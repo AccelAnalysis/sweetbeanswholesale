@@ -32,12 +32,17 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl order-2 md:order-1">
-               <Image
-                  src="https://images.unsplash.com/photo-1511537632536-b7a5758742af?q=80&w=2070&auto=format&fit=crop"
-                  alt="Our Story"
-                  fill
-                  className="object-cover"
-                />
+              <iframe
+                frameBorder="0"
+                allowFullScreen
+                loading="lazy"
+                style={{ width: '100%', height: 'auto', aspectRatio: '16/9' }}
+                src="https://redir1.wavy.com/nxs-video/vid-anvato-3976575/embed/?autoplay=1&injected_via=embed&post_id=186929"
+                rel="nofollow"
+                width="640"
+                height="320"
+                title="Our Story Video"
+              ></iframe>
             </div>
             <div className="space-y-6 order-1 md:order-2">
               <h2 className="text-3xl font-bold text-coffee-dark">More Than Just Coffee</h2>
@@ -114,7 +119,7 @@ export default function AboutPage() {
                  We&apos;re always looking for passionate people to join our cafe and roastery teams.
                </p>
                <Button size="lg" className="bg-white text-coffee-dark hover:bg-cream" asChild>
-                <Link href="/contact">
+                <Link href="/join-team">
                   Get in Touch
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>

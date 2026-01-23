@@ -7,17 +7,16 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center text-center text-white">
+      <section className="relative h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 z-0">
-          <video
-            src="https://img1.wsimg.com/blobby/go/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/video/pulled%20pork%20sandwich.mp4"
-            autoPlay
-            muted
-            loop
-            className="absolute inset-0 w-full h-full object-cover"
-            title="Coffee Roasting Video"
-          ></video>
+          <iframe
+            src="https://player.vimeo.com/video/1157684253?background=1&autoplay=1&loop=1&byline=0&title=0"
+            className="absolute top-1/2 left-1/2 w-full h-[56.25vw] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
         
         <div className="relative z-20 container mx-auto px-4 max-w-4xl space-y-6">

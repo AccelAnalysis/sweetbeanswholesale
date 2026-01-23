@@ -5,15 +5,15 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { CheckCircle2, Coffee, Store, Truck, Send } from "lucide-react"
-import { submitToGoogleSheet } from "@/lib/api"
+import { CheckCircle2, Coffee, Store, Truck, Send, Briefcase } from "lucide-react"
+import { submitToGoogleSheet, SubmissionData } from "@/lib/api"
 
 interface ApplicationFormProps {
-  defaultType?: "wholesale" | "inquiry"
+  defaultType?: "wholesale" | "inquiry" | "join_team"
 }
 
 export function ApplicationForm({ defaultType = "wholesale" }: ApplicationFormProps) {
-  const [formType, setFormType] = useState<"wholesale" | "inquiry">(defaultType)
+  const [formType, setFormType] = useState<"wholesale" | "inquiry" | "join_team">(defaultType)
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -23,10 +23,13 @@ export function ApplicationForm({ defaultType = "wholesale" }: ApplicationFormPr
     
     // Collect form data
     const formData = new FormData(e.target as HTMLFormElement)
-    const data: Record<string, any> = Object.fromEntries(formData.entries())
+    const data: Record<string, unknown> = Object.fromEntries(formData.entries())
     
     // Add type and handle arrays (checkboxes)
-    const submissionType = formType === 'wholesale' ? 'application' : 'inquiry'
+    let submissionType = 'inquiry';
+    if (formType === 'wholesale') submissionType = 'application';
+    if (formType === 'join_team') submissionType = 'join_team';
+    
     data.type = submissionType
     
     if (formType === 'wholesale') {
@@ -37,7 +40,7 @@ export function ApplicationForm({ defaultType = "wholesale" }: ApplicationFormPr
     }
 
     try {
-      await submitToGoogleSheet(data as any)
+      await submitToGoogleSheet(data as unknown as SubmissionData)
       
       setSubmitted(true)
       window.scrollTo({ top: 0, behavior: "smooth" })
@@ -92,11 +95,21 @@ export function ApplicationForm({ defaultType = "wholesale" }: ApplicationFormPr
         >
           General Inquiry
         </button>
+        <button
+          onClick={() => setFormType("join_team")}
+          className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+            formType === "join_team"
+              ? "bg-brand-purple text-white shadow-sm"
+              : "text-coffee-medium hover:bg-coffee-light/10"
+          }`}
+        >
+          Join Team
+        </button>
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm border border-coffee-light/20 overflow-hidden">
         <div className="bg-coffee-dark p-6 text-white flex gap-4 items-center">
-          {formType === "wholesale" ? (
+          {formType === "wholesale" && (
             <>
               <Store className="h-6 w-6 text-brand-purple-light" />
               <div>
@@ -104,12 +117,22 @@ export function ApplicationForm({ defaultType = "wholesale" }: ApplicationFormPr
                 <p className="text-white/80 text-sm">Tell us about your business coffee needs.</p>
               </div>
             </>
-          ) : (
+          )}
+          {formType === "inquiry" && (
             <>
                <Coffee className="h-6 w-6 text-brand-purple-light" />
                <div>
                 <h2 className="font-bold text-lg">General Contact Form</h2>
                 <p className="text-white/80 text-sm">Questions about training, events, or specific beans?</p>
+              </div>
+            </>
+          )}
+          {formType === "join_team" && (
+            <>
+               <Briefcase className="h-6 w-6 text-brand-purple-light" />
+               <div>
+                <h2 className="font-bold text-lg">Join Our Team</h2>
+                <p className="text-white/80 text-sm">Apply for a position at our roastery or cafe.</p>
               </div>
             </>
           )}
@@ -214,6 +237,51 @@ export function ApplicationForm({ defaultType = "wholesale" }: ApplicationFormPr
             </div>
           )}
 
+          {/* Job Application Section - Only for Join Team */}
+          {formType === "join_team" && (
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-coffee-dark border-b border-coffee-light/20 pb-2">
+                Application Details
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="position">Position of Interest</Label>
+                  <select 
+                    id="position"
+                    name="position"
+                    className="flex h-10 w-full rounded-md border border-coffee-light/30 bg-white px-3 py-2 text-sm text-coffee-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+                    required
+                  >
+                    <option value="">Select position...</option>
+                    <option value="barista">Barista</option>
+                    <option value="kitchen">Kitchen / Prep</option>
+                    <option value="roaster">Roaster / Production</option>
+                    <option value="driver">Delivery Driver</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="availability">Availability</Label>
+                  <Input id="availability" name="availability" placeholder="e.g. Full-time, Weekends, Mornings" required />
+                </div>
+                <div className="space-y-2 md:col-span-2">
+                  <Label htmlFor="resumeLink">Link to Resume / Portfolio (Optional)</Label>
+                  <Input id="resumeLink" name="resumeLink" placeholder="Google Drive, LinkedIn, or personal site URL" />
+                </div>
+                <div className="space-y-2 md:col-span-2">
+                  <Label htmlFor="experience">Relevant Experience</Label>
+                  <Textarea 
+                    id="experience" 
+                    name="experience" 
+                    placeholder="Tell us about your coffee or hospitality experience..." 
+                    className="min-h-[100px]"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Message Section */}
           <div className="space-y-2">
             <Label htmlFor="message">
@@ -229,7 +297,7 @@ export function ApplicationForm({ defaultType = "wholesale" }: ApplicationFormPr
 
           <Button type="submit" size="lg" className="w-full md:w-auto" disabled={isSubmitting}>
             <Send className="mr-2 h-4 w-4" />
-            {isSubmitting ? "Sending..." : (formType === "wholesale" ? "Submit Application" : "Send Inquiry")}
+            {isSubmitting ? "Sending..." : (formType === "wholesale" ? "Submit Application" : formType === "join_team" ? "Submit Application" : "Send Inquiry")}
           </Button>
           
           <p className="text-xs text-coffee-medium text-center md:text-left">

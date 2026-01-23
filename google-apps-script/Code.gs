@@ -38,6 +38,10 @@ const SHEETS = {
   RETAIL_ORDERS: {
     name: "Retail Orders",
     headers: ["Date", "Order ID", "Customer Name", "Company", "Email", "Phone", "Items", "Total Value", "Payment Preference", "Status", "Notes"]
+  },
+  JOB_APPLICATIONS: {
+    name: "Job Applications",
+    headers: ["Date", "Status", "Name", "Email", "Phone", "Position", "Experience", "Availability", "Resume Link", "Notes"]
   }
 };
 
@@ -64,6 +68,8 @@ function doPost(e) {
       result = handleSubscription(data);
     } else if (type === 'retail') {
       result = handleRetailOrder(data);
+    } else if (type === 'join_team') {
+      result = handleJobApplication(data);
     } else {
       throw new Error("Unknown submission type: " + type);
     }
@@ -244,6 +250,34 @@ function handleRetailOrder(data) {
     `New retail order ${orderId} from ${data.customerName}.\nTotal: $${data.totalValue}\n\nItems:\n${itemsString}`);
     
   return { orderId: orderId };
+}
+
+/**
+ * Handle Job Application
+ */
+function handleJobApplication(data) {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  const sheet = ss.getSheetByName(SHEETS.JOB_APPLICATIONS.name);
+  
+  const date = new Date();
+  
+  sheet.appendRow([
+    date,
+    "New",
+    data.contactName,
+    data.email,
+    data.phone,
+    data.position,
+    data.experience,
+    data.availability,
+    data.resumeLink,
+    data.notes
+  ]);
+  
+  sendNotification("New Job Application", 
+    `New application from ${data.contactName} for ${data.position}.\nEmail: ${data.email}`);
+    
+  return { id: "JOB-" + Date.now() };
 }
 
 /**

@@ -18,7 +18,14 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl text-brand-purple hover:opacity-90 transition-opacity">
-            <Image src="/sweetbeanswholesale/Sweet_Beans_Logo_Jan2026.png" alt="Sweet Beans Logo" width={120} height={40} />
+            <Image 
+              src="/sweetbeanswholesale/Sweet_Beans_Logo_Jan2026.png" 
+              alt="Sweet Beans Logo" 
+              width={0} 
+              height={0} 
+              sizes="100vw" 
+              style={{ height: '20px', width: 'auto' }}
+            />
             <span>Sweet Beans</span>
           </Link>
 

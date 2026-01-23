@@ -14,7 +14,14 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl text-white">
-              <Image src="/sweetbeanswholesale/Sweet_Beans_Logo_Jan2026.png" alt="Sweet Beans Logo" width={120} height={40} />
+              <Image 
+                src="/sweetbeanswholesale/Sweet_Beans_Logo_Jan2026.png" 
+                alt="Sweet Beans Logo" 
+                width={0} 
+                height={0} 
+                sizes="100vw" 
+                className="w-auto h-10" 
+              />
               <span>Sweet Beans</span>
             </Link>
             <p className="text-sm text-coffee-light/80">

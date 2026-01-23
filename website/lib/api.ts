@@ -2,7 +2,7 @@
 export const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyOc93Go01RYjYbvFA_uoKvwkqu-uJMhBqOsavZ64qdlNK2Ad7DZTSBvHo5VW7VTFs5g/exec';
 
 export interface SubmissionData {
-  type: 'quote' | 'application' | 'inquiry' | 'subscription' | 'retail';
+  type: 'quote' | 'application' | 'inquiry' | 'subscription' | 'retail' | 'join_team';
   [key: string]: unknown;
 }
 
