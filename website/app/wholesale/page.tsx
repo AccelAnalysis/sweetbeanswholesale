@@ -10,7 +10,7 @@ export default function WholesalePage() {
       <section className="relative h-[500px] flex items-center bg-coffee-dark text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1511537632536-b7a5758742af?q=80&w=2070&auto=format&fit=crop"
+            src="/wholesale-coffee.jpg"
             alt="Wholesale Coffee"
             fill
             className="object-cover opacity-40"
@@ -260,20 +260,52 @@ export default function WholesalePage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-             {/* Placeholders for Partner Logos */}
-             <div className="h-16 flex items-center justify-center font-bold text-xl text-coffee-medium border-2 border-dashed border-coffee-light/30 rounded-lg">
-                Partner 1
-             </div>
-             <div className="h-16 flex items-center justify-center font-bold text-xl text-coffee-medium border-2 border-dashed border-coffee-light/30 rounded-lg">
-                Partner 2
-             </div>
-             <div className="h-16 flex items-center justify-center font-bold text-xl text-coffee-medium border-2 border-dashed border-coffee-light/30 rounded-lg">
-                Partner 3
-             </div>
-             <div className="h-16 flex items-center justify-center font-bold text-xl text-coffee-medium border-2 border-dashed border-coffee-light/30 rounded-lg">
-                Partner 4
-             </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-80 hover:opacity-100 transition-all duration-500">
+            {/* Partner Images */}
+            <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
+              <Image
+                src="https://images.unsplash.com/photo-1751151015757-5f3aac54d2ad?q=80&w=800&auto=format&fit=crop"
+                alt="Partner Cafe"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 text-white font-bold text-lg drop-shadow-md">
+                Cafes
+              </div>
+            </div>
+            <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
+              <Image
+                src="https://images.unsplash.com/photo-1758243488328-148e39e5e6b1?q=80&w=800&auto=format&fit=crop"
+                alt="Partner Restaurant"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 text-white font-bold text-lg drop-shadow-md">
+                Restaurants
+              </div>
+            </div>
+            <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
+              <Image
+                src="https://images.unsplash.com/photo-1661956600684-97d3a4320e45?q=80&w=800&auto=format&fit=crop"
+                alt="Partner Office"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 text-white font-bold text-lg drop-shadow-md">
+                Offices
+              </div>
+            </div>
+            <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
+              <Image
+                src="https://images.unsplash.com/photo-1742283064476-c13586b15ad7?q=80&w=800&auto=format&fit=crop"
+                alt="Partner Bakery"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 text-white font-bold text-lg drop-shadow-md">
+                Bakeries
+              </div>
+            </div>
           </div>
           
           <div className="text-center mt-12 pt-8 border-t border-coffee-light/10">

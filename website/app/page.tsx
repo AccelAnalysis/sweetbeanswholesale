@@ -52,7 +52,7 @@ export default function Home() {
             <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg border border-coffee-light/20 hover:shadow-xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1511537632536-b7a5758742af?q=80&w=2070&auto=format&fit=crop"
+                  src="/wholesale-coffee.jpg"
                   alt="Wholesale Coffee Bags"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -86,7 +86,7 @@ export default function Home() {
             <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg border border-coffee-light/20 hover:shadow-xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1974&auto=format&fit=crop"
+                  src="/cafe-interior.jpg"
                   alt="Cafe Interior"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -138,7 +138,7 @@ export default function Home() {
             <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border border-coffee-light/30 hover:border-brand-purple/30 transition-colors">
               <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-lg mb-4">
                  <Image
-                  src="https://images.unsplash.com/photo-1611854779393-1b2ae9bc4048?q=80&w=2000&auto=format&fit=crop"
+                  src="/brazil.png"
                   alt="Brazil Coffee"
                   fill
                   className="object-cover"
@@ -157,7 +157,7 @@ export default function Home() {
             <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border border-coffee-light/30 hover:border-brand-purple/30 transition-colors">
               <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-lg mb-4">
                  <Image
-                  src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=2080&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1630861412229-67e2acb44b7a?q=80&w=800&auto=format&fit=crop"
                   alt="Ethiopia Coffee"
                   fill
                   className="object-cover"
