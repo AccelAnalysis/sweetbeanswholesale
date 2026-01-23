@@ -13,8 +13,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link href="/">
-              <Image src="/Sweet_Beans_Logo_Jan2026.1.png" alt="Sweet Beans Logo" width={150} height={50} />
+            <Link href="/" className="flex items-center gap-2 font-bold text-xl text-white">
+              <Image src="/sweetbeanswholesale/Sweet_Beans_Logo_Jan2026.png" alt="Sweet Beans Logo" width={120} height={40} />
+              <span>Sweet Beans</span>
             </Link>
             <p className="text-sm text-coffee-light/80">
               Fresh Roasted in Hampton, Serving Hampton Roads. Local small-batch roasting with reliable delivery and expert support.

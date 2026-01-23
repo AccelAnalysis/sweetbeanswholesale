@@ -17,8 +17,9 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/">
-            <Image src="/Sweet_Beans_Logo_Jan2026.1.png" alt="Sweet Beans Logo" width={150} height={50} />
+          <Link href="/" className="flex items-center gap-2 font-bold text-xl text-brand-purple hover:opacity-90 transition-opacity">
+            <Image src="/sweetbeanswholesale/Sweet_Beans_Logo_Jan2026.png" alt="Sweet Beans Logo" width={120} height={40} />
+            <span>Sweet Beans</span>
           </Link>
 
           {/* Desktop Navigation */}
