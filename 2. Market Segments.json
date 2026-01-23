@@ -1,0 +1,218 @@
+[
+{
+"name": "Morning Commuter Fuel (Fast Specialty Coffee)",
+"jtbd": "Grab a reliable specialty coffee and quick bite on the way to work/school without slowing down my morning.",
+"parentMarket": "Hampton Peninsula Community-Driven Specialty Café Market (Sweet Beans — Hampton)",
+"decisionCriteria": ["speed", "consistency", "location convenience", "taste", "price fairness"],
+"geographicOverlay": ["23666", "23665", "23664", "23663", "23661"],
+"triggers": ["new job/school schedule", "seasonal routine reset (New Year, back-to-school)", "trying to replace chain coffee", "traffic pattern changes"],
+"valueProposition": {
+"corePromise": "Fast, made-here specialty coffee you can count on—anchored by in-house roasted beans and house-flavor signatures—so you start the day on purpose.",
+"proofPoints": [
+"Signature house-flavor lattes that feel special without being slow",
+"Reliable counter-service cadence for weekday mornings",
+"Coffee + light food in one stop (reduce extra errands)"
+],
+"cta": "Book Now",
+"offerFamily": "Workday Fuel"
+}
+},
+{
+"name": "Remote Work + Study Sessions (Third-Place Productivity)",
+"jtbd": "Find a comfortable place to focus for 1–3 hours with great coffee and a calm, welcoming vibe.",
+"parentMarket": "Hampton Peninsula Community-Driven Specialty Café Market (Sweet Beans — Hampton)",
+"decisionCriteria": ["environment", "quality", "seating availability", "reliability", "menu variety"],
+"geographicOverlay": ["23666", "23661", "23663", "Newport News, VA (23606, 23602)"],
+"triggers": ["WFH fatigue", "exam weeks", "project deadlines", "need a meeting spot outside the office"],
+"valueProposition": {
+"corePromise": "A reliable ‘work-from-café’ home base—great espresso, made-here flavors, and an easy-going environment—so you can focus and leave refreshed.",
+"proofPoints": [
+"Third-place vibe designed for lingering and returning",
+"In-house roastery identity supports a quality-first coffee experience",
+"Food + beverage range supports longer stays"
+],
+"cta": "Compare Plans",
+"offerFamily": "Study + Work Blocks"
+}
+},
+{
+"name": "Family-Friendly Treat + Light Meal (Weekend & After-School)",
+"jtbd": "Treat the family while also getting something practical (coffee for adults, food for kids) in a place that feels safe and welcoming.",
+"parentMarket": "Hampton Peninsula Community-Driven Specialty Café Market (Sweet Beans — Hampton)",
+"decisionCriteria": ["family friendliness", "menu breadth", "value", "taste", "wait time"],
+"geographicOverlay": ["23663", "23664", "23669", "23651"],
+"triggers": ["weekend outings", "sports practice drop-offs", "after-school treats", "family visiting town"],
+"valueProposition": {
+"corePromise": "A community café that works for the whole crew—specialty drinks, approachable food, and a welcoming vibe—so everyone leaves happy.",
+"proofPoints": [
+"All-occasion menu (coffee + café food) reduces friction for groups",
+"Comfortable, family-friendly environment supports repeat visits",
+"Signature drinks create a ‘treat’ moment without a premium-only feel"
+],
+"cta": "Book Now",
+"offerFamily": "Family Treats"
+}
+},
+{
+"name": "Friends + Small Group Meetups (Community Third-Place)",
+"jtbd": "Meet friends somewhere local, comfortable, and consistent—where everyone can find something they like.",
+"parentMarket": "Hampton Peninsula Community-Driven Specialty Café Market (Sweet Beans — Hampton)",
+"decisionCriteria": ["atmosphere", "group suitability", "menu variety", "service reliability", "location"],
+"geographicOverlay": ["23661", "23663", "23666", "York County / Yorktown, VA (23692)"],
+"triggers": ["catching up with friends", "informal networking", "parent meetups", "club/group meetups"],
+"valueProposition": {
+"corePromise": "A reliable local meetup spot—specialty coffee, welcoming space, and broad menu appeal—so gathering feels easy and repeatable.",
+"proofPoints": [
+"Community-first positioning supports ‘regulars’ behavior",
+"Menu range fits mixed preferences in a group",
+"Consistent quality experience differentiates from chain monotony"
+],
+"cta": "Book Now",
+"offerFamily": "Meetup Menu"
+}
+},
+{
+"name": "Visitor + Event Traffic (Coliseum Central / Peninsula Attractions)",
+"jtbd": "Get a memorable local coffee experience while traveling or attending an event—without guesswork.",
+"parentMarket": "Hampton Peninsula Community-Driven Specialty Café Market (Sweet Beans — Hampton)",
+"decisionCriteria": ["local authenticity", "speed", "discoverability", "taste", "food availability"],
+"geographicOverlay": ["23666", "23651", "23661"],
+"triggers": ["conventions/events near Coliseum Central", "hotel stays", "day trips to Fort Monroe/Phoebus", "visiting family on the Peninsula"],
+"valueProposition": {
+"corePromise": "A ‘local favorite’ coffee stop—signature flavors and in-house roasted identity—so visitors experience Hampton beyond the chains.",
+"proofPoints": [
+"Distinct signature drinks create a memorable stop",
+"Approachable café menu supports travelers and families",
+"Community-driven brand story feels local and authentic"
+],
+"cta": "Book Now",
+"offerFamily": "Visitor Pit Stop"
+}
+},
+{
+"name": "Afternoon Reset + Light ‘Café + Sip’ Occasion",
+"jtbd": "Unwind with a quality beverage in a relaxed café setting—coffee first, with an optional adult beverage behind the counter.",
+"parentMarket": "Hampton Peninsula Community-Driven Specialty Café Market (Sweet Beans — Hampton)",
+"decisionCriteria": ["ambience", "product quality", "approachability", "menu options", "service consistency"],
+"geographicOverlay": ["23666", "23663", "23651"],
+"triggers": ["end of workday", "meeting a friend after errands", "needing a calm reset", "date-lite occasions"],
+"valueProposition": {
+"corePromise": "A calm, community café experience that flexes—specialty coffee and an optional sip option—so your afternoon has a reliable landing spot.",
+"proofPoints": [
+"Third-place atmosphere supports a low-pressure unwind",
+"Coffee-forward identity maintains a consistent brand experience",
+"Optional adult beverages expand occasions without changing the core"
+],
+"cta": "Book Now",
+"offerFamily": "Café + Sip"
+}
+},
+{
+"name": "Independent Café Wholesale Accounts (No In-House Roaster)",
+"jtbd": "Serve high-quality coffee under a consistent, local roaster partnership without taking on roasting complexity.",
+"parentMarket": "Hampton Roads Small-Batch Coffee Wholesale Market (Sweet Beans Roastery)",
+"decisionCriteria": ["quality consistency", "freshness", "reliability", "relationship/support", "cost-of-goods fit"],
+"geographicOverlay": ["Hampton, VA", "Newport News, VA", "Norfolk, VA", "Virginia Beach, VA", "Chesapeake, VA"],
+"triggers": ["opening a café", "changing roasters", "quality complaints", "desire for local brand alignment", "menu relaunch"],
+"valueProposition": {
+"corePromise": "A dependable local roaster partnership—consistent profiles, fresh delivery cadence, and story-backed product—so your café wins repeat business.",
+"proofPoints": [
+"Small-batch focus supports freshness and consistency",
+"Local roaster story helps cafés differentiate vs commodity suppliers",
+"Partnership-led approach supports long-term account retention"
+],
+"cta": "Book Now",
+"offerFamily": "Wholesale Roastery Partnership"
+}
+},
+{
+"name": "Brunch + Breakfast Restaurants (Coffee Program Upgrade)",
+"jtbd": "Upgrade our coffee experience to match our food quality and increase guest satisfaction without slowing service.",
+"parentMarket": "Hampton Roads Small-Batch Coffee Wholesale Market (Sweet Beans Roastery)",
+"decisionCriteria": ["speed of service", "taste improvement", "reliability", "compatibility with existing workflow", "price/value"],
+"geographicOverlay": ["Hampton, VA", "York County / Yorktown, VA", "Newport News, VA", "Suffolk, VA"],
+"triggers": ["bad reviews mentioning coffee", "new brunch push", "seasonal menu refresh", "competitive pressure from cafés"],
+"valueProposition": {
+"corePromise": "A restaurant-ready coffee upgrade—better cup quality with dependable supply—so your coffee matches your kitchen and earns repeat visits.",
+"proofPoints": [
+"Profiles suited for high-throughput service (reliable, consistent output)",
+"Local roaster identity supports a stronger menu story",
+"Recurring supply discipline supports predictable operations"
+],
+"cta": "Book Now",
+"offerFamily": "Restaurant Coffee Upgrade"
+}
+},
+{
+"name": "Bakeries + Dessert Shops (Pairing-Driven Coffee)",
+"jtbd": "Offer coffee that pairs with our baked goods and increases add-on sales per customer.",
+"parentMarket": "Hampton Roads Small-Batch Coffee Wholesale Market (Sweet Beans Roastery)",
+"decisionCriteria": ["flavor pairing fit", "consistency", "delivery reliability", "branding alignment", "margin impact"],
+"geographicOverlay": ["Norfolk, VA", "Virginia Beach, VA", "Chesapeake, VA", "Williamsburg / James City County, VA"],
+"triggers": ["adding espresso drinks", "expanding morning daypart", "introducing seasonal pastries", "seeking higher ticket averages"],
+"valueProposition": {
+"corePromise": "Coffee that sells more pastry—balanced, consistent roasts and a local story—so you lift ticket size without operational headaches.",
+"proofPoints": [
+"Roast profiles can be positioned for dessert/pastry pairing",
+"Consistent supply supports predictable daily quality",
+"Local roaster story complements artisan food positioning"
+],
+"cta": "Compare Plans",
+"offerFamily": "Bakery Pairings"
+}
+},
+{
+"name": "Offices + Professional Firms (Employee & Client Coffee Program)",
+"jtbd": "Provide a dependable, better-than-standard coffee experience for staff and visiting clients with minimal administration.",
+"parentMarket": "Hampton Roads Small-Batch Coffee Wholesale Market (Sweet Beans Roastery)",
+"decisionCriteria": ["reliability", "simplicity", "perceived quality", "recurring ordering", "budget fit"],
+"geographicOverlay": ["Hampton, VA", "Newport News, VA", "Chesapeake, VA", "Virginia Beach, VA"],
+"triggers": ["new office move", "HR retention initiatives", "client experience upgrades", "vendor consolidation"],
+"valueProposition": {
+"corePromise": "A simple, professional coffee program—local roast quality on a recurring cadence—so your office feels cared for and client-ready.",
+"proofPoints": [
+"Recurring-order discipline supports predictable replenishment",
+"Local coffee story upgrades perceived hospitality",
+"Consistent product reduces office complaints and waste"
+],
+"cta": "Book Now",
+"offerFamily": "Office Coffee Program"
+}
+},
+{
+"name": "Hotels + Hospitality + Short-Term Rentals (Local Amenities)",
+"jtbd": "Offer a memorable local coffee amenity that improves guest experience and reviews.",
+"parentMarket": "Hampton Roads Small-Batch Coffee Wholesale Market (Sweet Beans Roastery)",
+"decisionCriteria": ["guest experience impact", "reliability", "packaging/amenity suitability", "cost fit", "brand story"],
+"geographicOverlay": ["Hampton, VA", "Newport News, VA", "York County / Yorktown, VA", "Norfolk, VA", "Virginia Beach, VA"],
+"triggers": ["seasonal travel spikes", "rebranding/renovation", "amenity refresh", "review improvement initiative"],
+"valueProposition": {
+"corePromise": "A ‘local touch’ coffee amenity—consistent, story-backed roasts with dependable supply—so guests remember your stay for the right reasons.",
+"proofPoints": [
+"Local roaster story enhances guest experience differentiation",
+"Consistent supply prevents amenity shortages",
+"Quality uplift can support stronger reviews and repeat stays"
+],
+"cta": "Book Now",
+"offerFamily": "Hospitality Amenities"
+}
+},
+{
+"name": "Churches + Community Organizations (Event & Volunteer Coffee Supply)",
+"jtbd": "Serve dependable coffee for gatherings and volunteers with a values-aligned local partner.",
+"parentMarket": "Hampton Roads Small-Batch Coffee Wholesale Market (Sweet Beans Roastery)",
+"decisionCriteria": ["reliability", "value", "local alignment", "ease of reordering", "event suitability"],
+"geographicOverlay": ["Hampton, VA", "Newport News, VA", "York County / Yorktown, VA", "Suffolk, VA"],
+"triggers": ["new recurring events", "conference planning", "volunteer appreciation initiatives", "switching from bulk commodity coffee"],
+"valueProposition": {
+"corePromise": "A community-aligned coffee partner—reliable supply and approachable quality—so your gatherings feel welcoming and consistent.",
+"proofPoints": [
+"Local partnership supports community identity and story",
+"Recurring-order options support predictable event planning",
+"Consistent roast profiles reduce variability across volunteers/events"
+],
+"cta": "Compare Plans",
+"offerFamily": "Community Supply"
+}
+}
+]

@@ -1,0 +1,193 @@
+{
+"markets": [
+{
+"name": "Hampton Peninsula Community-Driven Specialty Café Market (Sweet Beans — Hampton)",
+"description": "A locally bounded, morning-to-afternoon café market centered on Hampton’s Coliseum Central / Commander Shepard Blvd corridor where residents, students, and on-the-go workers buy specialty espresso drinks, house-flavor lattes, and light café food in a family-friendly “third place” environment (with a lighter café + sip occasion via limited alcohol service behind the counter). Differentiation leans on ‘made-here’ flavor, community vibe, and an in-house roastery identity rather than price-led volume. ([Seamless][1])",
+"category": "specialty coffee bar + light café food + community third-place experience (+ limited alcohol beverages)",
+"type": "residential",
+"geographic": {
+"primaryZones": [
+"23666",
+"23665",
+"23664",
+"23663",
+"23661",
+"23651",
+"23669"
+],
+"secondaryZones": [
+"Newport News, VA (23602, 23606, 23607, 23608)",
+"York County / Yorktown, VA (23690, 23692, 23693)",
+"Williamsburg / James City County, VA (23185, 23188, 23187)",
+"Suffolk, VA (23435)"
+],
+"tertiaryZones": [
+"Norfolk, VA",
+"Virginia Beach, VA",
+"Chesapeake, VA",
+"Gloucester County, VA",
+"Isle of Wight County, VA"
+]
+},
+"competitors": [
+{
+"name": "Buckroe Coffee",
+"type": "direct",
+"location": {
+"lat": 37.0351302,
+"lng": -76.3131175,
+"address": "1930 E Pembroke Ave, Hampton, VA 23663"
+},
+"description": "Local independent coffee shop drawing beach-area and neighborhood traffic; competes on daily coffee occasions and convenience."
+},
+{
+"name": "Column 15",
+"type": "direct",
+"location": {
+"lat": 37.0273782,
+"lng": -76.343745,
+"address": "1206 23rd St, Hampton, VA 23661"
+},
+"description": "Local café option competing for ‘work-from-café’ and community coffee traffic in Hampton."
+},
+{
+"name": "Cure Coffeehouse (Newport News)",
+"type": "direct",
+"location": {
+"lat": 37.1142081,
+"lng": -76.4966152,
+"address": "11810 Fountain Way, Suite 500, Newport News, VA 23606"
+},
+"description": "Regional specialty café competitor for quality-seeking customers willing to drive across the Peninsula."
+},
+{
+"name": "Firehouse Coffee & Gifts 1881 (Fort Monroe area)",
+"type": "direct",
+"location": {
+"lat": 37.012116,
+"lng": -76.30234,
+"address": "Fort Monroe area, Hampton, VA 23651"
+},
+"description": "Tourism + destination coffee competitor for Fort Monroe / Phoebus traffic."
+},
+{
+"name": "7 Brew Coffee (drive-thru)",
+"type": "indirect",
+"location": {
+"lat": 37.0209127,
+"lng": -76.4425834,
+"address": "Hampton area (drive-thru coffee concept)"
+},
+"description": "Competes on speed, novelty drinks, and convenience—pulling ‘coffee as a quick stop’ occasions."
+},
+{
+"name": "Starbucks (Hampton area)",
+"type": "indirect",
+"location": {
+"lat": 37.0489661,
+"lng": -76.3918947,
+"address": "Hampton, VA (chain coffee)"
+},
+"description": "Competes on consistency, mobile ordering, and habitual daily coffee routines."
+},
+{
+"name": "Dunkin' (Commander Shepard Blvd)",
+"type": "indirect",
+"location": {
+"lat": 37.0939832,
+"lng": -76.3951029,
+"address": "3370 Commander Shepard Blvd, Hampton, VA 23666"
+},
+"description": "Competes on price-perceived value, speed, and breakfast habit purchases. ([LatLong][2])"
+}
+],
+"constraints": "Single retail footprint focused on Hampton (Carrollton location is closed per internal operations note). Primary daypart is morning–afternoon based on widely posted hours, which narrows evening capture. Alcohol is still offered behind the counter, but the former self-pour beer wall has been removed, reducing ‘destination’ theater while preserving a lighter café + sip occasion. Differentiation depends on consistent execution of in-house roasted coffee and house flavors, plus a clean, unified in-store message. ([Waze][3])",
+"positioning": {
+"statement": "We are for Hampton Peninsula locals and visitors (15–25 minutes from Coliseum Central) who want a reliable, family-friendly specialty café with made-here flavor and a comfortable place to meet, work, and reset—offering in-house roasted coffee and signature syrups—delivering a more personal, community-driven experience than chains and a more approachable, all-occasion menu than narrow craft-only bars, under the standard of consistent quality, clear in-store messaging, and morning-to-afternoon service hours. ([Seamless][1])",
+"categoryPromise": "Community-Driven Specialty Café (Experience + Flavor Differentiator)",
+"geographicPromise": "Hampton-first, Peninsula-reachable (primary: Hampton + Poquoson; secondary: Newport News + York County; tertiary: broader Hampton Roads)",
+"competitiveStance": "More ‘made-here’ taste + local story than chains; more accessible and family-friendly than boutique specialty-only concepts",
+"operationalTruth": "In-house roasted coffee and in-house created syrups/sauces; counter-service speed; community events/catering orientation; limited alcohol available behind the counter; daypart weighted to mornings and early afternoons. ([Seamless][1])"
+}
+},
+{
+"name": "Hampton Roads Small-Batch Coffee Wholesale Market (Sweet Beans Roastery)",
+"description": "A B2B wholesale market across Hampton Roads (Peninsula + Southside) where independent cafés, restaurants, brunch concepts, bakeries, offices, churches, and hospitality operators buy roasted coffee that is locally produced, consistent, and story-backed—often valuing freshness, partnership, and brand alignment over national-program commoditization. Sweet Beans’ fit is strongest with operators who want a regional roaster relationship (not just product) and can commit to recurring volume. ([Instagram][4])",
+"category": "small-batch coffee roasting + wholesale supply + partnership support",
+"type": "business",
+"geographic": {
+"primaryZones": [
+"Hampton, VA",
+"Newport News, VA",
+"Poquoson, VA",
+"York County / Yorktown, VA",
+"Norfolk, VA",
+"Virginia Beach, VA",
+"Chesapeake, VA",
+"Suffolk, VA"
+],
+"secondaryZones": [
+"Williamsburg / James City County, VA",
+"Portsmouth, VA",
+"Gloucester County, VA",
+"Isle of Wight County, VA",
+"Northeast North Carolina (Moyock / Elizabeth City corridor)"
+],
+"tertiaryZones": [
+"Richmond, VA metro",
+"Statewide Virginia (shipped wholesale / retail-to-wholesale crossover)"
+]
+},
+"competitors": [
+{
+"name": "Three Ships Coffee Roasters (wholesale-capable regional specialty roaster)",
+"type": "direct",
+"location": {
+"lat": 36.8463074,
+"lng": -75.9824007,
+"address": "Virginia Beach, VA (Old Beach area)"
+},
+"description": "Regional specialty roaster with consumer brand gravity and wholesale capability; competes for independent café/restaurant accounts. ([LatLong][5])"
+},
+{
+"name": "Cafe Stella Roasters (Norfolk)",
+"type": "direct",
+"location": {
+"lat": 36.867894,
+"lng": -76.2925307,
+"address": "1907 Colonial Ave, Norfolk, VA 23517"
+},
+"description": "Local roaster + café positioning; competes for operators seeking a local roasted-coffee partner. ([Cafe Stella Roasters][6])"
+},
+{
+"name": "Blanchard's Coffee (Richmond)",
+"type": "direct",
+"location": {
+"lat": 37.5650571,
+"lng": -77.4741203,
+"address": "Richmond, VA (regional roaster)"
+},
+"description": "Established Virginia roaster with broader distribution reach; competes for accounts willing to source regionally vs hyper-local. ([LatLong][7])"
+},
+{
+"name": "Sysco Hampton Roads (foodservice distributor coffee programs)",
+"type": "indirect",
+"location": {
+"lat": 36.7871,
+"lng": -76.4181,
+"address": "7000 Harbour View Blvd, Suffolk, VA 23435"
+},
+"description": "Competes by bundling coffee into broader foodservice supply with ordering convenience and standardized programs. ([Sysco][8])"
+}
+],
+"constraints": "Roastery is tied to the Hampton operation and must balance café demand with wholesale commitments. Current internal operating reality targets a step-change from ~60 lbs/month toward ~250 lbs/month breakeven, which makes recurring B2B contracts and account retention critical. Facility-use constraints can limit non-roasting monetization inside the roasting suite, pushing the strategy toward wholesale volume growth and tight production discipline. Roastery positioning should remain consistent with the café’s differentiation posture (local, made-here, community-driven) rather than racing distributors on price. ([Instagram][4])",
+"positioning": {
+"statement": "We are for Hampton Roads cafés, restaurants, bakeries, offices, and hospitality operators who want locally roasted coffee that is consistent, story-backed, and partner-supported—offering small-batch roasting with signature identity and flexible account relationships—providing a fresher, more brand-aligned alternative to distributor programs and a more locally resonant option than out-of-market roasters, under the standard of production consistency, recurring-order discipline, and a clear path to scaling wholesale volume. ([Instagram][4])",
+"categoryPromise": "Local small-batch roastery supplying wholesale partners (plus retail bean sales)",
+"geographicPromise": "Primary delivery focus across Hampton Roads; secondary reach to Williamsburg/Gloucester/Isle of Wight; tertiary shipping across Virginia as feasible",
+"competitiveStance": "Freshness + local story + relationship beats distributor commoditization; more approachable partnership than larger regional roasters for Peninsula-first operators",
+"operationalTruth": "Roasting and wholesale are active (retail + wholesale beans); growth requires recurring account volume and consistent roast profiles; wholesale is best positioned as relationship-led and reliability-led, not price-led. ([Instagram][4])"
+}
+}
+]
+}

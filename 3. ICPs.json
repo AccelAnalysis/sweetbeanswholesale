@@ -1,0 +1,971 @@
+[
+{
+"name": "Coliseum Central Young Professional (Daily Latte Routine)",
+"description": "A 25–39-year-old professional living in Hampton’s core ZIPs who wants a consistent, elevated morning coffee that feels personal (signature flavors, quality espresso) without paying luxury-premium prices. Ideal because they form repeat routines and influence coworkers/friends through habit and convenience.",
+"type": "residential",
+"parentSegment": "Morning Commuter Fuel (Fast Specialty Coffee)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23666", "23665", "23664", "23663", "23661"] },
+{ "column": "Age", "operator": "between", "values": [25, 39] },
+{ "column": "Estimated Income", "operator": "in", "values": ["$75,000 - $99,999", "$100,000 - $124,999", "$125,000 or More"] },
+{ "column": "Credit Card User", "operator": "=", "values": ["Yes"] }
+],
+"valueProposition": "Fast, made-here specialty coffee with signature flavors—reliable enough for a daily routine and distinct enough to feel like a treat.",
+"promise": {
+"text": "Your weekday coffee upgrade—fast, consistent, and made-here.",
+"trigger": "When chain coffee stops feeling worth it and you want a better daily ritual.",
+"process": "Order at the counter, choose a signature flavor or classic espresso drink, pair with a quick bite, grab-and-go.",
+"pricingAnchors": "$6–$9 signature latte; $5–$12 add-on food.",
+"processGuarantees": "Consistent quality, friendly service pace, and a clear ‘in-and-out’ experience during peak mornings."
+},
+"messageSpine": {
+"headline": "Make your morning coffee feel intentional—without slowing down.",
+"benefitBullets": ["Signature flavors that taste ‘made here’", "Reliable morning cadence for busy schedules"],
+"objectionHandling": "If you’re worried it’ll take too long, our counter-service flow is built for weekday mornings.",
+"proof": "Local regulars choose Sweet Beans for a consistent cup and a more personal experience than chains.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Mid-Career Homeowner Commuter (Coffee + Breakfast Stop)",
+"description": "A 35–54-year-old homeowner who wants a dependable one-stop morning solution—coffee plus a quick bite—before work, school drop-off, or errands. Ideal because they purchase for more than one person and build repeat weekday behavior.",
+"type": "residential",
+"parentSegment": "Morning Commuter Fuel (Fast Specialty Coffee)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23666", "23665", "23664", "23663", "23661"] },
+{ "column": "Age", "operator": "between", "values": [35, 54] },
+{ "column": "Home Owner", "operator": "=", "values": ["Homeowner"] },
+{ "column": "Estimated Income", "operator": "in", "values": ["$50,000 - $74,999", "$75,000 - $99,999", "$100,000 - $124,999", "$125,000 or More"] }
+],
+"valueProposition": "A reliable, approachable café stop where coffee quality and quick food live together—so mornings stay simple.",
+"promise": {
+"text": "Coffee + breakfast made easy in one stop.",
+"trigger": "When mornings get tight and you need a dependable routine for the household.",
+"process": "Quick order → pick up coffee and food together → back on the road.",
+"pricingAnchors": "$10–$18 typical ‘coffee + food’ ticket.",
+"processGuarantees": "Clear menu logic, predictable turnaround, and consistent drink execution."
+},
+"messageSpine": {
+"headline": "One stop. Better coffee. Less morning chaos.",
+"benefitBullets": ["Coffee and food together—no extra stops", "Approachable menu with specialty quality"],
+"objectionHandling": "If you’re comparing to fast chains, this is ‘better value per stop’ because you get quality plus convenience.",
+"proof": "Sweet Beans is positioned as a community-driven specialty café—personal without being precious.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Student + Early-Career Builder (Budgeted Treat Routine)",
+"description": "An 18–29-year-old student or early-career customer who wants a consistent, ‘special’ drink as a motivation ritual while still watching spend. Ideal because they share on social, respond to seasonal specials, and convert into regulars through habit.",
+"type": "residential",
+"parentSegment": "Morning Commuter Fuel (Fast Specialty Coffee)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23666", "23664", "23663", "23661"] },
+{ "column": "Age", "operator": "between", "values": [18, 29] },
+{ "column": "Education", "operator": "in", "values": ["Completed High School", "Completed College"] },
+{ "column": "Hi Tech Enthusiasts", "operator": "=", "values": ["Yes"] }
+],
+"valueProposition": "Signature flavors and a welcoming vibe that makes the routine feel bigger than the budget.",
+"promise": {
+"text": "A ‘treat’ coffee that fits your routine—and your wallet.",
+"trigger": "When you need a motivation boost for class, work, or training.",
+"process": "Pick a seasonal/signature drink → quick customization → grab-and-go or stay briefly.",
+"pricingAnchors": "$5–$8 typical drink purchase.",
+"processGuarantees": "Reliable drink quality and friendly, repeatable ordering."
+},
+"messageSpine": {
+"headline": "Turn your daily grind into a small win.",
+"benefitBullets": ["Seasonal/signature drinks that feel unique", "Fast, repeatable ordering for busy schedules"],
+"objectionHandling": "If you’re worried it’s ‘too fancy,’ the menu stays approachable—classic or signature, your choice.",
+"proof": "Sweet Beans emphasizes made-here flavors and a community café vibe.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Remote Knowledge Worker (High-Intent Repeat Visitor)",
+"description": "A college-educated remote worker (25–44) who needs a reliable third-place to focus for 1–3 hours with consistent coffee quality. Ideal because they stay longer, buy refills/food, and return weekly when the environment supports productivity.",
+"type": "residential",
+"parentSegment": "Remote Work + Study Sessions (Third-Place Productivity)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23666", "23661", "23663", "23606", "23602"] },
+{ "column": "Age", "operator": "between", "values": [25, 44] },
+{ "column": "Education", "operator": "in", "values": ["Completed College", "Completed Graduate School"] },
+{ "column": "Hi Tech Enthusiasts", "operator": "=", "values": ["Yes"] }
+],
+"valueProposition": "A dependable work-friendly café with quality espresso and made-here flavors—so you can focus and reset without the chain vibe.",
+"promise": {
+"text": "Your reliable work-from-café base—quality coffee, calm energy.",
+"trigger": "When home distractions kill momentum or you need a change of scene.",
+"process": "Arrive → order coffee + snack → settle in → recharge → repeat weekly.",
+"pricingAnchors": "$12–$22 typical ‘work session’ ticket.",
+"processGuarantees": "Consistent coffee execution and a welcoming, repeatable environment."
+},
+"messageSpine": {
+"headline": "Work better in a place that feels human—not corporate.",
+"benefitBullets": ["Quality-first coffee anchored by in-house roasting identity", "Menu range supports longer sessions"],
+"objectionHandling": "If you’re worried about ‘not enough options,’ the menu is broad enough to support repeated visits.",
+"proof": "Sweet Beans is positioned as a community-driven specialty café built for staying, meeting, and returning.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Graduate Student / Exam Week Regular",
+"description": "A 21–34-year-old graduate student or certification-track learner who needs long-focus blocks, reliable caffeine, and an easy place to reset. Ideal because exam cycles create predictable, high-frequency visit windows.",
+"type": "residential",
+"parentSegment": "Remote Work + Study Sessions (Third-Place Productivity)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23666", "23661", "23663", "23606", "23602"] },
+{ "column": "Age", "operator": "between", "values": [21, 34] },
+{ "column": "Education", "operator": "in", "values": ["Completed College", "Completed Graduate School"] },
+{ "column": "Book Buyers", "operator": "=", "values": ["Yes"] }
+],
+"valueProposition": "A steady study environment with quality drinks and food options—so exam prep feels sustainable.",
+"promise": {
+"text": "Study sessions that last—powered by consistent coffee.",
+"trigger": "When exam deadlines and projects stack up.",
+"process": "Study plan → arrive early → order a repeat favorite → settle in → refuel once → finish strong.",
+"pricingAnchors": "$10–$20 session spend (drink + small food).",
+"processGuarantees": "Consistency of favorite drinks and an environment that supports longer stays."
+},
+"messageSpine": {
+"headline": "When it’s crunch time, don’t gamble on your coffee spot.",
+"benefitBullets": ["Reliable drinks you can repeat", "Food + beverage range supports longer focus blocks"],
+"objectionHandling": "If you’re worried about cost, repeatable favorites keep spending predictable.",
+"proof": "Sweet Beans’ model is ‘approachable specialty’—quality without being exclusive.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Solo Operator / Entrepreneur Work Sessions",
+"description": "A 28–55-year-old solo business owner who uses cafés for thinking time, casual meetings, and momentum resets. Ideal because they bring others, spend across categories, and become community connectors.",
+"type": "residential",
+"parentSegment": "Remote Work + Study Sessions (Third-Place Productivity)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23666", "23661", "23663", "23692"] },
+{ "column": "Age", "operator": "between", "values": [28, 55] },
+{ "column": "Investor", "operator": "=", "values": ["Yes"] },
+{ "column": "Self-Improvement", "operator": "=", "values": ["Yes"] }
+],
+"valueProposition": "A dependable third-place for thinking, meeting, and returning—great coffee with a community-forward feel.",
+"promise": {
+"text": "A café base that helps you stay productive and connected.",
+"trigger": "When you need space to plan, sell, or reset between client work.",
+"process": "Arrive → order repeat favorite → work session or quick meeting → take a treat drink to-go.",
+"pricingAnchors": "$12–$25 per visit (drink + food, sometimes a second drink).",
+"processGuarantees": "Professional, reliable service and consistent quality that supports repeat meetings."
+},
+"messageSpine": {
+"headline": "Your next breakthrough doesn’t happen in your inbox.",
+"benefitBullets": ["Comfortable third-place energy for planning and execution", "Made-here flavors that keep the ritual enjoyable"],
+"objectionHandling": "If you’re worried it won’t feel ‘professional,’ Sweet Beans is positioned as helpful, reliable, and approachable.",
+"proof": "Community-driven cafés become repeat meeting points—Sweet Beans is built for that role.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Suburban Parents (After-School Treat)",
+"description": "A 30–49-year-old parent household that wants a dependable, family-friendly stop that satisfies both adults and kids. Ideal because they repeat weekly, purchase multiple items per visit, and respond to seasonal treats.",
+"type": "residential",
+"parentSegment": "Family-Friendly Treat + Light Meal (Weekend & After-School)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23663", "23664", "23669", "23651"] },
+{ "column": "Age", "operator": "between", "values": [30, 49] },
+{ "column": "Parenting and Children's Interest", "operator": "=", "values": ["Yes"] },
+{ "column": "Marital Status", "operator": "in", "values": ["Married", "Inferred Married"] }
+],
+"valueProposition": "A community café that works for the whole crew—specialty drinks plus approachable food—so family stops feel easy and worth repeating.",
+"promise": {
+"text": "A family-friendly café stop everyone agrees on.",
+"trigger": "When you need an after-school win or a low-stress weekend treat.",
+"process": "Order for the family → grab drinks and food → quick sit or to-go → repeat next week.",
+"pricingAnchors": "$18–$40 typical family ticket (multiple drinks + food).",
+"processGuarantees": "Welcoming vibe, approachable options, and consistent execution of signature drinks."
+},
+"messageSpine": {
+"headline": "A treat stop that doesn’t turn into a hassle.",
+"benefitBullets": ["Kid-friendly feel with adult-quality coffee", "Food + drinks together for easy family ordering"],
+"objectionHandling": "If you’re worried it’s ‘just coffee,’ the menu breadth supports families and groups.",
+"proof": "Sweet Beans positions as a family-friendly third-place, not a niche craft-only bar.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Weekend Outing Families (Peninsula Day Trip)",
+"description": "A 28–55-year-old household that adds a café stop to Peninsula outings (parks, waterfront, Fort Monroe). Ideal because they convert from occasional visits to a repeat weekend routine when the experience feels welcoming and local.",
+"type": "residential",
+"parentSegment": "Family-Friendly Treat + Light Meal (Weekend & After-School)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23651", "23663", "23664", "23669", "23692"] },
+{ "column": "Age", "operator": "between", "values": [28, 55] },
+{ "column": "Travel Enthusiast", "operator": "in", "values": ["Domestic", "Travel"] },
+{ "column": "Credit Card User", "operator": "=", "values": ["Yes"] }
+],
+"valueProposition": "A ‘local favorite’ café stop that fits family outings—memorable drinks, approachable food, and a comfortable vibe.",
+"promise": {
+"text": "Make your outing better with a reliable local café stop.",
+"trigger": "When you’re planning a weekend outing and want an easy place everyone likes.",
+"process": "Stop in → choose signature drinks → grab light food → continue the day.",
+"pricingAnchors": "$20–$45 typical outing add-on spend.",
+"processGuarantees": "Approachable menu and consistent quality that makes the stop feel worth it."
+},
+"messageSpine": {
+"headline": "Add a ‘local’ highlight to your weekend—without overthinking it.",
+"benefitBullets": ["Signature flavors that feel unique", "Comfortable space for families and groups"],
+"objectionHandling": "If you’re worried it’s out of the way, Sweet Beans is positioned for Peninsula reach from core Hampton corridors.",
+"proof": "Community-driven specialty cafés win on repeatability and comfort—Sweet Beans is built for that.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Multi-Gen Hosts (Family Visiting Hampton)",
+"description": "A 45–64-year-old homeowner who hosts visiting relatives and wants a dependable local spot for coffee and light food. Ideal because they bring groups and create ‘visitor’ introductions that convert into new regulars.",
+"type": "residential",
+"parentSegment": "Family-Friendly Treat + Light Meal (Weekend & After-School)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23663", "23664", "23661", "23651"] },
+{ "column": "Age", "operator": "between", "values": [45, 64] },
+{ "column": "Home Owner", "operator": "=", "values": ["Homeowner"] },
+{ "column": "Estimated Income", "operator": "in", "values": ["$75,000 - $99,999", "$100,000 - $124,999", "$125,000 or More"] }
+],
+"valueProposition": "A welcoming local café you can confidently bring visitors to—quality drinks, easy food options, and a comfortable atmosphere.",
+"promise": {
+"text": "Your go-to place to host—easy, local, and consistently good.",
+"trigger": "When family visits and you want a low-stress ‘local favorite’ outing.",
+"process": "Bring the group → order across preferences → relax briefly → continue the day.",
+"pricingAnchors": "$25–$60 group ticket depending on party size.",
+"processGuarantees": "Approachable menu for mixed tastes and consistent execution of core drinks."
+},
+"messageSpine": {
+"headline": "Be the host who always knows the right spot.",
+"benefitBullets": ["Quality coffee with ‘made-here’ flavor", "Menu breadth that works for everyone"],
+"objectionHandling": "If you’re worried about mixed preferences, Sweet Beans’ approachable menu reduces friction for groups.",
+"proof": "Sweet Beans competes as a community-driven specialty café—personal, welcoming, and repeatable.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Young Adults Social Meetups (Approachable Specialty)",
+"description": "A 21–34-year-old social customer who wants a comfortable, local meetup spot with drinks that feel special and shareable. Ideal because they bring friends, respond to seasonal offerings, and amplify word-of-mouth.",
+"type": "residential",
+"parentSegment": "Friends + Small Group Meetups (Community Third-Place)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23661", "23663", "23666", "23692"] },
+{ "column": "Age", "operator": "between", "values": [21, 34] },
+{ "column": "Marital Status", "operator": "=", "values": ["Single"] },
+{ "column": "Credit Card User", "operator": "=", "values": ["Yes"] }
+],
+"valueProposition": "A reliable local meetup spot with signature drinks and a welcoming vibe—easy to choose, easy to repeat.",
+"promise": {
+"text": "Meet up somewhere that feels local—and always delivers.",
+"trigger": "When you want to catch up without committing to a full restaurant plan.",
+"process": "Text the group → meet at Sweet Beans → order signature favorites → stay or take it to-go.",
+"pricingAnchors": "$6–$12 per person typical meetup spend (drink + optional snack).",
+"processGuarantees": "A comfortable, repeatable environment with consistent drink execution."
+},
+"messageSpine": {
+"headline": "Your ‘easy yes’ meetup spot—without the chain feel.",
+"benefitBullets": ["Signature drinks that feel shareable", "Welcoming third-place environment"],
+"objectionHandling": "If you’re worried it won’t have enough options, the menu stays broad and approachable.",
+"proof": "Sweet Beans positions as a community-driven café designed for meeting, working, and returning.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Couples Catch-Up / Date-Lite (Café + Sip Flex)",
+"description": "A 28–55-year-old couple looking for a low-pressure ‘date-lite’ setting with quality beverages and a relaxed atmosphere. Ideal because they purchase across categories (coffee + treats) and return frequently for simple rituals.",
+"type": "residential",
+"parentSegment": "Friends + Small Group Meetups (Community Third-Place)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23661", "23663", "23666", "23651"] },
+{ "column": "Age", "operator": "between", "values": [28, 55] },
+{ "column": "Marital Status", "operator": "in", "values": ["Married", "Inferred Married"] },
+{ "column": "Cooking and Wine", "operator": "in", "values": ["Cooking", "Gourmet Food and Wine"] }
+],
+"valueProposition": "A calm, welcoming café experience that flexes—coffee-first with an optional sip—perfect for low-pressure catch-ups.",
+"promise": {
+"text": "A simple, better-than-average place to reconnect.",
+"trigger": "When you want time together without the full restaurant expense or noise.",
+"process": "Arrive → order quality drinks → sit and talk → leave refreshed.",
+"pricingAnchors": "$15–$35 typical couple spend.",
+"processGuarantees": "Comfortable atmosphere and consistent beverages aligned with a helpful, professional tone."
+},
+"messageSpine": {
+"headline": "Skip the noise—choose the easy, local reset.",
+"benefitBullets": ["Relaxed third-place atmosphere", "Approachable options for different tastes"],
+"objectionHandling": "If you’re comparing to restaurants, this is a lower-commitment way to connect without sacrificing quality.",
+"proof": "Sweet Beans differentiates through experience and made-here flavor, not gimmicks.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Community Group Organizer (Clubs, Parents, Meetups)",
+"description": "A 30–64-year-old organizer who coordinates small gatherings and needs a dependable, welcoming venue. Ideal because they bring recurring groups and convert multiple households into regular customers.",
+"type": "residential",
+"parentSegment": "Friends + Small Group Meetups (Community Third-Place)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23661", "23663", "23666", "23692"] },
+{ "column": "Age", "operator": "between", "values": [30, 64] },
+{ "column": "Donator to Charity", "operator": "=", "values": ["Yes"] },
+{ "column": "Self-Improvement", "operator": "=", "values": ["Yes"] }
+],
+"valueProposition": "A reliable local gathering spot—broad menu, comfortable vibe, consistent service—so organizing feels easy and repeatable.",
+"promise": {
+"text": "Host meetups without the venue headache.",
+"trigger": "When your group needs a predictable place to gather on a schedule.",
+"process": "Set a recurring meetup → members order individually → stay comfortably → repeat monthly/weekly.",
+"pricingAnchors": "Individual checks; predictable per-person spend ($6–$15).",
+"processGuarantees": "Consistent experience and an approachable setup that works for diverse preferences."
+},
+"messageSpine": {
+"headline": "Make your meetup feel effortless—and keep people coming back.",
+"benefitBullets": ["Broad appeal menu for mixed groups", "Consistent quality that supports recurring events"],
+"objectionHandling": "If you’re worried about coordination, the counter-service model keeps ordering simple for each guest.",
+"proof": "Community-driven cafés win as repeat gathering points—Sweet Beans is positioned for that role.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Event Weekend Attendee (Coliseum Central)",
+"description": "A 22–55-year-old visitor in town for an event who wants a ‘local favorite’ coffee stop that’s easy to choose and worth remembering. Ideal because they’re high-intent, time-sensitive, and likely to buy signature drinks and food together.",
+"type": "residential",
+"parentSegment": "Visitor + Event Traffic (Coliseum Central / Peninsula Attractions)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23666", "23661", "23651"] },
+{ "column": "Age", "operator": "between", "values": [22, 55] },
+{ "column": "Travel Enthusiast", "operator": "in", "values": ["Domestic", "Travel"] },
+{ "column": "Credit Card User", "operator": "=", "values": ["Yes"] }
+],
+"valueProposition": "A memorable local coffee experience—signature flavors, approachable food, reliable speed—so you don’t waste time on guesswork.",
+"promise": {
+"text": "Your ‘local’ coffee win during event weekends.",
+"trigger": "When you’re in town and want something better than hotel or chain coffee.",
+"process": "Search → arrive → order signature drink + quick food → head to event.",
+"pricingAnchors": "$10–$18 typical visitor ticket (drink + food).",
+"processGuarantees": "Approachable menu choices and a consistent experience that feels local and reliable."
+},
+"messageSpine": {
+"headline": "Don’t settle for chain coffee when you’re in Hampton.",
+"benefitBullets": ["Signature flavors that feel local", "Fast, easy stop near core corridors"],
+"objectionHandling": "If you’re short on time, order your go-to and keep moving—counter service is built for flow.",
+"proof": "Sweet Beans competes as an experience + flavor differentiator with a welcoming, approachable menu.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Peninsula Day-Tripper (Fort Monroe / Waterfront Stops)",
+"description": "A 28–60-year-old day-tripper who builds a café stop into Peninsula outings. Ideal because they value local authenticity and are willing to pay for a better experience when it’s easy and dependable.",
+"type": "residential",
+"parentSegment": "Visitor + Event Traffic (Coliseum Central / Peninsula Attractions)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23651", "23663", "23664", "23692", "23185"] },
+{ "column": "Age", "operator": "between", "values": [28, 60] },
+{ "column": "Travel Enthusiast", "operator": "in", "values": ["Domestic", "Travel"] },
+{ "column": "Cooking and Wine", "operator": "in", "values": ["Cooking", "Gourmet Food and Wine"] }
+],
+"valueProposition": "A ‘local favorite’ stop with signature drinks and approachable food—perfect for adding a highlight to your outing.",
+"promise": {
+"text": "Make the day trip better with a reliable local café stop.",
+"trigger": "When you want a local place to anchor your outing (without planning a whole meal).",
+"process": "Stop in → choose signature drinks → grab light food → continue the outing.",
+"pricingAnchors": "$15–$35 per couple/family member set depending on group size.",
+"processGuarantees": "Consistent beverage quality and an approachable ordering experience for visitors."
+},
+"messageSpine": {
+"headline": "Add a ‘local highlight’ to your Peninsula day.",
+"benefitBullets": ["Made-here flavors that feel distinct", "Approachable menu for groups and families"],
+"objectionHandling": "If you’re unsure what to order, signature favorites simplify the choice.",
+"proof": "Sweet Beans’ differentiation is experience + flavor—not complicated exclusivity.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Hotel Guest Host (Local Resident Hosting Visitors)",
+"description": "A 35–70-year-old Hampton-area resident who hosts visiting friends/family staying at nearby hotels. Ideal because they bring groups, create first-time trials, and convert visitors into advocates.",
+"type": "residential",
+"parentSegment": "Visitor + Event Traffic (Coliseum Central / Peninsula Attractions)",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23666", "23661", "23663", "23664"] },
+{ "column": "Age", "operator": "between", "values": [35, 70] },
+{ "column": "Home Owner", "operator": "=", "values": ["Homeowner"] },
+{ "column": "Travel Enthusiast", "operator": "in", "values": ["Domestic", "Travel"] }
+],
+"valueProposition": "A dependable local café you can confidently take visitors to—signature flavors, approachable food, welcoming vibe.",
+"promise": {
+"text": "Be the host who always has the right local stop.",
+"trigger": "When guests arrive and you want a simple, memorable local outing.",
+"process": "Pick a time → bring the group → order across preferences → enjoy → repeat during the visit.",
+"pricingAnchors": "$25–$60 group tickets based on party size.",
+"processGuarantees": "Consistent experience that works for mixed preferences and daypart needs."
+},
+"messageSpine": {
+"headline": "Hosting made easy: one local stop everyone likes.",
+"benefitBullets": ["Broad menu appeal for guests", "Signature drinks that feel ‘local’"],
+"objectionHandling": "If you’re worried about variety, the menu stays approachable—classic or signature options.",
+"proof": "Sweet Beans is positioned as a community-driven third-place built for meetups and returning.",
+"cta": "Book Now"
+}
+},
+{
+"name": "After-Work Unwinder (Coffee-First, Optional Sip)",
+"description": "A 28–60-year-old professional who wants a calm, reliable place to decompress with a quality beverage after work. Ideal because they convert slow dayparts, buy higher-margin drinks, and become habitual if the vibe is consistent.",
+"type": "residential",
+"parentSegment": "Afternoon Reset + Light ‘Café + Sip’ Occasion",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23666", "23663", "23651"] },
+{ "column": "Age", "operator": "between", "values": [28, 60] },
+{ "column": "Estimated Income", "operator": "in", "values": ["$75,000 - $99,999", "$100,000 - $124,999", "$125,000 or More"] },
+{ "column": "Cooking and Wine", "operator": "in", "values": ["Gourmet Food and Wine"] }
+],
+"valueProposition": "A calm community café for an afternoon reset—coffee-first quality with flexible beverage options—so you can unwind without the bar scene.",
+"promise": {
+"text": "Unwind in a place that feels calm, local, and consistently good.",
+"trigger": "When you need a decompression ritual that isn’t loud or expensive.",
+"process": "Stop in after work → order a favorite drink → relax briefly → head home refreshed.",
+"pricingAnchors": "$7–$15 typical unwind spend per person.",
+"processGuarantees": "A consistent, welcoming environment and reliable beverage execution."
+},
+"messageSpine": {
+"headline": "A better after-work reset—without the bar vibe.",
+"benefitBullets": ["Calm third-place atmosphere", "Coffee-forward quality with flexible options"],
+"objectionHandling": "If you’re worried it’s not ‘enough of an occasion,’ signature flavors make it feel special without the fuss.",
+"proof": "Sweet Beans differentiates through experience and made-here flavor in an approachable format.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Errand Runners + Meet-a-Friend (Convenient Reset Stop)",
+"description": "A 30–64-year-old local who uses Sweet Beans as a convenient, comfortable reset between errands or appointments. Ideal because they fill non-peak hours, buy add-ons, and prefer reliable consistency over novelty.",
+"type": "residential",
+"parentSegment": "Afternoon Reset + Light ‘Café + Sip’ Occasion",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23666", "23663", "23661"] },
+{ "column": "Age", "operator": "between", "values": [30, 64] },
+{ "column": "Credit Card User", "operator": "=", "values": ["Yes"] },
+{ "column": "Home Owner", "operator": "in", "values": ["Homeowner", "Renter"] }
+],
+"valueProposition": "A dependable, approachable café stop that fits into real life—quality drinks, easy food, welcoming vibe.",
+"promise": {
+"text": "Your dependable mid-day reset—easy, consistent, local.",
+"trigger": "When you need a quick break that still feels worth it.",
+"process": "Stop in → order quickly → take a short break → continue errands.",
+"pricingAnchors": "$6–$16 typical mid-day ticket.",
+"processGuarantees": "Clear, repeatable ordering and consistent quality that fits a tight schedule."
+},
+"messageSpine": {
+"headline": "Turn the middle of your day into a small win.",
+"benefitBullets": ["Approachable menu that reduces decision fatigue", "Comfortable vibe that supports quick breaks or short meetups"],
+"objectionHandling": "If you’re worried about time, counter-service keeps it simple and fast.",
+"proof": "Sweet Beans’ positioning is reliable, community-forward specialty—built for repeat stops.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Creative & Arts Crowd (Third-Place Culture)",
+"description": "A 22–55-year-old arts-leaning customer who values atmosphere and community feel as much as the product. Ideal because they become loyal regulars, invite others, and help ‘place identity’ stand out vs chains.",
+"type": "residential",
+"parentSegment": "Afternoon Reset + Light ‘Café + Sip’ Occasion",
+"matchingCriteria": [
+{ "column": "Zipcode", "operator": "in", "values": ["23661", "23663", "23651", "23666"] },
+{ "column": "Age", "operator": "between", "values": [22, 55] },
+{ "column": "Arts Bundle", "operator": "in", "values": ["Interest in Arts", "Interest in Performing Arts"] },
+{ "column": "Book Readers", "operator": "=", "values": ["Yes"] }
+],
+"valueProposition": "A community-forward café with made-here flavor and a welcoming vibe—so your hangout feels local and inspiring.",
+"promise": {
+"text": "A local third-place that feels like part of the community, not just a transaction.",
+"trigger": "When you want a comfortable creative reset or informal meetup spot.",
+"process": "Stop in → choose signature drinks → relax, read, or meet → return often.",
+"pricingAnchors": "$6–$15 per visit typical.",
+"processGuarantees": "Consistent quality and an environment that supports staying, meeting, and returning."
+},
+"messageSpine": {
+"headline": "Choose a spot that feels local—because it is.",
+"benefitBullets": ["Atmosphere that supports community and connection", "Signature flavors that feel ‘made here’"],
+"objectionHandling": "If you’re worried it won’t be consistent, the brand promise is reliable specialty—not one-off novelty.",
+"proof": "Sweet Beans positions as a community-driven specialty café with a welcoming third-place experience.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Single-Location Coffee Bar (No Roastery)",
+"description": "An independent coffee bar with no in-house roasting capability that wants consistent, locally roasted beans and a dependable reorder cadence. Ideal because they value partnership and quality as differentiation versus chains while needing reliability to protect reviews.",
+"type": "business",
+"parentSegment": "Independent Café Wholesale Accounts (No In-House Roaster)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["722515"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Sales", "operator": "between", "values": [300000, 2500000] },
+{ "column": "Marketing Prescreen Ranking", "operator": "in", "values": ["1 - Most likely to pay", "2 - Likely to pay"] }
+],
+"valueProposition": "A dependable local roaster partnership—consistent profiles, fresh delivery cadence, and story-backed product—so your café wins repeat business.",
+"promise": {
+"text": "Local-roasted consistency that protects your customer experience.",
+"trigger": "When you’re opening, switching roasters, or tightening quality to improve reviews.",
+"process": "Intro call → sample/cupping → select roast profiles → set delivery cadence → recurring reorder.",
+"pricingAnchors": "Wholesale per-lb pricing with monthly volume tiers (e.g., 25–100 lbs/mo).",
+"processGuarantees": "Consistent roast profiles, reliable fulfillment cadence, and easy reordering."
+},
+"messageSpine": {
+"headline": "Upgrade your coffee program without adding roasting complexity.",
+"benefitBullets": ["Consistent profiles your baristas can trust", "Local story that differentiates vs commodity supply"],
+"objectionHandling": "If you’re worried about switching risk, start with samples and a phased rollout to your menu.",
+"proof": "Sweet Beans operates as both café and roastery—built to deliver repeatable quality at retail standards.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Bakery-Café Hybrid (Coffee as Add-On Revenue)",
+"description": "A bakery or café hybrid that wants coffee to lift ticket size and complement pastry sales, but needs a partner that’s reliable and approachable. Ideal because coffee is a high-leverage add-on and they can grow volume quickly once the pairing clicks.",
+"type": "business",
+"parentSegment": "Independent Café Wholesale Accounts (No In-House Roaster)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["311811", "722513", "722515"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Sales", "operator": "between", "values": [250000, 3000000] },
+{ "column": "Employee this Site", "operator": "between", "values": [5, 40] }
+],
+"valueProposition": "Coffee that helps sell more pastry—consistent roasts and a local story—so you lift ticket size without operational headaches.",
+"promise": {
+"text": "Make coffee your easiest margin lift—paired with a dependable local roaster.",
+"trigger": "When you’re adding espresso, improving coffee quality, or chasing higher average tickets.",
+"process": "Pairing discussion → sample selection → set brew/espresso targets → recurring supply cadence.",
+"pricingAnchors": "Tiered wholesale pricing by volume; starter programs designed for gradual ramp.",
+"processGuarantees": "Repeatable roast consistency and reorder simplicity to keep the program stable."
+},
+"messageSpine": {
+"headline": "Turn coffee into your highest-leverage add-on sale.",
+"benefitBullets": ["Balanced roasts that pair with baked goods", "Reliable supply cadence that protects daily consistency"],
+"objectionHandling": "If you’re worried about training burden, start with a simple, repeatable ‘house coffee’ foundation.",
+"proof": "Sweet Beans’ identity is approachable specialty—quality without being overly complex.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Multi-Location Local Café Group (Standardization Need)",
+"description": "A small regional café group that needs consistent bean profiles across locations and a dependable supply relationship to reduce variability. Ideal because standardization needs create durable contracts and higher monthly volume.",
+"type": "business",
+"parentSegment": "Independent Café Wholesale Accounts (No In-House Roaster)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["722515"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Employee All Sites", "operator": "between", "values": [30, 200] },
+{ "column": "Location Type", "operator": "!=", "values": ["Single Location"] }
+],
+"valueProposition": "Standardized coffee quality at scale—local-roasted consistency with an account cadence built for repeatability.",
+"promise": {
+"text": "Consistent coffee across locations—without supplier drama.",
+"trigger": "When you’re scaling, adding locations, or chasing consistency improvements.",
+"process": "Account alignment → profile standardization → delivery calendar → recurring reorder + quarterly review.",
+"pricingAnchors": "Contracted volume tiers (e.g., 100+ lbs/mo) with predictable cadence.",
+"processGuarantees": "Profile consistency, dependable fulfillment, and a clear account management rhythm."
+},
+"messageSpine": {
+"headline": "Consistency is your brand—protect it with the right roaster partner.",
+"benefitBullets": ["Standard profiles your teams can execute", "Predictable supply cadence for multiple sites"],
+"objectionHandling": "If you’re worried about transition disruption, phase in by location and keep a fallback profile during the changeover.",
+"proof": "Sweet Beans runs retail standards and roastery discipline—built for repeatability.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Single-Location Brunch Restaurant (Quality Gap Fix)",
+"description": "A full-service brunch restaurant that gets ‘coffee wasn’t great’ feedback and wants a clear upgrade without slowing service. Ideal because coffee is a high-visibility touchpoint and improvements quickly show up in reviews and repeat visits.",
+"type": "business",
+"parentSegment": "Brunch + Breakfast Restaurants (Coffee Program Upgrade)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["722511"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Sales", "operator": "between", "values": [1000000, 7000000] },
+{ "column": "Employee this Site", "operator": "between", "values": [15, 120] }
+],
+"valueProposition": "A restaurant-ready coffee upgrade—better cup quality with dependable supply—so your coffee matches your kitchen and earns repeat visits.",
+"promise": {
+"text": "Coffee that matches your food quality—without slowing your line.",
+"trigger": "When reviews mention coffee, or you’re relaunching brunch and want fewer weak links.",
+"process": "Taste targets → sample selection → brew standardization → recurring supply cadence.",
+"pricingAnchors": "Wholesale coffee cost aligned to guest count and daypart (contract tiers by volume).",
+"processGuarantees": "Consistent profile, predictable ordering cadence, and support for a simple, repeatable brew standard."
+},
+"messageSpine": {
+"headline": "If your brunch is great, your coffee can’t be ‘good enough.’",
+"benefitBullets": ["Better coffee experience without extra complexity", "Reliable supply cadence that protects service"],
+"objectionHandling": "If you’re worried about disruption, we standardize on one ‘house’ profile first, then expand.",
+"proof": "Sweet Beans is built on approachable specialty—quality you can execute at speed.",
+"cta": "Book Now"
+}
+},
+{
+"name": "High-Throughput Breakfast Counter (Speed + Consistency)",
+"description": "A limited-service breakfast concept that serves high volume and needs coffee that’s consistent, fast to produce, and reliable to reorder. Ideal because they buy recurring volume and value supplier reliability over novelty.",
+"type": "business",
+"parentSegment": "Brunch + Breakfast Restaurants (Coffee Program Upgrade)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["722513"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Sales", "operator": "between", "values": [800000, 6000000] },
+{ "column": "Marketing Prescreen Ranking", "operator": "in", "values": ["1 - Most likely to pay", "2 - Likely to pay"] }
+],
+"valueProposition": "Reliable coffee at throughput speed—consistent profiles and reorder discipline—so your rush hours stay smooth.",
+"promise": {
+"text": "Consistent coffee built for rush-hour reality.",
+"trigger": "When service speed is the brand and coffee can’t slow it down.",
+"process": "Define brew workflow → choose a stable profile → set ordering cadence → lock standards.",
+"pricingAnchors": "Volume-based wholesale tiers (predictable monthly pounds).",
+"processGuarantees": "Dependable supply, profile stability, and reorder simplicity."
+},
+"messageSpine": {
+"headline": "Rush hour doesn’t wait—your coffee program shouldn’t either.",
+"benefitBullets": ["Profiles designed for consistent output", "Reliable cadence for high-volume operations"],
+"objectionHandling": "If you’re worried about cost, stable quality reduces waste, remakes, and complaint friction.",
+"proof": "Sweet Beans’ discipline comes from serving retail customers daily—consistency matters.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "All-Day Restaurant Adding Brunch (New Program)",
+"description": "An established restaurant expanding into brunch that needs a credible coffee program quickly to support the new daypart. Ideal because brunch launches drive immediate coffee volume and the business is already operationally mature.",
+"type": "business",
+"parentSegment": "Brunch + Breakfast Restaurants (Coffee Program Upgrade)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["722511", "722513"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Year of Founding", "operator": "<=", "values": [2022] },
+{ "column": "Sales", "operator": "between", "values": [1000000, 10000000] }
+],
+"valueProposition": "A fast-start coffee program—local roasted quality with simple standards—so your brunch rollout feels complete.",
+"promise": {
+"text": "Launch brunch with a coffee program you’re proud of from day one.",
+"trigger": "When you add brunch and don’t want coffee to be an afterthought.",
+"process": "Quick assessment → sample → choose profiles → set reorder cadence → launch support.",
+"pricingAnchors": "Starter tiers built for launch ramp; scale with demand.",
+"processGuarantees": "On-time delivery cadence and repeatable standards that fit an existing kitchen flow."
+},
+"messageSpine": {
+"headline": "Brunch isn’t complete without a coffee program that holds up.",
+"benefitBullets": ["Fast rollout with a simple ‘house’ standard", "Local story that strengthens your menu narrative"],
+"objectionHandling": "If you’re worried it’s ‘one more thing,’ we keep the program simple and scalable.",
+"proof": "Sweet Beans’ positioning is approachable specialty—quality you can run consistently.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Retail Bakery with Espresso Bar (Ticket Lift Focus)",
+"description": "A retail bakery that wants coffee to increase per-customer spend and improve morning traffic. Ideal because coffee is a natural pairing and small improvements in quality and consistency lift repeat behavior.",
+"type": "business",
+"parentSegment": "Bakeries + Dessert Shops (Pairing-Driven Coffee)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["311811"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Sales", "operator": "between", "values": [250000, 3000000] },
+{ "column": "Employee this Site", "operator": "between", "values": [5, 35] }
+],
+"valueProposition": "Coffee that sells more pastry—balanced, consistent roasts and a local story—so you lift ticket size without operational headaches.",
+"promise": {
+"text": "Make coffee your easiest pairing-driven revenue lift.",
+"trigger": "When you want higher average tickets and stronger morning traffic.",
+"process": "Pairing plan → choose profiles → set brew standard → recurring supply cadence.",
+"pricingAnchors": "Wholesale tiers by volume; start small and scale with demand.",
+"processGuarantees": "Consistent profiles and reliable reorder cadence that protects daily execution."
+},
+"messageSpine": {
+"headline": "If your pastry is great, your coffee should help sell more of it.",
+"benefitBullets": ["Profiles that pair well with baked goods", "Reliable cadence that prevents ‘we’re out’ moments"],
+"objectionHandling": "If you’re worried about complexity, start with one house roast and one signature espresso profile.",
+"proof": "Sweet Beans’ retail + roastery model emphasizes repeatable quality and approachable specialty.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Dessert Shop / Ice Cream Café (Occasion Add-On)",
+"description": "A dessert-forward shop adding coffee to increase attach rate and extend visit occasions. Ideal because coffee is a high-margin add-on and the business benefits from a local, story-backed coffee partner.",
+"type": "business",
+"parentSegment": "Bakeries + Dessert Shops (Pairing-Driven Coffee)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["722515", "722513"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Sales", "operator": "between", "values": [300000, 4000000] },
+{ "column": "Marketing Prescreen Ranking", "operator": "in", "values": ["1 - Most likely to pay", "2 - Likely to pay"] }
+],
+"valueProposition": "A pairing-friendly coffee program with consistent quality—so you boost add-on sales and guest satisfaction.",
+"promise": {
+"text": "Increase add-on sales with coffee that fits your dessert experience.",
+"trigger": "When you expand beverages or want more ‘per visit’ revenue.",
+"process": "Menu pairing → profile selection → simple brew/espresso standard → recurring supply.",
+"pricingAnchors": "Volume tiers matched to peak seasons and weekend spikes.",
+"processGuarantees": "Stable profiles and reorder discipline to support predictable service."
+},
+"messageSpine": {
+"headline": "Dessert + coffee = higher tickets (when coffee is done right).",
+"benefitBullets": ["Balanced roasts that complement sweets", "Reliable supply cadence for weekends and peaks"],
+"objectionHandling": "If you’re worried about training, we keep it simple: repeatable profiles and a clear brew standard.",
+"proof": "Sweet Beans differentiates through made-here flavor and consistent execution—ideal for pairing concepts.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Catering Bakery / Events (Consistency Under Pressure)",
+"description": "An events-focused bakery/caterer that needs reliable coffee supply and consistent quality for gatherings. Ideal because events drive predictable bulk volume and success depends on reliable fulfillment.",
+"type": "business",
+"parentSegment": "Bakeries + Dessert Shops (Pairing-Driven Coffee)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["311812", "722320"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Sales", "operator": "between", "values": [500000, 8000000] },
+{ "column": "Employee this Site", "operator": "between", "values": [10, 120] }
+],
+"valueProposition": "Event-ready coffee reliability—consistent profiles and disciplined reordering—so your events feel polished and predictable.",
+"promise": {
+"text": "Coffee you can rely on when the stakes are highest.",
+"trigger": "When event volume increases and coffee becomes a guest-experience factor.",
+"process": "Estimate demand → choose stable profiles → schedule supply cadence → execute events confidently.",
+"pricingAnchors": "Event-volume tiers and recurring supply schedules based on calendar demand.",
+"processGuarantees": "Reliable fulfillment cadence and consistent profiles that reduce last-minute risk."
+},
+"messageSpine": {
+"headline": "Events expose weak links—make coffee a strength.",
+"benefitBullets": ["Reliable supply for scheduled peaks", "Consistent quality that protects brand perception"],
+"objectionHandling": "If you’re worried about variability, we standardize on stable profiles designed to perform at scale.",
+"proof": "Sweet Beans runs retail standards daily—consistency and reliability are core.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Law / CPA Office (Client Hospitality Standard)",
+"description": "A professional services office that uses coffee as part of client hospitality and team culture. Ideal because they value reliability, a polished experience, and recurring reorder simplicity.",
+"type": "business",
+"parentSegment": "Offices + Professional Firms (Employee & Client Coffee Program)",
+"matchingCriteria": [
+{ "column": "2-Digit NAICS Code", "operator": "in", "values": ["54"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Employee this Site", "operator": "between", "values": [10, 150] },
+{ "column": "Marketing Prescreen Ranking", "operator": "in", "values": ["1 - Most likely to pay", "2 - Likely to pay"] }
+],
+"valueProposition": "A simple, professional coffee program—local roast quality on a recurring cadence—so your office feels cared for and client-ready.",
+"promise": {
+"text": "Client-ready hospitality with dependable, local coffee.",
+"trigger": "When you upgrade client experience or want a more intentional office culture touchpoint.",
+"process": "Choose profiles → set reorder cadence → deliver consistently → refresh seasonally if desired.",
+"pricingAnchors": "Monthly supply cadence sized by headcount (recurring volume tiers).",
+"processGuarantees": "Reliable delivery cadence and consistent product that reduces office friction."
+},
+"messageSpine": {
+"headline": "Make your office feel more premium—without adding work.",
+"benefitBullets": ["Local roast quality that elevates hospitality", "Recurring cadence that keeps it simple"],
+"objectionHandling": "If you’re worried about admin burden, we keep reordering predictable and straightforward.",
+"proof": "Sweet Beans’ model emphasizes reliability and consistent execution—ideal for professional environments.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Medical / Dental Practice (Staff Retention & Patient Experience)",
+"description": "A healthcare practice that wants better staff experience and a more welcoming environment for patients/visitors. Ideal because they value dependable service and consistent quality, and they reorder predictably.",
+"type": "business",
+"parentSegment": "Offices + Professional Firms (Employee & Client Coffee Program)",
+"matchingCriteria": [
+{ "column": "2-Digit NAICS Code", "operator": "in", "values": ["62"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Employee this Site", "operator": "between", "values": [10, 200] },
+{ "column": "Sales", "operator": "between", "values": [1000000, 20000000] }
+],
+"valueProposition": "A reliable coffee program that’s better than standard—so staff feel cared for and the space feels more welcoming.",
+"promise": {
+"text": "Better coffee that supports better days for staff and visitors.",
+"trigger": "When you’re improving culture, retention, or patient experience details.",
+"process": "Select profiles → set cadence → deliver consistently → simple reorder rhythm.",
+"pricingAnchors": "Headcount-based monthly tiers (predictable supply).",
+"processGuarantees": "Consistency, reliability, and low administration effort."
+},
+"messageSpine": {
+"headline": "Small upgrades that improve the whole experience—start with coffee.",
+"benefitBullets": ["Higher perceived hospitality", "Predictable ordering that doesn’t distract staff"],
+"objectionHandling": "If budget is a concern, consistent quality reduces waste and increases perceived value.",
+"proof": "Local, consistent programs beat commodity coffee for workplace satisfaction.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Real Estate / Insurance Office (Daily Brew Program)",
+"description": "A client-facing office where coffee supports daily productivity and client comfort during meetings. Ideal because they value professionalism, repeatability, and a dependable vendor relationship.",
+"type": "business",
+"parentSegment": "Offices + Professional Firms (Employee & Client Coffee Program)",
+"matchingCriteria": [
+{ "column": "2-Digit NAICS Code", "operator": "in", "values": ["52", "53"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Employee this Site", "operator": "between", "values": [5, 80] },
+{ "column": "Owns/Rents", "operator": "in", "values": ["Own", "Rent"] }
+],
+"valueProposition": "A dependable, client-ready coffee program—local roast quality with simple reordering—so every meeting feels more professional.",
+"promise": {
+"text": "Client-ready coffee that’s easy to keep stocked.",
+"trigger": "When you increase client meetings or want a stronger office experience.",
+"process": "Choose a house profile → set cadence → reorder predictably → refresh seasonally if desired.",
+"pricingAnchors": "Monthly tiers based on meeting volume and staff size.",
+"processGuarantees": "Reliable cadence and consistent quality without admin overhead."
+},
+"messageSpine": {
+"headline": "Make every meeting feel more professional—without extra effort.",
+"benefitBullets": ["Local quality that improves perceived hospitality", "Predictable cadence that keeps you stocked"],
+"objectionHandling": "If you’re worried it’s ‘nice-to-have,’ coffee is a daily touchpoint that shapes client perception.",
+"proof": "Offices that upgrade coffee often see immediate satisfaction lift because the change is felt every day.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Boutique Hotel / Inn (Local Amenity Differentiation)",
+"description": "A boutique lodging property that wants a memorable ‘local touch’ amenity aligned to guest experience and reviews. Ideal because local differentiation is part of their business model and they value partnership over commodity supply.",
+"type": "business",
+"parentSegment": "Hotels + Hospitality + Short-Term Rentals (Local Amenities)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["721110"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Sales", "operator": "between", "values": [2000000, 25000000] },
+{ "column": "Marketing Prescreen Ranking", "operator": "in", "values": ["1 - Most likely to pay", "2 - Likely to pay"] }
+],
+"valueProposition": "A ‘local touch’ coffee amenity—consistent, story-backed roasts with dependable supply—so guests remember your stay for the right reasons.",
+"promise": {
+"text": "Give guests a local experience they can taste.",
+"trigger": "When you refresh amenities or focus on review improvement.",
+"process": "Amenity format selection → profile selection → supply cadence → seasonal refresh options.",
+"pricingAnchors": "Amenity tiers by room count and occupancy seasonality.",
+"processGuarantees": "Consistent supply and profiles that support a dependable guest experience."
+},
+"messageSpine": {
+"headline": "Turn your coffee amenity into a review-worthy detail.",
+"benefitBullets": ["Local story that differentiates", "Reliable supply that prevents shortages"],
+"objectionHandling": "If you’re worried guests won’t notice, coffee is one of the most repeated touchpoints in a stay.",
+"proof": "Local amenities often outperform generic programs because they feel intentional.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Midscale Hotel (Breakfast Program Consistency)",
+"description": "A midscale hotel with a breakfast program that needs coffee reliability and consistency to protect guest satisfaction. Ideal because they have predictable demand and benefit from stable vendor cadence.",
+"type": "business",
+"parentSegment": "Hotels + Hospitality + Short-Term Rentals (Local Amenities)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["721110"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Employee this Site", "operator": "between", "values": [15, 250] },
+{ "column": "Sales", "operator": "between", "values": [5000000, 60000000] }
+],
+"valueProposition": "Reliable, consistent coffee supply for breakfast operations—so guest experience stays smooth and predictable.",
+"promise": {
+"text": "Keep breakfast coffee consistent—every day, every guest.",
+"trigger": "When you’re reducing complaints and improving breakfast satisfaction.",
+"process": "Demand sizing → profile selection → cadence schedule → reorder rhythm.",
+"pricingAnchors": "Volume tiers based on occupancy and breakfast counts.",
+"processGuarantees": "Stable profiles and dependable cadence to prevent service gaps."
+},
+"messageSpine": {
+"headline": "Breakfast coffee shouldn’t be the reason for a 3-star review.",
+"benefitBullets": ["Consistent quality at scale", "Predictable ordering and delivery cadence"],
+"objectionHandling": "If you’re concerned about switching, we can trial alongside your current program before full changeover.",
+"proof": "Consistency and reliability are the strongest predictors of guest coffee satisfaction in hospitality programs.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Conference Venue / Event Center (Bulk Brew Reliability)",
+"description": "A venue that needs coffee for meetings, conferences, and events with predictable scheduling and minimal failure risk. Ideal because events drive recurring bulk orders and reliability matters more than novelty.",
+"type": "business",
+"parentSegment": "Hotels + Hospitality + Short-Term Rentals (Local Amenities)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["561920", "721110"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Sales", "operator": "between", "values": [2000000, 50000000] },
+{ "column": "Employee this Site", "operator": "between", "values": [10, 300] }
+],
+"valueProposition": "Event-ready coffee reliability—consistent profiles and disciplined fulfillment—so meetings feel polished and predictable.",
+"promise": {
+"text": "Reliable coffee for events where failure isn’t an option.",
+"trigger": "When your venue calendar is full and coffee becomes a key satisfaction factor.",
+"process": "Event planning cadence → demand sizing → scheduled delivery → simple standards for staff.",
+"pricingAnchors": "Event-volume tiers; scheduled supply aligned to calendar blocks.",
+"processGuarantees": "Dependable fulfillment cadence and profile consistency across events."
+},
+"messageSpine": {
+"headline": "Make coffee the easiest part of your event execution.",
+"benefitBullets": ["Predictable supply aligned to your calendar", "Consistent profiles that perform under pressure"],
+"objectionHandling": "If you’re worried about last-minute changes, we build a reorder buffer into the cadence.",
+"proof": "Repeatable standards and cadence are how you protect guest experience at scale.",
+"cta": "Book Now"
+}
+},
+{
+"name": "Mid-Sized Church (Weekly Gatherings & Volunteer Flow)",
+"description": "A church that serves coffee weekly to members and volunteers and wants dependable quality and predictable reordering. Ideal because the need is recurring, community-oriented, and reliability is valued.",
+"type": "business",
+"parentSegment": "Churches + Community Organizations (Event & Volunteer Coffee Supply)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["813110"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Employee this Site", "operator": "between", "values": [3, 60] }
+],
+"valueProposition": "A community-aligned coffee partner—reliable supply and approachable quality—so your gatherings feel welcoming and consistent.",
+"promise": {
+"text": "Serve consistent coffee that supports a welcoming environment.",
+"trigger": "When you want a better guest experience and fewer last-minute supply issues.",
+"process": "Estimate weekly need → choose stable profile → set reorder cadence → keep gatherings consistent.",
+"pricingAnchors": "Recurring supply tiers sized to weekly attendance and serving frequency.",
+"processGuarantees": "Predictable cadence and consistent profiles that reduce volunteer variability."
+},
+"messageSpine": {
+"headline": "Hospitality is a feeling—coffee helps create it.",
+"benefitBullets": ["Consistent quality that supports welcoming spaces", "Reliable cadence that simplifies volunteer planning"],
+"objectionHandling": "If budget is the concern, consistency reduces waste and makes serving easier for volunteers.",
+"proof": "Community-focused organizations benefit most from repeatable programs and dependable supply.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Community Nonprofit (Programs + Volunteers)",
+"description": "A community nonprofit that hosts regular programs, trainings, or workshops and needs dependable coffee supply with simple reordering. Ideal because they value reliability, community alignment, and predictable processes.",
+"type": "business",
+"parentSegment": "Churches + Community Organizations (Event & Volunteer Coffee Supply)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["813319"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Employee this Site", "operator": "between", "values": [5, 120] }
+],
+"valueProposition": "Dependable coffee supply for programs and volunteers—consistent, approachable quality with an easy reorder rhythm.",
+"promise": {
+"text": "Keep programs welcoming with a simple, dependable coffee plan.",
+"trigger": "When you scale programs and need fewer operational distractions.",
+"process": "Set baseline demand → choose profiles → schedule reorder cadence → adjust seasonally.",
+"pricingAnchors": "Recurring tiers by program frequency and attendance.",
+"processGuarantees": "Reliable cadence and consistent profiles that simplify operations."
+},
+"messageSpine": {
+"headline": "Make your programs feel more welcoming—without extra work.",
+"benefitBullets": ["Simple reordering for busy coordinators", "Consistent quality that supports hospitality"],
+"objectionHandling": "If staffing is limited, a predictable reorder cadence reduces decision load.",
+"proof": "Reliable suppliers win in community environments because consistency supports trust.",
+"cta": "Compare Plans"
+}
+},
+{
+"name": "Civic / Fraternal Organization (Events & Meetings)",
+"description": "A civic group or fraternal organization hosting recurring meetings and periodic larger events that need reliable coffee supply. Ideal because they have predictable calendars and repeat purchasing behavior.",
+"type": "business",
+"parentSegment": "Churches + Community Organizations (Event & Volunteer Coffee Supply)",
+"matchingCriteria": [
+{ "column": "Primary NAICS Code", "operator": "in", "values": ["813410", "813990"] },
+{ "column": "Physical State", "operator": "=", "values": ["VA"] },
+{ "column": "Employee this Site", "operator": "between", "values": [1, 50] }
+],
+"valueProposition": "Event-ready coffee consistency—easy reordering and reliable supply—so meetings and gatherings feel organized and welcoming.",
+"promise": {
+"text": "Reliable coffee for meetings that run smoothly.",
+"trigger": "When your calendar is full and you need predictable supplies.",
+"process": "Calendar-based demand planning → reorder cadence → event top-ups as needed.",
+"pricingAnchors": "Meeting cadence tiers plus optional event top-ups by volume.",
+"processGuarantees": "Dependable cadence and consistent profiles that reduce event risk."
+},
+"messageSpine": {
+"headline": "Take coffee off your worry list—keep meetings running smooth.",
+"benefitBullets": ["Predictable reorder rhythm", "Consistent quality that supports hospitality"],
+"objectionHandling": "If you’re concerned about storage or overbuying, we size cadence to your calendar and attendance.",
+"proof": "Repeatable cadence is the simplest way to prevent ‘we ran out’ moments.",
+"cta": "Book Now"
+}
+}
+]

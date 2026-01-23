@@ -1,0 +1,870 @@
+{
+  "personas": [
+    {
+      "parentIcp": "Coliseum Central Young Professional (Daily Latte Routine)",
+      "name": "Daily Routine Builder (Latte Regular)",
+      "role": "Routine buyer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Make your morning coffee feel intentional—fast, consistent, and made-here.",
+        "benefitBullets": [
+          "Signature flavors that taste ‘made here’",
+          "Reliable weekday morning flow",
+          "Easy add-on bite without a second stop"
+        ],
+        "objectionHandling": "If you’re worried it’ll take too long, the counter-service flow is built for weekday mornings.",
+        "proof": "Consistent quality + repeatable ordering: pick your go-to signature latte and get the same result every time.",
+        "cta": "Stop in this week and choose your go-to signature latte."
+      }
+    },
+    {
+      "parentIcp": "Mid-Career Homeowner Commuter (Coffee + Breakfast Stop)",
+      "name": "Household Morning Captain (Coffee + Food Stop)",
+      "role": "Household planner",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "One stop for coffee + breakfast—less morning chaos.",
+        "benefitBullets": [
+          "Coffee and food together—no extra stops",
+          "Approachable menu with specialty quality",
+          "Predictable turnaround for tight mornings"
+        ],
+        "objectionHandling": "If you’re comparing to fast chains, this is better value per stop because quality and convenience come together.",
+        "proof": "Clear menu logic + consistent drink execution during peak mornings.",
+        "cta": "Make Sweet Beans your one-stop morning routine."
+      }
+    },
+    {
+      "parentIcp": "Student + Early-Career Builder (Budgeted Treat Routine)",
+      "name": "Motivation Ritual Seeker (Budgeted Treat)",
+      "role": "Treat-driven buyer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Turn your daily grind into a small win—without blowing the budget.",
+        "benefitBullets": [
+          "Seasonal/signature drinks that feel unique",
+          "Fast, repeatable ordering",
+          "Welcoming vibe that keeps it easy"
+        ],
+        "objectionHandling": "If you’re worried it’s ‘too fancy,’ go classic or signature—your choice, same easy process.",
+        "proof": "Approachable specialty positioning: made-here flavors without exclusivity.",
+        "cta": "Try one signature drink this week—pick your repeat favorite."
+      }
+    },
+    {
+      "parentIcp": "Remote Knowledge Worker (High-Intent Repeat Visitor)",
+      "name": "Work-Block Planner (Remote Worker)",
+      "role": "Focus session buyer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Work better in a place that feels human—not corporate.",
+        "benefitBullets": [
+          "Calm, repeatable environment for 1–3 hour focus blocks",
+          "Quality espresso anchored by in-house roasting identity",
+          "Food + beverage range for longer sessions"
+        ],
+        "objectionHandling": "If you’re worried about options over repeat visits, the menu stays broad enough to rotate without effort.",
+        "proof": "Repeatable work-session flow: arrive, order, settle in, refuel, finish strong.",
+        "cta": "Make Sweet Beans your weekly work-session base."
+      }
+    },
+    {
+      "parentIcp": "Graduate Student / Exam Week Regular",
+      "name": "Exam-Week Operator (Graduate Student)",
+      "role": "Study session buyer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "When it’s crunch time, don’t gamble on your coffee spot.",
+        "benefitBullets": [
+          "Reliable drinks you can repeat",
+          "Food + beverage range supports longer focus blocks",
+          "Comfortable third-place energy for sustained sessions"
+        ],
+        "objectionHandling": "If cost is a concern, repeatable favorites keep spending predictable during exam cycles.",
+        "proof": "Consistency-first promise: stable execution so your routine doesn’t break mid-week.",
+        "cta": "Pick a repeat favorite and lock your study routine."
+      }
+    },
+    {
+      "parentIcp": "Solo Operator / Entrepreneur Work Sessions",
+      "name": "Local Connector (Solo Owner / Entrepreneur)",
+      "role": "Meeting + momentum buyer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Your next breakthrough doesn’t happen in your inbox.",
+        "benefitBullets": [
+          "Comfortable third-place for thinking and quick meetings",
+          "Made-here flavors that keep the ritual enjoyable",
+          "Reliable service that supports repeat visits"
+        ],
+        "objectionHandling": "If you’re worried it won’t feel professional, the environment is built to be welcoming, consistent, and meeting-friendly.",
+        "proof": "Counter-service simplicity keeps meetings easy: order, sit, execute, repeat.",
+        "cta": "Meet here once this week—make it your repeat spot."
+      }
+    },
+    {
+      "parentIcp": "Suburban Parents (After-School Treat)",
+      "name": "After-School Decision Maker (Parent)",
+      "role": "Parent purchaser",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "A treat stop that doesn’t turn into a hassle.",
+        "benefitBullets": [
+          "Kid-friendly feel with adult-quality coffee",
+          "Food + drinks together for easy ordering",
+          "Welcoming vibe that supports weekly repeat stops"
+        ],
+        "objectionHandling": "If you think it’s ‘just coffee,’ the menu breadth is built for families and mixed preferences.",
+        "proof": "Family-friendly third-place positioning: approachable options, consistent execution.",
+        "cta": "Make it your go-to after-school win this week."
+      }
+    },
+    {
+      "parentIcp": "Weekend Outing Families (Peninsula Day Trip)",
+      "name": "Weekend Outing Planner (Family)",
+      "role": "Outing planner",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Add a local highlight to your weekend—without overthinking it.",
+        "benefitBullets": [
+          "Signature flavors that feel unique and local",
+          "Approachable menu for groups and families",
+          "Comfortable space for a quick reset"
+        ],
+        "objectionHandling": "If you’re worried it’s out of the way, the location is positioned for Peninsula reach from core Hampton corridors.",
+        "proof": "Visitor-friendly experience: easy choices + reliable speed + welcoming vibe.",
+        "cta": "Make Sweet Beans your first stop on your next outing."
+      }
+    },
+    {
+      "parentIcp": "Multi-Gen Hosts (Family Visiting Hampton)",
+      "name": "Host With a Plan (Local Resident Host)",
+      "role": "Group organizer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Be the host who always knows the right spot.",
+        "benefitBullets": [
+          "Menu breadth that works for everyone",
+          "Quality coffee with made-here flavor",
+          "Comfortable atmosphere for mixed ages"
+        ],
+        "objectionHandling": "If you’re worried about mixed preferences, the menu stays approachable—classic or signature options.",
+        "proof": "Group-friendly flow: order across tastes, relax briefly, keep the day moving.",
+        "cta": "Bring your guests in—make it your ‘sure thing’ stop."
+      }
+    },
+    {
+      "parentIcp": "Young Adults Social Meetups (Approachable Specialty)",
+      "name": "Hangout Coordinator (Friend Group)",
+      "role": "Meetup initiator",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Your easy-yes meetup spot—without the chain feel.",
+        "benefitBullets": [
+          "Signature drinks that feel shareable",
+          "Welcoming third-place environment",
+          "Broad menu for mixed preferences"
+        ],
+        "objectionHandling": "If you’re worried about options, the menu is designed to be approachable for everyone in the group.",
+        "proof": "Repeatable meetup pattern: pick a signature favorite, sit, catch up, repeat.",
+        "cta": "Text the group and meet at Sweet Beans this week."
+      }
+    },
+    {
+      "parentIcp": "Couples Catch-Up / Date-Lite (Café + Sip Flex)",
+      "name": "Date-Lite Planner (Couple)",
+      "role": "Couple decision maker",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Skip the noise—choose the easy, local reset.",
+        "benefitBullets": [
+          "Relaxed third-place atmosphere",
+          "Coffee-forward quality with flexible options",
+          "Low-pressure setting for real conversation"
+        ],
+        "objectionHandling": "If you’re comparing to restaurants, this is a lower-commitment way to connect without sacrificing quality.",
+        "proof": "Consistent beverages + welcoming vibe = repeatable ritual without the fuss.",
+        "cta": "Make it your go-to catch-up spot this week."
+      }
+    },
+    {
+      "parentIcp": "Community Group Organizer (Clubs, Parents, Meetups)",
+      "name": "Recurring Meetup Organizer (Club Lead)",
+      "role": "Group organizer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Make your meetup effortless—and keep people coming back.",
+        "benefitBullets": [
+          "Counter-service ordering keeps coordination simple",
+          "Broad appeal menu for mixed groups",
+          "Consistent experience for recurring meetups"
+        ],
+        "objectionHandling": "If coordination is a concern, individual ordering keeps it simple and avoids one-person complexity.",
+        "proof": "Repeatable event rhythm: set a time, guests order easily, space supports staying.",
+        "cta": "Set your next meetup at Sweet Beans and make it recurring."
+      }
+    },
+    {
+      "parentIcp": "Event Weekend Attendee (Coliseum Central)",
+      "name": "Time-Crunch Visitor (Event Attendee)",
+      "role": "Visitor buyer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Don’t settle for chain coffee when you’re in Hampton.",
+        "benefitBullets": [
+          "Signature flavors that feel local",
+          "Fast, easy stop near core corridors",
+          "Approachable food + drink options"
+        ],
+        "objectionHandling": "If you’re short on time, pick a signature favorite and keep moving—counter service is built for flow.",
+        "proof": "Visitor-friendly promise: easy choices, reliable speed, memorable taste.",
+        "cta": "Stop in before your event—grab a signature drink + quick bite."
+      }
+    },
+    {
+      "parentIcp": "Peninsula Day-Tripper (Fort Monroe / Waterfront Stops)",
+      "name": "Day-Trip Curator (Outing Planner)",
+      "role": "Outing planner",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Add a local highlight to your Peninsula day.",
+        "benefitBullets": [
+          "Made-here flavors that feel distinct",
+          "Approachable menu for groups and families",
+          "Easy, dependable stop without guesswork"
+        ],
+        "objectionHandling": "If you’re unsure what to order, signature favorites simplify the choice.",
+        "proof": "Approachable specialty: distinct taste without complicated exclusivity.",
+        "cta": "Make Sweet Beans your planned stop on your next day trip."
+      }
+    },
+    {
+      "parentIcp": "Hotel Guest Host (Local Resident Hosting Visitors)",
+      "name": "Local Host (Guest Experience Planner)",
+      "role": "Host / planner",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Hosting made easy: one local stop everyone likes.",
+        "benefitBullets": [
+          "Broad menu appeal for guests",
+          "Signature drinks that feel ‘local’",
+          "Comfortable third-place experience"
+        ],
+        "objectionHandling": "If you’re worried about variety, the menu stays approachable—classic or signature options.",
+        "proof": "Group-ready flow: mixed tastes work, service stays simple, experience feels local.",
+        "cta": "Bring your visitors in—make it part of their Hampton story."
+      }
+    },
+    {
+      "parentIcp": "After-Work Unwinder (Coffee-First, Optional Sip)",
+      "name": "Decompression Seeker (After Work)",
+      "role": "After-work buyer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "A better after-work reset—without the bar vibe.",
+        "benefitBullets": [
+          "Calm third-place atmosphere",
+          "Coffee-forward quality with flexible options",
+          "A dependable ritual you can repeat"
+        ],
+        "objectionHandling": "If you want it to feel like an occasion, signature flavors make it special without the fuss.",
+        "proof": "Consistency guarantee: same vibe, same quality, easy to repeat weekly.",
+        "cta": "Make Sweet Beans your after-work reset this week."
+      }
+    },
+    {
+      "parentIcp": "Errand Runners + Meet-a-Friend (Convenient Reset Stop)",
+      "name": "Midday Resetter (Errand Runner)",
+      "role": "Convenience buyer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Turn the middle of your day into a small win.",
+        "benefitBullets": [
+          "Quick, repeatable ordering",
+          "Approachable menu that reduces decision fatigue",
+          "Comfortable vibe for short breaks or quick meetups"
+        ],
+        "objectionHandling": "If you’re worried about time, counter service keeps it simple and fast.",
+        "proof": "Predictable experience: easy choices + consistent execution for a tight schedule.",
+        "cta": "Stop in between errands—make it your reliable reset."
+      }
+    },
+    {
+      "parentIcp": "Creative & Arts Crowd (Third-Place Culture)",
+      "name": "Community Culture Keeper (Creative Regular)",
+      "role": "Atmosphere-driven buyer",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Choose a spot that feels local—because it is.",
+        "benefitBullets": [
+          "Atmosphere that supports community and connection",
+          "Signature flavors that feel ‘made here’",
+          "A comfortable place to linger and return"
+        ],
+        "objectionHandling": "If you’re worried it won’t be consistent, the promise is reliable specialty—not one-off novelty.",
+        "proof": "In-house roasting identity + repeatable café execution supports a stable third-place.",
+        "cta": "Make Sweet Beans your regular third-place this month."
+      }
+    },
+    {
+      "parentIcp": "Single-Location Coffee Bar (No Roastery)",
+      "name": "Owner-Operator (Independent Coffee Bar)",
+      "role": "Owner/Operator",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Upgrade your coffee program without adding roasting complexity.",
+        "benefitBullets": [
+          "Consistent profiles your team can execute",
+          "Fresh, local delivery cadence you can count on",
+          "Local story that helps you stand out vs commodity supply"
+        ],
+        "objectionHandling": "If switching feels risky, start with samples and a phased rollout before you change the whole menu.",
+        "proof": "Sample-first process + profile consistency + reorder simplicity = low-risk transition.",
+        "cta": "Request a sample set and a simple monthly pricing tier."
+      }
+    },
+    {
+      "parentIcp": "Bakery-Café Hybrid (Coffee as Add-On Revenue)",
+      "name": "Menu & Margin Builder (Bakery-Café Owner)",
+      "role": "Owner/GM",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Turn coffee into your easiest add-on sale.",
+        "benefitBullets": [
+          "Balanced roasts that pair with baked goods",
+          "Reliable cadence that protects daily consistency",
+          "Simple foundation: ‘house coffee’ that scales"
+        ],
+        "objectionHandling": "If training feels heavy, start with one repeatable house profile before expanding.",
+        "proof": "Pairing discussion + stable profiles + easy reorder rhythm keeps the program consistent.",
+        "cta": "Schedule a quick pairing call and request samples."
+      }
+    },
+    {
+      "parentIcp": "Multi-Location Local Café Group (Standardization Need)",
+      "name": "Operations Standardizer (Multi-Location Café Group)",
+      "role": "Operations Director",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Consistency is your brand—protect it with the right roaster partner.",
+        "benefitBullets": [
+          "Standard profiles across locations",
+          "Predictable cadence that prevents site-level shortages",
+          "Phased rollout to avoid operational disruption"
+        ],
+        "objectionHandling": "If a transition could disrupt stores, phase by location and keep a fallback profile during changeover.",
+        "proof": "Profile standardization + delivery calendar + quarterly review rhythm supports stability at scale.",
+        "cta": "Book a standardization consult and receive volume-tier pricing."
+      }
+    },
+    {
+      "parentIcp": "Single-Location Brunch Restaurant (Quality Gap Fix)",
+      "name": "Guest Experience Fixer (Brunch GM)",
+      "role": "General Manager",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "If your brunch is great, your coffee can’t be ‘good enough.’",
+        "benefitBullets": [
+          "Better cup quality without slowing service",
+          "Simple ‘house’ standard your staff can repeat",
+          "Reliable supply cadence that prevents weak-link reviews"
+        ],
+        "objectionHandling": "If you fear disruption, we start with one house profile and standardize workflow first.",
+        "proof": "Taste targets → sample selection → brew standardization → recurring cadence.",
+        "cta": "Book a tasting and define your ‘house coffee’ standard."
+      }
+    },
+    {
+      "parentIcp": "High-Throughput Breakfast Counter (Speed + Consistency)",
+      "name": "Rush-Hour Protector (Operations Lead)",
+      "role": "Operations Manager",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Rush hour doesn’t wait—your coffee program shouldn’t either.",
+        "benefitBullets": [
+          "Stable profiles designed for consistent output",
+          "Reliable reorder cadence for high-volume reality",
+          "Less waste, fewer remakes, fewer complaints"
+        ],
+        "objectionHandling": "If cost is a concern, stability reduces waste and rework—saving time and product.",
+        "proof": "Workflow-first setup: define brew process, lock profile, set cadence, keep it repeatable.",
+        "cta": "Request volume-tier pricing and a fast-start supply plan."
+      }
+    },
+    {
+      "parentIcp": "All-Day Restaurant Adding Brunch (New Program)",
+      "name": "Brunch Launch Owner (Program Starter)",
+      "role": "Owner/GM",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Brunch isn’t complete without a coffee program that holds up.",
+        "benefitBullets": [
+          "Fast rollout with a simple, scalable house standard",
+          "Local story that strengthens your menu narrative",
+          "Recurring cadence that keeps the launch smooth"
+        ],
+        "objectionHandling": "If it feels like ‘one more thing,’ we keep the program simple first—then expand once stable.",
+        "proof": "Quick assessment → sample → profile selection → cadence → launch support.",
+        "cta": "Book a quick coffee-program kickoff for your brunch launch."
+      }
+    },
+    {
+      "parentIcp": "Retail Bakery with Espresso Bar (Ticket Lift Focus)",
+      "name": "Attach-Rate Driver (Bakery Owner)",
+      "role": "Owner/Operator",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "If your pastry is great, your coffee should help sell more of it.",
+        "benefitBullets": [
+          "Profiles that pair with baked goods",
+          "Reliable cadence that prevents ‘we’re out’ moments",
+          "Simple setup: one house roast + one espresso profile"
+        ],
+        "objectionHandling": "If complexity is the fear, start with two profiles and a clear brew standard.",
+        "proof": "Pairing plan + stable profiles + reorder discipline = consistent daily execution.",
+        "cta": "Compare starter tiers and request a pairing sample set."
+      }
+    },
+    {
+      "parentIcp": "Dessert Shop / Ice Cream Café (Occasion Add-On)",
+      "name": "Upsell Program Builder (Dessert Shop Manager)",
+      "role": "Store Manager",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Dessert + coffee = higher tickets (when coffee is done right).",
+        "benefitBullets": [
+          "Balanced roasts that complement sweets",
+          "Reliable cadence for weekends and peaks",
+          "Simple standards your team can repeat"
+        ],
+        "objectionHandling": "If training is the worry, we keep it simple: repeatable profiles and a clear brew standard.",
+        "proof": "Menu pairing → profile selection → simple standard → recurring supply.",
+        "cta": "Request a dessert-pairing coffee lineup and pricing tiers."
+      }
+    },
+    {
+      "parentIcp": "Catering Bakery / Events (Consistency Under Pressure)",
+      "name": "Event Reliability Owner (Caterer)",
+      "role": "Owner/Operations Lead",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Events expose weak links—make coffee a strength.",
+        "benefitBullets": [
+          "Reliable supply for scheduled peaks",
+          "Consistent quality that protects brand perception",
+          "Calendar-aligned planning to reduce last-minute risk"
+        ],
+        "objectionHandling": "If variability is the concern, we standardize on stable profiles designed to perform at scale.",
+        "proof": "Estimate demand → schedule cadence → maintain buffer → execute consistently.",
+        "cta": "Book an event-demand sizing call and lock your supply calendar."
+      }
+    },
+    {
+      "parentIcp": "Law / CPA Office (Client Hospitality Standard)",
+      "name": "Office Admin (Hospitality & Stocking Owner)",
+      "role": "Office Manager",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Make your office feel more premium—without adding work.",
+        "benefitBullets": [
+          "Client-ready hospitality with local roast quality",
+          "Recurring cadence that keeps it stocked",
+          "Simple reordering with predictable spend"
+        ],
+        "objectionHandling": "If admin burden is the concern, the cadence is set-and-repeat—no weekly decision fatigue.",
+        "proof": "Choose profiles → set cadence → deliver consistently → optional seasonal refresh.",
+        "cta": "Request a simple monthly office coffee plan by headcount."
+      }
+    },
+    {
+      "parentIcp": "Medical / Dental Practice (Staff Retention & Patient Experience)",
+      "name": "Practice Operations Lead (Staff Experience Owner)",
+      "role": "Practice Manager",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Small upgrades that improve the whole experience—start with coffee.",
+        "benefitBullets": [
+          "Better staff experience and visitor hospitality",
+          "Predictable ordering that doesn’t distract staff",
+          "Consistent quality that reduces complaints and waste"
+        ],
+        "objectionHandling": "If budget is a concern, stability reduces waste and raises perceived value every day.",
+        "proof": "Low-admin program: select profiles, set cadence, keep it consistent.",
+        "cta": "Compare a simple monthly plan sized to your team."
+      }
+    },
+    {
+      "parentIcp": "Real Estate / Insurance Office (Daily Brew Program)",
+      "name": "Client-Meeting Host (Agency Lead)",
+      "role": "Branch Manager",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Make every meeting feel more professional—without extra effort.",
+        "benefitBullets": [
+          "Local quality that elevates client hospitality",
+          "Predictable cadence that keeps you stocked",
+          "Simple ‘house’ profile that stays consistent"
+        ],
+        "objectionHandling": "If it feels like a nice-to-have, coffee is a daily touchpoint that shapes client perception in every meeting.",
+        "proof": "House profile + reorder rhythm + consistent delivery keeps meetings client-ready.",
+        "cta": "Request your ‘house coffee’ setup and monthly cadence pricing."
+      }
+    },
+    {
+      "parentIcp": "Boutique Hotel / Inn (Local Amenity Differentiation)",
+      "name": "Guest Experience Curator (Boutique Hotel GM)",
+      "role": "General Manager",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Turn your coffee amenity into a review-worthy detail.",
+        "benefitBullets": [
+          "Local story that differentiates the stay",
+          "Reliable supply that prevents shortages",
+          "Consistent quality guests actually notice"
+        ],
+        "objectionHandling": "If you’re unsure guests will notice, coffee is one of the most repeated touchpoints in a stay.",
+        "proof": "Amenity format + stable profiles + dependable cadence = consistent guest experience.",
+        "cta": "Request amenity options and room-count pricing tiers."
+      }
+    },
+    {
+      "parentIcp": "Midscale Hotel (Breakfast Program Consistency)",
+      "name": "Breakfast Program Owner (F&B Lead)",
+      "role": "Food & Beverage Manager",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Breakfast coffee shouldn’t be the reason for a 3-star review.",
+        "benefitBullets": [
+          "Consistent quality at scale",
+          "Predictable ordering and delivery cadence",
+          "Trial-first approach to reduce switching risk"
+        ],
+        "objectionHandling": "If switching is a concern, run a trial alongside your current program before full changeover.",
+        "proof": "Demand sizing → profile selection → cadence schedule → reorder rhythm.",
+        "cta": "Book a breakfast coffee assessment and request a trial plan."
+      }
+    },
+    {
+      "parentIcp": "Conference Venue / Event Center (Bulk Brew Reliability)",
+      "name": "Event Execution Lead (Venue Ops)",
+      "role": "Event Director",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Make coffee the easiest part of your event execution.",
+        "benefitBullets": [
+          "Predictable supply aligned to your calendar",
+          "Consistent profiles that perform under pressure",
+          "Buffer planning that prevents last-minute failures"
+        ],
+        "objectionHandling": "If last-minute changes worry you, we build reorder buffers into the cadence for scheduled peaks.",
+        "proof": "Calendar-based demand planning + scheduled delivery + simple staff standards.",
+        "cta": "Request an event-calendar supply plan and bulk tier pricing."
+      }
+    },
+    {
+      "parentIcp": "Mid-Sized Church (Weekly Gatherings & Volunteer Flow)",
+      "name": "Hospitality Captain (Volunteer Lead)",
+      "role": "Hospitality Coordinator",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Hospitality is a feeling—coffee helps create it.",
+        "benefitBullets": [
+          "Consistent quality that supports welcoming spaces",
+          "Predictable cadence that simplifies volunteer planning",
+          "Approachable coffee that serves mixed preferences"
+        ],
+        "objectionHandling": "If budget is the concern, consistency reduces waste and makes serving easier for volunteers.",
+        "proof": "Weekly demand sizing + stable profile + reorder cadence = fewer last-minute issues.",
+        "cta": "Compare weekly supply tiers based on attendance."
+      }
+    },
+    {
+      "parentIcp": "Community Nonprofit (Programs + Volunteers)",
+      "name": "Program Operations Lead (Nonprofit)",
+      "role": "Program Director",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Make your programs feel more welcoming—without extra work.",
+        "benefitBullets": [
+          "Simple reordering for busy coordinators",
+          "Consistent quality that supports hospitality",
+          "Predictable cadence that reduces operational distractions"
+        ],
+        "objectionHandling": "If staffing is limited, a predictable cadence reduces decision load and prevents ‘we ran out’ moments.",
+        "proof": "Baseline demand → profile selection → scheduled cadence → seasonal adjustments as needed.",
+        "cta": "Request a program-based coffee plan by frequency and attendance."
+      }
+    },
+    {
+      "parentIcp": "Civic / Fraternal Organization (Events & Meetings)",
+      "name": "Meeting & Event Chair (Civic Group)",
+      "role": "Event Chair",
+      "decisionMaker": true,
+      "messageSpine": {
+        "headline": "Take coffee off your worry list—keep meetings running smooth.",
+        "benefitBullets": [
+          "Predictable reorder rhythm matched to your calendar",
+          "Consistent quality that supports hospitality",
+          "Optional event top-ups without guesswork"
+        ],
+        "objectionHandling": "If storage or overbuying is a concern, the cadence is sized to attendance and meeting frequency.",
+        "proof": "Calendar-based planning + stable profile + cadence buffer prevents shortages.",
+        "cta": "Book a quick cadence setup and get meeting-tier pricing."
+      }
+    }
+  ],
+  "messagingMatrix": [
+    {
+      "segment": "Morning Commuter Fuel (Fast Specialty Coffee)",
+      "geoTier": "primary",
+      "competitor": "Dunkin' (Commander Shepard Blvd)",
+      "alternativeChoice": "Fast chain stop (value + speed habit)",
+      "requiredClaim": "Fast, made-here specialty coffee you can count on—signature flavors + in-house roasted identity—so your morning feels intentional without slowing down."
+    },
+    {
+      "segment": "Morning Commuter Fuel (Fast Specialty Coffee)",
+      "geoTier": "secondary",
+      "competitor": "Starbucks (Hampton area)",
+      "alternativeChoice": "Mobile-order chain routine (consistency + app convenience)",
+      "requiredClaim": "A more personal, community-driven specialty coffee experience than chains—approachable, consistent, and built for weekday flow."
+    },
+    {
+      "segment": "Morning Commuter Fuel (Fast Specialty Coffee)",
+      "geoTier": "tertiary",
+      "competitor": "7 Brew Coffee (drive-thru)",
+      "alternativeChoice": "Drive-thru novelty drinks (speed-first)",
+      "requiredClaim": "Specialty quality with made-here flavor—fast enough for the commute, distinct enough to replace the drive-thru habit."
+    },
+    {
+      "segment": "Remote Work + Study Sessions (Third-Place Productivity)",
+      "geoTier": "primary",
+      "competitor": "Column 15",
+      "alternativeChoice": "Another local café for work sessions (environment-first)",
+      "requiredClaim": "A reliable work-from-café base—quality espresso + made-here flavors + welcoming third-place vibe—so focus sessions feel repeatable."
+    },
+    {
+      "segment": "Remote Work + Study Sessions (Third-Place Productivity)",
+      "geoTier": "secondary",
+      "competitor": "Cure Coffeehouse (Newport News)",
+      "alternativeChoice": "Drive farther for specialty coffee (quality-first)",
+      "requiredClaim": "Quality-first coffee and a calm, welcoming environment—closer, more approachable, and built for returning."
+    },
+    {
+      "segment": "Remote Work + Study Sessions (Third-Place Productivity)",
+      "geoTier": "tertiary",
+      "competitor": "Starbucks (Hampton area)",
+      "alternativeChoice": "Chain ‘work spot’ (predictability + ubiquity)",
+      "requiredClaim": "Work in a place that feels local and human—community-driven, comfortable, and consistently executed."
+    },
+    {
+      "segment": "Family-Friendly Treat + Light Meal (Weekend & After-School)",
+      "geoTier": "primary",
+      "competitor": "Buckroe Coffee",
+      "alternativeChoice": "Neighborhood coffee stop (convenience + familiarity)",
+      "requiredClaim": "A family-friendly community café—specialty drinks plus approachable food—so the whole crew leaves happy."
+    },
+    {
+      "segment": "Family-Friendly Treat + Light Meal (Weekend & After-School)",
+      "geoTier": "secondary",
+      "competitor": "Starbucks (Hampton area)",
+      "alternativeChoice": "Chain family treat (known menu + predictability)",
+      "requiredClaim": "More made-here flavor and local story than chains—still approachable and easy for groups."
+    },
+    {
+      "segment": "Family-Friendly Treat + Light Meal (Weekend & After-School)",
+      "geoTier": "tertiary",
+      "competitor": "Dunkin' (Commander Shepard Blvd)",
+      "alternativeChoice": "Value-led quick stop (price-perceived value)",
+      "requiredClaim": "Approachable specialty: a better treat moment with coffee + food together—without turning into a slow, complicated stop."
+    },
+    {
+      "segment": "Friends + Small Group Meetups (Community Third-Place)",
+      "geoTier": "primary",
+      "competitor": "Column 15",
+      "alternativeChoice": "Local café meetup (atmosphere-first)",
+      "requiredClaim": "A reliable local meetup spot—welcoming third-place vibe, broad menu, consistent quality—so gathering feels easy and repeatable."
+    },
+    {
+      "segment": "Friends + Small Group Meetups (Community Third-Place)",
+      "geoTier": "secondary",
+      "competitor": "Cure Coffeehouse (Newport News)",
+      "alternativeChoice": "Drive for boutique specialty (quality + vibe)",
+      "requiredClaim": "More approachable, all-occasion menu with a community feel—still specialty-forward and worth repeating."
+    },
+    {
+      "segment": "Friends + Small Group Meetups (Community Third-Place)",
+      "geoTier": "tertiary",
+      "competitor": "Starbucks (Hampton area)",
+      "alternativeChoice": "Default chain meetup (easy choice)",
+      "requiredClaim": "Skip chain monotony—choose a community-driven café with made-here flavor and a comfortable place to connect."
+    },
+    {
+      "segment": "Visitor + Event Traffic (Coliseum Central / Peninsula Attractions)",
+      "geoTier": "primary",
+      "competitor": "Firehouse Coffee & Gifts 1881 (Fort Monroe area)",
+      "alternativeChoice": "Destination/tourism coffee stop (location-driven)",
+      "requiredClaim": "A memorable local coffee stop near core Hampton corridors—signature flavors + approachable food—so visitors don’t waste time on guesswork."
+    },
+    {
+      "segment": "Visitor + Event Traffic (Coliseum Central / Peninsula Attractions)",
+      "geoTier": "secondary",
+      "competitor": "Starbucks (Hampton area)",
+      "alternativeChoice": "Hotel/chain coffee default (convenience)",
+      "requiredClaim": "Experience Hampton beyond the chains—local, made-here flavor with a reliable, welcoming café format."
+    },
+    {
+      "segment": "Visitor + Event Traffic (Coliseum Central / Peninsula Attractions)",
+      "geoTier": "tertiary",
+      "competitor": "7 Brew Coffee (drive-thru)",
+      "alternativeChoice": "Quick drive-thru stop (speed-first)",
+      "requiredClaim": "Fast, local, and worth remembering—signature drinks that feel like a Hampton find, not a generic stop."
+    },
+    {
+      "segment": "Afternoon Reset + Light ‘Café + Sip’ Occasion",
+      "geoTier": "primary",
+      "competitor": "Column 15",
+      "alternativeChoice": "Another café for an afternoon reset (ambience-first)",
+      "requiredClaim": "A calm community café for an afternoon reset—coffee-forward quality with flexible options—so you unwind without the bar scene."
+    },
+    {
+      "segment": "Afternoon Reset + Light ‘Café + Sip’ Occasion",
+      "geoTier": "secondary",
+      "competitor": "Buckroe Coffee",
+      "alternativeChoice": "Neighborhood quick coffee break (convenience)",
+      "requiredClaim": "A welcoming third-place that flexes—made-here flavors, consistent execution, and a comfortable reset you’ll repeat."
+    },
+    {
+      "segment": "Afternoon Reset + Light ‘Café + Sip’ Occasion",
+      "geoTier": "tertiary",
+      "competitor": "Starbucks (Hampton area)",
+      "alternativeChoice": "Chain afternoon habit (predictability)",
+      "requiredClaim": "A more personal, community-driven reset than chains—approachable specialty with consistent vibes and quality."
+    },
+    {
+      "segment": "Independent Café Wholesale Accounts (No In-House Roaster)",
+      "geoTier": "primary",
+      "competitor": "Sysco Hampton Roads (foodservice distributor coffee programs)",
+      "alternativeChoice": "Distributor-bundled coffee program (convenience + standardization)",
+      "requiredClaim": "Freshness + local story + reliable cadence—partner-led coffee supply that differentiates your café beyond commodity programs."
+    },
+    {
+      "segment": "Independent Café Wholesale Accounts (No In-House Roaster)",
+      "geoTier": "secondary",
+      "competitor": "Three Ships Coffee Roasters (wholesale-capable regional specialty roaster)",
+      "alternativeChoice": "Established regional roaster (brand gravity + distribution)",
+      "requiredClaim": "A more approachable, Peninsula-first roaster relationship—consistent profiles and flexible partnership without feeling like a small account."
+    },
+    {
+      "segment": "Independent Café Wholesale Accounts (No In-House Roaster)",
+      "geoTier": "tertiary",
+      "competitor": "Blanchard's Coffee (Richmond)",
+      "alternativeChoice": "Out-of-market regional roaster (broader reach)",
+      "requiredClaim": "Locally resonant, story-backed coffee with dependable reordering—built for recurring volume and consistent execution."
+    },
+    {
+      "segment": "Brunch + Breakfast Restaurants (Coffee Program Upgrade)",
+      "geoTier": "primary",
+      "competitor": "Sysco Hampton Roads (foodservice distributor coffee programs)",
+      "alternativeChoice": "Bundled restaurant supply coffee (ease of ordering)",
+      "requiredClaim": "Restaurant-ready coffee upgrade—better cup quality with simple standards and dependable supply—so coffee matches the kitchen without slowing service."
+    },
+    {
+      "segment": "Brunch + Breakfast Restaurants (Coffee Program Upgrade)",
+      "geoTier": "secondary",
+      "competitor": "Cafe Stella Roasters (Norfolk)",
+      "alternativeChoice": "Local roaster with café positioning (quality-first)",
+      "requiredClaim": "Approachable specialty designed for throughput—consistent profiles and reorder discipline that fits real restaurant workflows."
+    },
+    {
+      "segment": "Brunch + Breakfast Restaurants (Coffee Program Upgrade)",
+      "geoTier": "tertiary",
+      "competitor": "Blanchard's Coffee (Richmond)",
+      "alternativeChoice": "Regional roaster program (bigger footprint)",
+      "requiredClaim": "A faster-start, relationship-led program—simple ‘house’ standards + consistent supply—built to earn better reviews quickly."
+    },
+    {
+      "segment": "Bakeries + Dessert Shops (Pairing-Driven Coffee)",
+      "geoTier": "primary",
+      "competitor": "Sysco Hampton Roads (foodservice distributor coffee programs)",
+      "alternativeChoice": "Commodity coffee add-on (bundled purchasing)",
+      "requiredClaim": "Coffee that sells more pastry—balanced, consistent roasts with a local story—so you lift ticket size without operational headaches."
+    },
+    {
+      "segment": "Bakeries + Dessert Shops (Pairing-Driven Coffee)",
+      "geoTier": "secondary",
+      "competitor": "Cafe Stella Roasters (Norfolk)",
+      "alternativeChoice": "Local roaster supply (quality-first)",
+      "requiredClaim": "Pairing-first profiles and reorder reliability—approachable specialty that complements artisan food positioning."
+    },
+    {
+      "segment": "Bakeries + Dessert Shops (Pairing-Driven Coffee)",
+      "geoTier": "tertiary",
+      "competitor": "Three Ships Coffee Roasters (wholesale-capable regional specialty roaster)",
+      "alternativeChoice": "Brand-name specialty roaster (marketing pull)",
+      "requiredClaim": "A partnership-led local roaster option—consistent supply + pairing-fit profiles—without needing big-brand overhead."
+    },
+    {
+      "segment": "Offices + Professional Firms (Employee & Client Coffee Program)",
+      "geoTier": "primary",
+      "competitor": "Sysco Hampton Roads (foodservice distributor coffee programs)",
+      "alternativeChoice": "Office coffee via distributor/commodity program (simplicity)",
+      "requiredClaim": "A simple, professional local coffee program—recurring cadence, consistent quality, minimal admin—so your office stays client-ready."
+    },
+    {
+      "segment": "Offices + Professional Firms (Employee & Client Coffee Program)",
+      "geoTier": "secondary",
+      "competitor": "Blanchard's Coffee (Richmond)",
+      "alternativeChoice": "Regional roaster office supply (brand familiarity)",
+      "requiredClaim": "Local story + predictable replenishment—better-than-standard coffee that feels intentional without extra work."
+    },
+    {
+      "segment": "Offices + Professional Firms (Employee & Client Coffee Program)",
+      "geoTier": "tertiary",
+      "competitor": "Cafe Stella Roasters (Norfolk)",
+      "alternativeChoice": "Local café/roaster office supply (quality-driven)",
+      "requiredClaim": "Reliable cadence and consistent profiles—upgrade hospitality and staff experience without operational complexity."
+    },
+    {
+      "segment": "Hotels + Hospitality + Short-Term Rentals (Local Amenities)",
+      "geoTier": "primary",
+      "competitor": "Sysco Hampton Roads (foodservice distributor coffee programs)",
+      "alternativeChoice": "Standard amenity coffee program (commodity consistency)",
+      "requiredClaim": "A ‘local touch’ coffee amenity—story-backed, consistent, and reliably supplied—so guest experience and reviews improve."
+    },
+    {
+      "segment": "Hotels + Hospitality + Short-Term Rentals (Local Amenities)",
+      "geoTier": "secondary",
+      "competitor": "Three Ships Coffee Roasters (wholesale-capable regional specialty roaster)",
+      "alternativeChoice": "Premium regional roaster amenity (brand gravity)",
+      "requiredClaim": "Locally resonant amenity with dependable supply—partner-supported and flexible for seasonality and room-count needs."
+    },
+    {
+      "segment": "Hotels + Hospitality + Short-Term Rentals (Local Amenities)",
+      "geoTier": "tertiary",
+      "competitor": "Blanchard's Coffee (Richmond)",
+      "alternativeChoice": "Out-of-market roaster amenity (regional distribution)",
+      "requiredClaim": "Reliable, review-worthy coffee that feels intentional—consistent profiles and cadence to prevent shortages and complaints."
+    },
+    {
+      "segment": "Churches + Community Organizations (Event & Volunteer Coffee Supply)",
+      "geoTier": "primary",
+      "competitor": "Sysco Hampton Roads (foodservice distributor coffee programs)",
+      "alternativeChoice": "Bulk commodity coffee (value-first, easy reorder)",
+      "requiredClaim": "A community-aligned coffee partner—reliable cadence, approachable quality—so gatherings feel welcoming and consistent every time."
+    },
+    {
+      "segment": "Churches + Community Organizations (Event & Volunteer Coffee Supply)",
+      "geoTier": "secondary",
+      "competitor": "Cafe Stella Roasters (Norfolk)",
+      "alternativeChoice": "Local roaster for events (quality-driven)",
+      "requiredClaim": "Consistency over complexity—stable profiles and predictable reordering that makes volunteer service smoother."
+    },
+    {
+      "segment": "Churches + Community Organizations (Event & Volunteer Coffee Supply)",
+      "geoTier": "tertiary",
+      "competitor": "Blanchard's Coffee (Richmond)",
+      "alternativeChoice": "Regional roaster bulk supply (distribution reach)",
+      "requiredClaim": "A simpler, more local, relationship-led supply option—cadence sized to calendars so you don’t run out or overbuy."
+    }
+  ]
+}

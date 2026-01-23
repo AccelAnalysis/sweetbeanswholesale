@@ -1,0 +1,49 @@
+### Key Principles for a Wholesale-Focused Website
+A wholesale-focused website for Sweet Beans Coffee & Roastery should prioritize B2B conversions, such as capturing leads, facilitating sample requests, account approvals, and repeat orders, while building trust through credibility and ease of use. Taking cues from Tidewater Coffee's site (http://tidewatercoffee.com), which excels in simplicity, directness, and a no-frills emphasis on core services (rapid response, convenient delivery, and barista training), the design should improve upon its limitations: add visuals, multi-page structure, interactive elements, and e-commerce-like features without overwhelming the user. Tidewater's appeal lies in its minimalism—quick-loading, text-focused, and phone-call driven—but it lacks engagement, product details, forms, and proof elements. For Sweet Beans, amplify the local Hampton, VA roasting story, flavor profiles from the menu (e.g., Brazil's caramel notes), and community ties to differentiate, while keeping the site efficient for busy business owners.
+
+The site should be responsive (mobile-friendly, unlike Tidewater's potential issues), SEO-optimized for terms like "wholesale coffee roaster Hampton Roads," and integrated with basic analytics for tracking wholesale inquiries. Use a unified purple-accented palette (from the menu graphic), warm photography (beans, roastery, deliveries), and icons for roast levels/tasting notes to make it visually appealing yet professional.
+
+### Global Structure and Navigation
+- **Header/Navigation**: Sticky top bar with simple links: Home, Wholesale (primary), Shop (retail crossover), Roastery, About, Contact. Include dropdowns for quick access (e.g., Wholesale > Catalog, Application, Portal). Add CTAs like "Request Samples" and "Get Pricing" on the right—improving on Tidewater's anchor links by making navigation intuitive and always visible.
+- **Footer**: Build trust with location details (3355 Commander Shepard Blvd, Suite C, Hampton, VA; phone: 757-964-6925; email: sweetbeanscs@gmail.com), social links (Facebook), quick links (FAQs, Privacy), and a tagline: "Fresh Roasted in Hampton, Serving Hampton Roads." Include an email signup for wholesale updates, absent in Tidewater.
+
+### Core Wholesale Pages and Features
+Focus 60-70% of the site on wholesale to drive repeat accounts. Structure as a dedicated section or subdomain (wholesale.sweetbeanscoffee.com) for logged-in users, emphasizing conversion paths: Visitor → Sample Request → Account Approval → Reorder.
+
+1. **Wholesale Landing Page**:
+   - **Hero Section**: Bold headline: "Wholesale Fresh-Roasted Coffee for Cafes, Offices, and Restaurants in Hampton Roads." Subhead: "Local small-batch roasting with reliable delivery and expert support." CTAs: "Request Free Samples" (form link) and "Apply Now" (application). Add a hero image of roasted beans or a delivery van—contrasting Tidewater's text-only top.
+   - **Who It's For**: 3-4 cards with icons/photos: Cafes (espresso programs), Offices (drip setups), Restaurants (custom blends), Institutions (decaf options). Describe benefits like cost savings and freshness.
+   - **Why Choose Sweet Beans**: Bullet points expanding Tidewater's services: Local roasting for fresher beans, customizable delivery schedules (weekly/bi-weekly), barista training/consulting (on-site or virtual), and calibration support (e.g., dial-in guides). Highlight differentiators: Ethical sourcing, roast-to-order, and community events for partners.
+   - **Programs Offered**: Sections for House Espresso, Drip Coffee, Decaf, and Seasonal Rotations. Use the menu origins (Brazil for mellow bases, Ethiopia for complex pour-overs) with flavor icons and suggested uses (espresso vs. drip).
+   - **Logistics Basics**: Clear info on minimum orders (e.g., 10lbs), lead times (3-5 days), delivery zones (Hampton Roads free, beyond at cost), pickup options, and eco-friendly packaging. Improve on Tidewater by adding a map embed for coverage.
+   - **Social Proof**: Testimonials (e.g., "Switched to Sweet Beans for better flavor consistency—highly recommend!" from a local cafe), partner logos, and stats (e.g., "Serving 50+ businesses in VA"). Tidewater lacks this; it builds credibility.
+   - **CTA Block**: "Get Started: 1. Request Samples → 2. Approve Account → 3. Place Order." Form teaser here.
+
+2. **Wholesale Catalog Page**:
+   - Public view with filters (origin, roast level, acidity, use-case: espresso/drip/cold brew). List products in a table or cards, improving the attached menu graphic:
+     | Origin       | Roast Level | Tasting Notes                          | Acidity | Suggested Use         | Sizes Available | SKU    |
+     |--------------|-------------|----------------------------------------|---------|-----------------------|-----------------|--------|
+     | Brazil      | Medium     | Caramel, toffee, mellow balance        | Low    | Espresso base, blends | 12oz, 2lb, 5lb  | BRZ-01 |
+     | Colombia    | Medium     | Chocolate, fruity, nutty               | Mellow | Drip, medium roasts   | 12oz, 2lb, 5lb  | COL-01 |
+     | Ethiopia    | Light      | Citrus, floral, tropical fruits, jasmine, chocolate | Bright | Pour-over, specialty | 12oz, 2lb, 5lb  | ETH-01 |
+     | Guatemala   | Medium     | Chocolate, caramel, fruit hints        | Vibrant| Bold drinks           | 12oz, 2lb, 5lb  | GUA-01 |
+     | Sumatra     | Dark       | Cedar, dark chocolate, cherries        | Low    | Dark roasts           | 12oz, 2lb, 5lb  | SUM-01 |
+     | Decaf Mexico| Medium     | Nutmeg, molasses, chocolate            | Tangy  | Decaf alternatives    | 12oz, 2lb, 5lb  | DEC-01 |
+   - Each entry includes high-res photos, downloadable spec sheets, and "Pricing Upon Request" (or show after login). Add a PDF download (clean, no watermark) of the full catalog—evolving the graphic into an interactive tool.
+   - Sample Pack Offer: Prominent section for a "Wholesale Sampler Box" ($20-30, 6x4oz origins)—best lead magnet, with form to request.
+
+3. **Wholesale Application and Forms**:
+   - Dedicated form page: Fields for business name/type, address, contact, estimated usage (lbs/week), current supplier, equipment (e.g., grinder type), preferences (delivery/pickup). Include checkboxes for samples (select origins). Auto-email confirmation: "Thanks—samples ship in 2 days!" This streamlines Tidewater's phone-only contact.
+   - Inquiry Form: Simpler version for general questions, with "Reason" dropdown (Samples, Pricing, Training).
+
+4. **Wholesale Portal (Logged-In Area)**:
+   - Secure subdomain for approved accounts: View custom pricing (e.g., tiered discounts for volume), reorder from past orders (quick-add buttons), invoices, delivery tracking, and schedule adjustments. Features like "Reorder in 60 Seconds" with saved favorites—fostering repeats, unlike Tidewater's lack of ongoing tools.
+
+### Supporting Elements for Wholesale Conversion
+- **Integration with Retail/Brand**: Link to Shop for retail cross-sell (e.g., "Test our beans retail first"), but keep wholesale gated. Unify branding: Roastery page with photos/videos of the Suite C setup, sourcing stories, and "Book a Tour/Cupping" form—building authority.
+- **Resources Section**: Brew guides, storage tips, and wholesale-specific PDFs (e.g., "Dialing In Your Espresso"). This educates partners, reducing issues and encouraging loyalty.
+- **Events Tie-In**: Promote wholesale partners at events (e.g., "Feature your cafe at our trivia night") to build relationships.
+- **SEO and Analytics**: Optimize pages for local searches; track form submits and portal logins. Use schema markup for products/business.
+- **Technical Improvements Over Tidewater**: Fast load times (compress images), accessibility (alt text, keyboard nav), and basic e-commerce (Stripe for samples) without full retail complexity.
+
+This setup converts prospects into accounts by guiding them through a funnel, while retaining Tidewater's efficient ethos but adding visuals, interactivity, and proof to boost engagement and retention. Estimated build: Use HTML/CSS with JS for forms; expand to CMS like WordPress for easy updates.
