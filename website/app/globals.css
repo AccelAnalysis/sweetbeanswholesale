@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  /* Sweet Beans Brand Colors */
+  --color-brand-purple: #6B21A8; /* Deep purple from description */
+  --color-brand-purple-light: #A855F7;
+  --color-brand-purple-dark: #581C87;
+  
+  --color-coffee-dark: #3E2723; /* Dark roast */
+  --color-coffee-medium: #795548; /* Medium roast */
+  --color-coffee-light: #D7CCC8; /* Light foam/crema */
+  
+  --color-cream: #FDFBF7; /* Off-white background */
+  
+  /* Semantic Colors */
+  --background: var(--color-cream);
+  --foreground: var(--color-coffee-dark);
+  
+  --primary: var(--color-brand-purple);
+  --primary-foreground: #ffffff;
+  
+  --secondary: var(--color-coffee-medium);
+  --secondary-foreground: #ffffff;
+  
+  --muted: #F5F5F5;
+  --muted-foreground: #737373;
+  
+  --border: #E5E5E5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-brand-purple: var(--color-brand-purple);
+  --color-brand-purple-light: var(--color-brand-purple-light);
+  --color-brand-purple-dark: var(--color-brand-purple-dark);
+  
+  --color-coffee-dark: var(--color-coffee-dark);
+  --color-coffee-medium: var(--color-coffee-medium);
+  --color-coffee-light: var(--color-coffee-light);
+  --color-cream: var(--color-cream);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Keeping it light-themed for now as per coffee shop aesthetic often benefits from clean light or warm dark. 
+     The description implies "unified purple-accented palette... warm photography". 
+     I'll stick to a default light theme for consistency with standard business sites unless requested otherwise, 
+     but provide variables if needed. 
+     Overriding the default dark mode for now to ensure branding consistency. */
+  :root {
+    --background: var(--color-cream);
+    --foreground: var(--color-coffee-dark);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
