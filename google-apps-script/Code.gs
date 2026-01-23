@@ -37,7 +37,7 @@ const SHEETS = {
   },
   RETAIL_ORDERS: {
     name: "Retail Orders",
-    headers: ["Date", "Order ID", "Customer Name", "Email", "Phone", "Items", "Total Value", "Status"]
+    headers: ["Date", "Order ID", "Customer Name", "Company", "Email", "Phone", "Items", "Total Value", "Payment Preference", "Status", "Notes"]
   }
 };
 
@@ -230,11 +230,14 @@ function handleRetailOrder(data) {
     date,
     orderId,
     data.customerName,
+    data.company,
     data.email,
     data.phone,
     itemsString,
     data.totalValue,
-    "Pending"
+    data.paymentPreference,
+    "Pending",
+    data.notes
   ]);
   
   sendNotification("New Retail Order", 
