@@ -18,7 +18,7 @@ const products = [
     acidity: "Low",
     use: "Espresso base, blends",
     sizes: "12oz, 2lb, 5lb",
-    price: 45.00,
+    price: 61.00,
     image: "https://images.unsplash.com/photo-1611854779393-1b2ae9bc4048?q=80&w=2000&auto=format&fit=crop"
   },
   {
@@ -30,7 +30,7 @@ const products = [
     acidity: "Mellow",
     use: "Drip, medium roasts",
     sizes: "12oz, 2lb, 5lb",
-    price: 48.00,
+    price: 65.00,
     image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=2070&auto=format&fit=crop"
   },
   {
@@ -42,7 +42,7 @@ const products = [
     acidity: "Bright",
     use: "Pour-over, specialty",
     sizes: "12oz, 2lb, 5lb",
-    price: 52.00,
+    price: 70.00,
     image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=2080&auto=format&fit=crop"
   },
   {
@@ -54,7 +54,7 @@ const products = [
     acidity: "Vibrant",
     use: "Bold drinks",
     sizes: "12oz, 2lb, 5lb",
-    price: 49.00,
+    price: 66.00,
     image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1974&auto=format&fit=crop"
   },
   {
@@ -66,7 +66,7 @@ const products = [
     acidity: "Low",
     use: "Dark roasts",
     sizes: "12oz, 2lb, 5lb",
-    price: 47.00,
+    price: 63.50,
     image: "https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=2070&auto=format&fit=crop"
   },
   {
@@ -78,7 +78,7 @@ const products = [
     acidity: "Tangy",
     use: "Decaf alternatives",
     sizes: "12oz, 2lb, 5lb",
-    price: 50.00,
+    price: 67.50,
     image: "https://images.unsplash.com/photo-1552346990-3543163013ba?q=80&w=2070&auto=format&fit=crop"
   }
 ]
@@ -247,7 +247,7 @@ export default function CatalogPage() {
                 Perfect for cupping with your team.
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-coffee-dark">$25</span>
+                <span className="text-3xl font-bold text-coffee-dark">$34.00</span>
                 <span className="text-coffee-medium">/ box (Credited back on your first wholesale order)</span>
               </div>
               <Button size="lg" className="w-full sm:w-auto" asChild>

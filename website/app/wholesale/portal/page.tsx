@@ -17,9 +17,9 @@ export default function PortalDashboard() {
   ]
 
   const quickOrderItems = [
-    { id: "BRZ-01", name: "Brazil Santos - 5lb", price: 45.00, size: "5lb" },
-    { id: "ESP-01", name: "Espresso Blend - 5lb", price: 48.00, size: "5lb" },
-    { id: "CB-01", name: "Cold Brew Blend - 5lb", price: 46.00, size: "5lb" },
+    { id: "BRZ-01", name: "Brazil Santos - 5lb", price: 61.00, size: "5lb" },
+    { id: "ESP-01", name: "Espresso Blend - 5lb", price: 65.00, size: "5lb" },
+    { id: "CB-01", name: "Cold Brew Blend - 5lb", price: 62.00, size: "5lb" },
   ]
 
   const handleQuickAdd = (item: typeof quickOrderItems[0]) => {

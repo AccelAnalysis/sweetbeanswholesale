@@ -11,28 +11,28 @@ const retailProducts = [
     id: "RET-01",
     name: "Hampton House Blend",
     roast: "Medium",
-    price: 16.00,
+    price: 21.50,
     image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=2070&auto=format&fit=crop"
   },
   {
     id: "RET-02",
     name: "Ethiopia Yirgacheffe",
     roast: "Light",
-    price: 18.00,
+    price: 24.50,
     image: "https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/1d77007d-8922-4127-bfdd-b6b332328c88.jpg"
   },
   {
     id: "RET-03",
     name: "Sumatra Dark",
     roast: "Dark",
-    price: 16.00,
+    price: 21.50,
     image: "https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=2070&auto=format&fit=crop"
   },
   {
     id: "RET-04",
     name: "Decaf Mexico",
     roast: "Medium",
-    price: 17.00,
+    price: 23.00,
     image: "https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/mexico_coffee.png"
   }
 ]

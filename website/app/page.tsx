@@ -52,7 +52,7 @@ export default function Home() {
             <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg border border-coffee-light/20 hover:shadow-xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1511537632536-b7a5758742af?q=80&w=2070&auto=format&fit=crop"
+                  src="https://drive.google.com/uc?export=view&id=1LGfPXYq2ZBcxT-g1lRdmnvp2b8WN8QVh"
                   alt="Wholesale Coffee Bags"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
