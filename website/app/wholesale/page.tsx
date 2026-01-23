@@ -10,7 +10,7 @@ export default function WholesalePage() {
       <section className="relative h-[500px] flex items-center bg-coffee-dark text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1511537632536-b7a5758742af?q=80&w=2070&auto=format&fit=crop"
+            src="https://drive.google.com/uc?export=view&id=1LGfPXYq2ZBcxT-g1lRdmnvp2b8WN8QVh"
             alt="Wholesale Coffee"
             fill
             className="object-cover opacity-40"
