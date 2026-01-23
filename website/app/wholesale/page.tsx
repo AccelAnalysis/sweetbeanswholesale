@@ -10,7 +10,7 @@ export default function WholesalePage() {
       <section className="relative h-[500px] flex items-center bg-coffee-dark text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/wholesale-coffee.jpg"
+            src="https://images.unsplash.com/photo-1511537632536-b7a5758742af?q=80&w=2070&auto=format&fit=crop"
             alt="Wholesale Coffee"
             fill
             className="object-cover opacity-40"
@@ -264,7 +264,7 @@ export default function WholesalePage() {
             {/* Partner Images */}
             <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
               <Image
-                src="https://images.unsplash.com/photo-1751151015757-5f3aac54d2ad?q=80&w=800&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=800&auto=format&fit=crop"
                 alt="Partner Cafe"
                 fill
                 className="object-cover"
@@ -275,7 +275,7 @@ export default function WholesalePage() {
             </div>
             <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
               <Image
-                src="https://images.unsplash.com/photo-1758243488328-148e39e5e6b1?q=80&w=800&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop"
                 alt="Partner Restaurant"
                 fill
                 className="object-cover"
@@ -286,7 +286,7 @@ export default function WholesalePage() {
             </div>
             <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
               <Image
-                src="https://images.unsplash.com/photo-1661956600684-97d3a4320e45?q=80&w=800&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
                 alt="Partner Office"
                 fill
                 className="object-cover"
@@ -297,7 +297,7 @@ export default function WholesalePage() {
             </div>
             <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
               <Image
-                src="https://images.unsplash.com/photo-1742283064476-c13586b15ad7?q=80&w=800&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop"
                 alt="Partner Bakery"
                 fill
                 className="object-cover"
