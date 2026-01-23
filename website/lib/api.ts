@@ -1,5 +1,5 @@
 
-export const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4aB_eR5i7FCEZiC3B_gf21L5U5qcGQguELzbPKRAQqrmZz6DNNEJO5LfsvnbKH3Ugyw/exec';
+export const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyOc93Go01RYjYbvFA_uoKvwkqu-uJMhBqOsavZ64qdlNK2Ad7DZTSBvHo5VW7VTFs5g/exec';
 
 export interface SubmissionData {
   type: 'quote' | 'application' | 'inquiry' | 'subscription' | 'retail';
