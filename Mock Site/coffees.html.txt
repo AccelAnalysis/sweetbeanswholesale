@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wholesale Coffee Lineup | Sweet Beans Roastery</title>
+  <meta name="description" content="Wholesale coffee lineup and tasting notes for Sweet Beans Coffee & Roastery in Hampton, VA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html">
+          <div class="brand-badge" aria-hidden="true"></div>
+          <div>
+            <h1>Sweet Beans Coffee &amp; Roastery</h1>
+            <p>Wholesale Program • Hampton, VA</p>
+          </div>
+        </a>
+
+        <button class="hamburger" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
+          <span aria-hidden="true"></span>
+        </button>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html">Overview</a>
+          <a href="coffees.html">Coffees</a>
+          <a href="services.html">Wholesale Services</a>
+          <a href="private-label.html">Private Label</a>
+          <a href="ordering.html">Ordering</a>
+          <a href="resources.html">Partner Resources</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="ctas">
+          <a class="btn primary" href="contact.html#samples">Request Samples</a>
+          <a class="btn secondary" href="contact.html#apply">Apply for Wholesale</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-bg" style="background-image:
+            linear-gradient(90deg, rgba(11,11,13,.92), rgba(11,11,13,.55) 55%, rgba(11,11,13,.86)),
+            url('https://source.unsplash.com/1600x900/?coffee,beans,roasted');"></div>
+          <div class="hero-inner">
+            <div>
+              <div class="kicker"><span class="dot" aria-hidden="true"></span>Wholesale coffee lineup</div>
+              <h2>Six core origins to build your program.</h2>
+              <p>
+                A simple lineup that covers balanced, bright, bold, and decaf—built for espresso, drip, and feature brews.
+                Add blends and seasonal rotations once wholesale program details are finalized.
+              </p>
+              <div class="hero-actions">
+                <a class="btn primary" href="contact.html#samples">Request Samples</a>
+                <a class="btn" href="ordering.html">Packaging &amp; Ordering</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Whole bean &amp; grind options</span>
+                <span class="badge">Bulk + retail formats</span>
+                <span class="badge">Single-origin lineup</span>
+              </div>
+            </div>
+
+            <aside class="hero-side">
+              <h3>What you’ll confirm later</h3>
+              <ul>
+                <li><b>Bag sizes:</b> retail + bulk (see Ordering page placeholders)</li>
+                <li><b>MOQ:</b> set by account type</li>
+                <li><b>Lead time:</b> set by roast schedule</li>
+                <li><b>Pricing:</b> published after approval</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3>Core offerings</h3>
+            <p>These notes mirror Sweet Beans’ current wholesale menu descriptions.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,brazil,beans');"></div>
+            <div class="body">
+              <h4>Brazil</h4>
+              <p>Natural sweetness and low acidity with hints of caramel or toffee. Mellow and balanced.</p>
+              <div class="pill">Use-case: espresso base • drip</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,colombia,roast');"></div>
+            <div class="body">
+              <h4>Colombia</h4>
+              <p>Mellow acidity with pleasant brightness; chocolate, fruity, and nutty undertones.</p>
+              <div class="pill">Use-case: drip • pour-over</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,ethiopia,cup');"></div>
+            <div class="body">
+              <h4>Ethiopia</h4>
+              <p>Bright acidity and complex flavor; citrus, floral, tropical fruits, jasmine and even chocolate.</p>
+              <div class="pill">Use-case: feature single-origin</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,guatemala');"></div>
+            <div class="body">
+              <h4>Guatemala</h4>
+              <p>Vibrant acidity with rich chocolate, caramel, and delicate hints of fruits.</p>
+              <div class="pill">Use-case: house drip • balanced</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,sumatra,dark');"></div>
+            <div class="body">
+              <h4>Sumatra</h4>
+              <p>Low acidity with earthy, rich flavors such as cedar, dark chocolate, and dark cherries.</p>
+              <div class="pill">Use-case: bold profile • blends</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?decaf,coffee,beans');"></div>
+            <div class="body">
+              <h4>Decaf Mexico</h4>
+              <p>Tangy acidity with warm, rich flavors. Notes of nutmeg, molasses, and chocolate.</p>
+              <div class="pill">Use-case: decaf drip • decaf espresso</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="banner">
+          <div class="banner-inner">
+            <div>
+              <h3>Want a “house blend” or signature espresso?</h3>
+              <p>Once you confirm volume and goals, Sweet Beans can expand into blends and seasonal rotations.</p>
+            </div>
+            <div class="hero-actions">
+              <a class="btn primary" href="contact.html#apply">Apply for Wholesale</a>
+              <a class="btn secondary" href="contact.html#samples">Request Samples</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Sweet Beans Coffee &amp; Roastery — Wholesale</h4>
+          <p>Small-batch roasting in Hampton, Virginia for wholesale partners.</p>
+          <div class="hr"></div>
+          <p class="small"><b>Wholesale contact</b><br>
+            Phone: <a href="tel:17579646925">(757) 964-6925</a><br>
+            Email: <a href="mailto:sweetbeanscs@gmail.com">sweetbeanscs@gmail.com</a>
+          </p>
+        </div>
+        <div>
+          <h4>What we provide</h4>
+          <p>Roasted coffee • Private label • Training support • Brew recipes</p>
+        </div>
+        <div>
+          <h4>Quick links</h4>
+          <p><a href="ordering.html">Ordering</a><br><a href="contact.html">Request samples</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="small">© 2026 Sweet Beans Coffee &amp; Roastery</span>
+        <span class="small">Hampton, VA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

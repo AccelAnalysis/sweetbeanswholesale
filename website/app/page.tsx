@@ -120,7 +120,7 @@ export default function Home() {
                   </div>
                 </div>
                 <Button variant="outline" className="w-full sm:w-auto" asChild>
-                  <Link href="/roastery">
+                  <Link href="/cafe">
                     Cafe Menu & Hours
                   </Link>
                 </Button>

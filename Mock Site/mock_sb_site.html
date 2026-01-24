@@ -1,0 +1,1532 @@
+import os, textwrap, zipfile, json, re, pathlib, datetime
+base = "/mnt/data/sweetbeans_wholesale_site"
+assets = os.path.join(base, "assets")
+os.makedirs(assets, exist_ok=True)
+
+styles = r"""
+:root{
+  --bg:#0b0b0d;
+  --bg2:#111217;
+  --card:#141622;
+  --text:#f4f5f7;
+  --muted:#b9bcc6;
+  --accent:#7b3fe4; /* Sweet Beans purple accent */
+  --accent2:#f2b84b; /* warm accent for highlights */
+  --border:rgba(255,255,255,.10);
+  --shadow: 0 16px 40px rgba(0,0,0,.45);
+  --radius: 18px;
+  --max: 1120px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background: radial-gradient(1200px 900px at 20% -10%, rgba(123,63,228,.25), transparent 55%),
+              radial-gradient(900px 700px at 90% 10%, rgba(242,184,75,.18), transparent 60%),
+              linear-gradient(180deg, var(--bg), var(--bg2));
+  line-height:1.5;
+}
+
+a{color:inherit; text-decoration:none}
+a:hover{opacity:.95}
+img{max-width:100%; display:block}
+
+.container{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+.skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+.skip:focus{left:16px; top:16px; width:auto; height:auto; background:#fff; color:#000; padding:10px 12px; border-radius:10px; z-index:9999}
+
+header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
+  background: rgba(10,10,14,.65);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+  gap:16px;
+}
+.brand{
+  display:flex; align-items:center; gap:12px; min-width:240px;
+}
+.brand-badge{
+  width:40px; height:40px; border-radius:14px;
+  background: linear-gradient(145deg, rgba(123,63,228,.95), rgba(242,184,75,.55));
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+.brand h1{
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight:700; letter-spacing:.2px;
+  font-size:18px; margin:0; line-height:1.1;
+}
+.brand p{margin:0; color:var(--muted); font-size:12px}
+
+.nav-links{
+  display:flex; align-items:center; gap:16px;
+  flex-wrap:wrap;
+}
+.nav-links a{
+  padding:8px 10px;
+  border-radius:12px;
+  color:var(--muted);
+  font-size:13px;
+}
+.nav-links a.active{
+  color:var(--text);
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.ctas{display:flex; gap:10px; align-items:center}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color:var(--text);
+  font-weight:600;
+  font-size:13px;
+  cursor:pointer;
+  transition: transform .08s ease, background .2s ease, border-color .2s ease;
+  white-space:nowrap;
+}
+.btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.22)}
+.btn.primary{
+  background: linear-gradient(145deg, rgba(123,63,228,.95), rgba(123,63,228,.55));
+  border-color: rgba(123,63,228,.75);
+}
+.btn.secondary{
+  background: linear-gradient(145deg, rgba(242,184,75,.95), rgba(242,184,75,.45));
+  border-color: rgba(242,184,75,.75);
+  color:#1a1406;
+}
+.btn.ghost{background: transparent}
+
+.hamburger{
+  display:none;
+  width:42px; height:42px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  align-items:center; justify-content:center;
+}
+.hamburger span{
+  width:18px; height:2px; background: var(--text);
+  position:relative; display:block; border-radius:2px;
+}
+.hamburger span:before,.hamburger span:after{
+  content:""; position:absolute; left:0; width:18px; height:2px; background: var(--text);
+  border-radius:2px;
+}
+.hamburger span:before{top:-6px}
+.hamburger span:after{top:6px}
+
+.hero{
+  padding:54px 0 26px;
+}
+.hero-card{
+  position:relative;
+  border-radius: calc(var(--radius) + 10px);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow: var(--shadow);
+}
+.hero-bg{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(90deg, rgba(11,11,13,.92), rgba(11,11,13,.55) 55%, rgba(11,11,13,.86)),
+    url('https://source.unsplash.com/1600x900/?coffee,roastery,beans');
+  background-size:cover;
+  background-position:center;
+  filter:saturate(1.05) contrast(1.02);
+}
+.hero-inner{
+  position:relative;
+  padding:44px 28px;
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:22px;
+  align-items:stretch;
+}
+.kicker{
+  display:inline-flex; gap:10px; align-items:center;
+  color: rgba(244,245,247,.92);
+  font-size:12px;
+  padding:7px 10px;
+  border-radius:999px;
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+}
+.dot{
+  width:9px; height:9px; border-radius:999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(123,63,228,.25);
+}
+.hero h2{
+  font-family:"Playfair Display", Georgia, serif;
+  font-size:44px;
+  line-height:1.05;
+  margin:14px 0 12px;
+  letter-spacing:.2px;
+}
+.hero p{
+  margin:0 0 18px;
+  color: rgba(185,188,198,.98);
+  font-size:15px;
+  max-width:58ch;
+}
+.hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
+
+.hero-side{
+  border-radius: var(--radius);
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(20,22,34,.62);
+  padding:18px;
+}
+.hero-side h3{margin:0 0 10px; font-size:14px; letter-spacing:.2px}
+.hero-side ul{margin:0; padding-left:18px; color:var(--muted); font-size:13px}
+.hero-side li{margin:8px 0}
+.badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
+.badge{
+  font-size:12px; color: rgba(244,245,247,.92);
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+}
+
+section{padding:28px 0}
+.section-head{
+  display:flex; align-items:flex-end; justify-content:space-between; gap:18px;
+  margin-bottom:14px;
+}
+.section-head h3{
+  font-size:18px; margin:0;
+  font-family:"Playfair Display", Georgia, serif;
+}
+.section-head p{margin:0; color:var(--muted); font-size:13px; max-width:70ch}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:14px;
+}
+.card{
+  grid-column: span 4;
+  border-radius: var(--radius);
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(20,22,34,.55);
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+  overflow:hidden;
+}
+.card .img{
+  height:150px;
+  background-size:cover;
+  background-position:center;
+  filter:saturate(1.05) contrast(1.02);
+}
+.card .body{padding:14px 14px 16px}
+.card h4{margin:0 0 6px; font-size:14px}
+.card p{margin:0; color:var(--muted); font-size:13px}
+.pill{
+  display:inline-flex; align-items:center;
+  gap:8px;
+  margin-top:10px;
+  font-size:12px;
+  color: rgba(244,245,247,.92);
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+}
+
+.split{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:16px;
+}
+.panel{
+  border-radius: var(--radius);
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(20,22,34,.55);
+  padding:18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+}
+.panel h4{margin:0 0 8px; font-size:14px}
+.panel p, .panel li{color:var(--muted); font-size:13px}
+.panel ul{margin:10px 0 0; padding-left:18px}
+
+.steps{counter-reset: step}
+.step{
+  display:flex; gap:12px; align-items:flex-start;
+  padding:14px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.step:first-child{border-top:0}
+.step:before{
+  counter-increment: step;
+  content: counter(step);
+  flex: 0 0 auto;
+  width:30px; height:30px;
+  border-radius:12px;
+  background: rgba(123,63,228,.18);
+  border:1px solid rgba(123,63,228,.45);
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700;
+}
+.step b{display:block; margin-bottom:4px}
+
+.banner{
+  border-radius: calc(var(--radius) + 10px);
+  border:1px solid rgba(255,255,255,.14);
+  background:
+    linear-gradient(135deg, rgba(123,63,228,.25), rgba(242,184,75,.18)),
+    url('https://source.unsplash.com/1600x700/?coffee,barista');
+  background-size:cover;
+  background-position:center;
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.banner-inner{
+  padding:22px 20px;
+  background: linear-gradient(90deg, rgba(11,11,13,.92), rgba(11,11,13,.55) 60%, rgba(11,11,13,.92));
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+}
+.banner h3{margin:0; font-family:"Playfair Display", Georgia, serif; font-size:22px}
+.banner p{margin:6px 0 0; color:var(--muted); max-width:70ch; font-size:13px}
+
+form{display:grid; gap:12px}
+.field{
+  display:grid; gap:6px;
+}
+label{font-size:12px; color: rgba(244,245,247,.9)}
+input, select, textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  outline:none;
+}
+textarea{min-height:110px; resize:vertical}
+.help{font-size:12px; color: rgba(185,188,198,.95)}
+.form-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+.form-actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.notice{
+  font-size:12px;
+  color: rgba(185,188,198,.95);
+  padding:10px 12px;
+  border-radius:14px;
+  background: rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+footer{
+  margin-top:34px;
+  padding:26px 0;
+  border-top:1px solid rgba(255,255,255,.10);
+  background: rgba(10,10,14,.45);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr 1fr;
+  gap:16px;
+  align-items:start;
+}
+.footer-grid h4{margin:0 0 8px; font-size:13px}
+.footer-grid p, .footer-grid a{color:var(--muted); font-size:13px}
+.small{font-size:12px; color:rgba(185,188,198,.9)}
+.hr{height:1px; background:rgba(255,255,255,.10); margin:14px 0}
+.footer-bottom{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-top:12px}
+
+@media (max-width: 980px){
+  .hero-inner{grid-template-columns:1fr; padding:36px 20px}
+  .hero h2{font-size:38px}
+  .card{grid-column: span 6}
+  .split{grid-template-columns:1fr}
+}
+@media (max-width: 720px){
+  .hamburger{display:flex}
+  .nav-links{
+    display:none;
+    width:100%;
+    padding:10px 0 2px;
+  }
+  .nav-links.open{display:flex}
+  .nav{flex-wrap:wrap}
+  .brand{min-width:auto}
+  .ctas{width:100%; justify-content:flex-start; flex-wrap:wrap}
+  .card{grid-column: span 12}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+"""
+
+site_js = r"""
+(function(){
+  const btn = document.querySelector('[data-menu-toggle]');
+  const links = document.querySelector('.nav-links');
+  if(btn && links){
+    btn.addEventListener('click', () => {
+      links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', links.classList.contains('open') ? 'true' : 'false');
+    });
+  }
+
+  // Active nav highlight
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if(href === path) a.classList.add('active');
+  });
+
+  // Simple client-side form UX for static deploys (no backend):
+  // - If a form has data-mailto, it will open the user's email client with a prefilled message.
+  document.querySelectorAll('form[data-mailto]').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const to = form.getAttribute('data-mailto');
+      const subject = form.getAttribute('data-subject') || 'Wholesale Inquiry';
+      const data = new FormData(form);
+      const lines = [];
+      for(const [k,v] of data.entries()){
+        lines.push(`${k}: ${v}`);
+      }
+      const body = encodeURIComponent(lines.join('\\n'));
+      const url = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = url;
+      const notice = form.querySelector('[data-form-notice]');
+      if(notice){
+        notice.textContent = "Your email app should open with this message prefilled. If it doesn't, copy the details and email us directly.";
+      }
+    });
+  });
+})();
+"""
+
+def page_template(title, active_desc, content_html):
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content="{active_desc}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Sweet Beans Wholesale Home">
+          <div class="brand-badge" aria-hidden="true"></div>
+          <div>
+            <h1>Sweet Beans Coffee &amp; Roastery</h1>
+            <p>Wholesale Program • Hampton, VA</p>
+          </div>
+        </a>
+
+        <button class="hamburger" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
+          <span aria-hidden="true"></span>
+        </button>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html">Overview</a>
+          <a href="coffees.html">Coffees</a>
+          <a href="services.html">Wholesale Services</a>
+          <a href="private-label.html">Private Label</a>
+          <a href="ordering.html">Ordering</a>
+          <a href="resources.html">Partner Resources</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="ctas">
+          <a class="btn primary" href="contact.html#samples">Request Samples</a>
+          <a class="btn secondary" href="contact.html#apply">Apply for Wholesale</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    {content_html}
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Sweet Beans Coffee &amp; Roastery — Wholesale</h4>
+          <p>Small-batch roasting in Hampton, Virginia. Built for cafés, restaurants, offices, and hospitality partners who want consistent coffee and a responsive local roastery.</p>
+          <div class="hr"></div>
+          <p class="small"><b>Wholesale contact</b><br>
+            Phone: <a href="tel:17579646925">(757) 964-6925</a><br>
+            Email: <a href="mailto:sweetbeanscs@gmail.com">sweetbeanscs@gmail.com</a>
+          </p>
+        </div>
+
+        <div>
+          <h4>What we provide</h4>
+          <p>Roasted coffee • Private label • Training support • Brew recipes • Local delivery/pickup options</p>
+          <p class="small">Serving Hampton Roads and surrounding areas (delivery zones and schedules can be customized by account).</p>
+        </div>
+
+        <div>
+          <h4>Quick links</h4>
+          <p><a href="ordering.html">Ordering details</a><br>
+             <a href="coffees.html">Coffee lineup</a><br>
+             <a href="private-label.html">Private label program</a><br>
+             <a href="contact.html">Request samples / Apply</a></p>
+          <div class="hr"></div>
+          <p class="small">Images are placeholders (Unsplash). Replace with Sweet Beans photos before launch.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="small">© {datetime.datetime.now().year} Sweet Beans Coffee &amp; Roastery (Wholesale site draft)</span>
+        <span class="small">Hampton, VA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
+"""
+
+index_html = page_template(
+    "Sweet Beans Wholesale Coffee | Hampton, VA",
+    "Wholesale coffee program for cafés, restaurants, offices, and hospitality partners in Hampton Roads.",
+    """
+<section class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Wholesale roasted in Hampton, Virginia</div>
+          <h2>Coffee your customers remember.</h2>
+          <p>
+            Sweet Beans Coffee &amp; Roastery partners with cafés, restaurants, offices, and hospitality teams that want
+            <b>consistent roast quality</b>, <b>fresh delivery</b>, and <b>a local team</b> that picks up the phone.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="coffees.html">View Coffee Lineup</a>
+            <a class="btn" href="ordering.html">Ordering &amp; Lead Times</a>
+            <a class="btn secondary" href="contact.html#samples">Get a Sample Box</a>
+          </div>
+
+          <div class="badges" aria-label="Highlights">
+            <span class="badge">Whole bean &amp; grind options</span>
+            <span class="badge">Café + restaurant programs</span>
+            <span class="badge">Office coffee supply</span>
+            <span class="badge">Private label available</span>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <h3>Designed for wholesale partners</h3>
+          <ul>
+            <li><b>Fast reorders:</b> repeat your standard lineup without re-explaining specs.</li>
+            <li><b>Support:</b> dial-in sheets, brew recipes, and staff basics to keep quality consistent.</li>
+            <li><b>Flexible formats:</b> retail bags, bulk bags, and curated assortment packs.</li>
+            <li><b>Local relationships:</b> a roastery partner, not just a shipment.</li>
+          </ul>
+          <div class="badges">
+            <span class="badge">Cafés</span>
+            <span class="badge">Restaurants</span>
+            <span class="badge">Offices</span>
+            <span class="badge">Hotels</span>
+            <span class="badge">Churches</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h3>Core coffee lineup (wholesale-ready)</h3>
+        <p>Start with a proven set of origins and expand into blends, seasonal rotations, and signature house coffees.</p>
+      </div>
+      <a class="btn" href="coffees.html">See all coffees</a>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/900x700/?coffee,beans,brazil');"></div>
+        <div class="body">
+          <h4>Brazil</h4>
+          <p>Natural sweetness &amp; low acidity with caramel/toffee notes. Mellow and balanced.</p>
+          <div class="pill">Great for: drip • espresso base</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/900x700/?coffee,colombia');"></div>
+        <div class="body">
+          <h4>Colombia</h4>
+          <p>Mellow acidity with pleasant brightness; chocolate, fruity, and nutty undertones.</p>
+          <div class="pill">Great for: drip • pour-over</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/900x700/?coffee,ethiopia');"></div>
+        <div class="body">
+          <h4>Ethiopia</h4>
+          <p>Bright acidity and complex flavor; citrus, floral, tropical fruit, jasmine, and chocolate.</p>
+          <div class="pill">Great for: pour-over • featured single-origin</div>
+        </div>
+      </article>
+    </div>
+
+    <div style="height:14px"></div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/900x700/?coffee,guatemala');"></div>
+        <div class="body">
+          <h4>Guatemala</h4>
+          <p>Vibrant acidity; rich chocolate, caramel, and delicate fruit hints.</p>
+          <div class="pill">Great for: drip • signature “house” option</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/900x700/?coffee,sumatra');"></div>
+        <div class="body">
+          <h4>Sumatra</h4>
+          <p>Low acidity; earthy and rich flavors with cedar, dark chocolate, and dark cherries.</p>
+          <div class="pill">Great for: dark profile • blends</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/900x700/?decaf,coffee');"></div>
+        <div class="body">
+          <h4>Decaf Mexico</h4>
+          <p>Tangy acidity with warm, rich flavors; nutmeg, molasses, and chocolate notes.</p>
+          <div class="pill">Great for: decaf drip • decaf espresso</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="split">
+      <div class="panel">
+        <h4>How wholesale works</h4>
+        <div class="steps">
+          <div class="step">
+            <div>
+              <b>Start with samples</b>
+              <div class="small">Tell us your brew method(s), volume, and flavor goals. We’ll curate a sample box.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <b>Choose your lineup</b>
+              <div class="small">Pick 2–4 coffees to cover espresso + drip + decaf (or your exact needs).</div>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <b>Set the cadence</b>
+              <div class="small">Define lead time, delivery/pickup schedule, and reorder method for your team.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <b>Deliver consistent quality</b>
+              <div class="small">We provide brew recipes and simple training resources to keep every cup on-point.</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-actions" style="margin-top:10px">
+          <a class="btn primary" href="contact.html#samples">Request Samples</a>
+          <a class="btn" href="ordering.html">Ordering Details</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h4>Programs for different partner types</h4>
+        <ul>
+          <li><b>Cafés &amp; restaurants:</b> espresso + drip program with seasonal rotation options.</li>
+          <li><b>Offices &amp; institutions:</b> reliable supply, easy reorders, and consistent profiles.</li>
+          <li><b>Hospitality:</b> guest-friendly coffee lineup with bulk + portion options (as needed).</li>
+          <li><b>Private label:</b> launch or upgrade your branded coffee offering without building a roastery.</li>
+        </ul>
+        <div class="hr"></div>
+        <p class="small"><b>Note:</b> This is a wholesale-only website draft. Replace imagery and add specific pricing/terms once Sweet Beans approves the program details.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="banner">
+      <div class="banner-inner">
+        <div>
+          <h3>Ready to become a wholesale partner?</h3>
+          <p>Get a curated sample box, then we’ll help you lock in a lineup and ordering cadence that fits your operation.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn secondary" href="contact.html#samples">Request Samples</a>
+          <a class="btn primary" href="contact.html#apply">Apply for Wholesale</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+)
+
+coffees_html = page_template(
+    "Wholesale Coffee Lineup | Sweet Beans Roastery",
+    "Wholesale coffee lineup and tasting notes for Sweet Beans Coffee & Roastery in Hampton, VA.",
+    """
+<section class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(11,11,13,.92), rgba(11,11,13,.55) 55%, rgba(11,11,13,.86)), url('https://source.unsplash.com/1600x900/?coffee,beans,roasted');"></div>
+      <div class="hero-inner">
+        <div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Wholesale coffee lineup</div>
+          <h2>Six core origins to build your program.</h2>
+          <p>
+            A simple, proven lineup that covers balanced, bright, bold, and decaf—built for espresso, drip, and feature brews.
+            (Replace or expand with blends and seasonal offerings as your wholesale program evolves.)
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="contact.html#samples">Request Samples</a>
+            <a class="btn" href="ordering.html">Packaging &amp; Ordering</a>
+          </div>
+          <div class="badges">
+            <span class="badge">Whole bean &amp; grind options</span>
+            <span class="badge">Bulk + retail formats</span>
+            <span class="badge">Single-origin lineup</span>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <h3>Typical wholesale specs (edit as needed)</h3>
+          <ul>
+            <li><b>Formats:</b> retail bags + bulk bags (set sizes in Ordering page)</li>
+            <li><b>Grind:</b> whole bean default; grind options by request</li>
+            <li><b>Labeling:</b> roast date + origin name (recommended)</li>
+            <li><b>Sampling:</b> curated by brew method and flavor goals</li>
+          </ul>
+          <div class="badges">
+            <span class="badge">Espresso</span>
+            <span class="badge">Drip</span>
+            <span class="badge">Pour-over</span>
+            <span class="badge">Decaf</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h3>Core offerings</h3>
+        <p>These tasting notes come from Sweet Beans’ current wholesale menu. Add roast levels, pricing, SKUs, and minimums when ready.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,brazil,beans');"></div>
+        <div class="body">
+          <h4>Brazil</h4>
+          <p>A natural sweetness and low acidity, often with hints of caramel or toffee, making this a mellow and balanced flavor.</p>
+          <div class="pill">Use-case: espresso base • drip</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,colombia,roast');"></div>
+        <div class="body">
+          <h4>Colombia</h4>
+          <p>A mellow acidity which provides a pleasant brightness with chocolate, fruity, and nutty undertones of flavor.</p>
+          <div class="pill">Use-case: drip • pour-over</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,ethiopia,ceramic');"></div>
+        <div class="body">
+          <h4>Ethiopia</h4>
+          <p>A bright acidity and a complex flavor. Citrus and floral undertones bring hints of tropical fruits, jasmine and even chocolate.</p>
+          <div class="pill">Use-case: single-origin feature • pour-over</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,guatemala,cup');"></div>
+        <div class="body">
+          <h4>Guatemala</h4>
+          <p>A vibrant acidity with notes of rich chocolate, caramel and delicate hints of fruits.</p>
+          <div class="pill">Use-case: house drip • balanced profile</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,sumatra,dark');"></div>
+        <div class="body">
+          <h4>Sumatra</h4>
+          <p>A low acidity with earthy and rich flavors such as cedar, dark chocolate, and dark cherries.</p>
+          <div class="pill">Use-case: dark profile • blends</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?decaf,coffee,beans');"></div>
+        <div class="body">
+          <h4>Decaf Mexico</h4>
+          <p>A tangy acidity with warm and rich flavors. Notes of nutmeg, molasses, and chocolate.</p>
+          <div class="pill">Use-case: decaf drip • decaf espresso</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="banner">
+      <div class="banner-inner">
+        <div>
+          <h3>Want blends, espresso profiles, or a “house” coffee?</h3>
+          <p>We can expand beyond these six origins into signature blends and seasonal rotations once your wholesale program is defined.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="contact.html#apply">Apply for Wholesale</a>
+          <a class="btn secondary" href="contact.html#samples">Request Samples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+)
+
+services_html = page_template(
+    "Wholesale Services | Sweet Beans Coffee & Roastery",
+    "Wholesale services for cafes, restaurants, offices, and hospitality partners.",
+    """
+<section class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(11,11,13,.92), rgba(11,11,13,.55) 55%, rgba(11,11,13,.86)), url('https://source.unsplash.com/1600x900/?coffee,shop,espresso');"></div>
+      <div class="hero-inner">
+        <div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Wholesale services</div>
+          <h2>More than beans: a partner program.</h2>
+          <p>Wholesale should be easy. We aim to remove friction from ordering, keep your coffee consistent, and help your team deliver a repeatable cup.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="contact.html#samples">Request Samples</a>
+            <a class="btn" href="ordering.html">Ordering Details</a>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <h3>Service pillars</h3>
+          <ul>
+            <li><b>Consistency:</b> repeatable roast profiles (define final specs with Sweet Beans).</li>
+            <li><b>Support:</b> brew recipes + basic training materials.</li>
+            <li><b>Flexibility:</b> cafés, restaurants, offices, events, and hospitality.</li>
+            <li><b>Private label:</b> build your brand with our roastery.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h3>Programs</h3>
+        <p>Choose the partner model that fits your operation. Each can be customized once your volume and needs are known.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?cafe,coffee,barista');"></div>
+        <div class="body">
+          <h4>Cafés &amp; Coffee Shops</h4>
+          <p>Build an espresso + drip lineup, add a rotating single-origin, and keep the program consistent with dial-in support.</p>
+          <div class="pill">Best for: specialty drinks • daily volume</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?restaurant,coffee');"></div>
+        <div class="body">
+          <h4>Restaurants &amp; Brunch</h4>
+          <p>Serve a crowd-pleasing coffee that matches your menu and keeps service fast. Add decaf and a “premium” option if desired.</p>
+          <div class="pill">Best for: batch brew • table service</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?office,coffee');"></div>
+        <div class="body">
+          <h4>Office Coffee</h4>
+          <p>Reliable supply for teams and clients with easy reorders and predictable profiles. Ideal for recurring cadence accounts.</p>
+          <div class="pill">Best for: convenience • consistency</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?hotel,coffee');"></div>
+        <div class="body">
+          <h4>Hospitality</h4>
+          <p>Guest-friendly coffee program for hotels and venues. Pair bulk ordering with portion-friendly formats if needed.</p>
+          <div class="pill">Best for: guests • events • rooms</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,training');"></div>
+        <div class="body">
+          <h4>Training &amp; Brew Support</h4>
+          <p>Simple tools: brew recipes, basic staff training, and dial-in sheets to keep taste consistent across shifts.</p>
+          <div class="pill">Best for: quality control</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,packaging');"></div>
+        <div class="body">
+          <h4>Private Label</h4>
+          <p>Create a branded coffee line for your restaurant, organization, or retail store—without building your own roasting operation.</p>
+          <div class="pill">Best for: brand extension</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="split">
+      <div class="panel">
+        <h4>What partners usually ask for</h4>
+        <ul>
+          <li><b>“What should I serve as my house coffee?”</b> We’ll recommend a balanced option and a bold option based on your audience.</li>
+          <li><b>“How do I keep it consistent?”</b> We provide brew recipes and simple SOPs (and can add training sessions).</li>
+          <li><b>“Can I brand my own coffee?”</b> Yes—see the Private Label page for the workflow.</li>
+          <li><b>“What’s the ordering cadence?”</b> We tailor it to your weekly volume and storage capacity.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>Next step</h4>
+        <p>If you tell us your brew method, target flavor profile, and estimated weekly usage, we’ll curate samples and recommend a starting lineup.</p>
+        <div class="hero-actions" style="margin-top:10px">
+          <a class="btn secondary" href="contact.html#samples">Request Samples</a>
+          <a class="btn primary" href="contact.html#apply">Apply for Wholesale</a>
+        </div>
+        <div class="hr"></div>
+        <p class="small">Want to mirror Tidewater-style “services” pages? This site already separates programs by partner type (cafés/restaurants/offices) into standalone pages for SEO and clarity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+)
+
+private_label_html = page_template(
+    "Private Label Coffee | Sweet Beans Wholesale",
+    "Private label coffee program for businesses and organizations.",
+    """
+<section class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(11,11,13,.92), rgba(11,11,13,.55) 55%, rgba(11,11,13,.86)), url('https://source.unsplash.com/1600x900/?coffee,labels,packaging');"></div>
+      <div class="hero-inner">
+        <div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Private label</div>
+          <h2>Put your name on a great cup.</h2>
+          <p>
+            Launch a branded coffee line for your restaurant, office, organization, or retail shelf—powered by Sweet Beans roasting.
+            We’ll help you select a lineup, define bag sizes, and create a repeatable reorder process.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="contact.html#private-label">Request private label info</a>
+            <a class="btn" href="ordering.html">Packaging &amp; ordering</a>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <h3>Ideal for</h3>
+          <ul>
+            <li>Restaurants that want branded retail bags</li>
+            <li>Organizations &amp; fundraisers</li>
+            <li>Real estate teams, churches, and events</li>
+            <li>Retail shops seeking a local coffee partner</li>
+          </ul>
+          <div class="badges">
+            <span class="badge">Brand extension</span>
+            <span class="badge">Gift packs</span>
+            <span class="badge">Fundraisers</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="split">
+      <div class="panel">
+        <h4>Private label workflow</h4>
+        <div class="steps">
+          <div class="step"><div><b>Pick your coffee</b><div class="small">Choose 1–3 coffees (or a blend) based on your audience and story.</div></div></div>
+          <div class="step"><div><b>Choose packaging</b><div class="small">Define bag sizes, whole bean vs ground, and case counts.</div></div></div>
+          <div class="step"><div><b>Label &amp; design</b><div class="small">Use your label or have us provide a simple template (final artwork is on you).</div></div></div>
+          <div class="step"><div><b>Launch &amp; reorder</b><div class="small">We document your specs so you can reorder quickly and keep your product consistent.</div></div></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h4>What you’ll want to decide</h4>
+        <ul>
+          <li><b>Audience:</b> everyday drinkers vs specialty crowd</li>
+          <li><b>Flavor profile:</b> balanced, bright, bold, or decaf</li>
+          <li><b>Bag sizes:</b> retail vs bulk</li>
+          <li><b>Sales channel:</b> in-store shelf, online, gifts, or events</li>
+          <li><b>Reorder cadence:</b> weekly, bi-weekly, or monthly</li>
+        </ul>
+        <div class="hr"></div>
+        <p class="small">Tip: Private label works best when it’s tied to a story (local, community, fundraising mission) and a simple “try it” offer (sampler pack).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="banner">
+      <div class="banner-inner">
+        <div>
+          <h3>Want a branded sample pack?</h3>
+          <p>We can start with a small run for sampling and feedback before committing to a larger order cadence.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn secondary" href="contact.html#private-label">Start private label</a>
+          <a class="btn primary" href="contact.html#samples">Request samples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+)
+
+ordering_html = page_template(
+    "Ordering | Sweet Beans Wholesale",
+    "Ordering details, lead times, and logistics for Sweet Beans wholesale partners.",
+    """
+<section class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(11,11,13,.92), rgba(11,11,13,.55) 55%, rgba(11,11,13,.86)), url('https://source.unsplash.com/1600x900/?coffee,delivery,boxes');"></div>
+      <div class="hero-inner">
+        <div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Ordering &amp; logistics</div>
+          <h2>Set it once. Reorder fast.</h2>
+          <p>Use this page to publish your real wholesale terms once finalized (SKUs, prices, minimums, lead times, and delivery zones). Everything below is editable placeholder language.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="contact.html#apply">Apply for wholesale</a>
+            <a class="btn" href="contact.html#samples">Request samples</a>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <h3>Typical ordering components</h3>
+          <ul>
+            <li>Bag sizes + case counts</li>
+            <li>Minimum order quantity (MOQ)</li>
+            <li>Lead time and cutoff schedule</li>
+            <li>Delivery or pickup options</li>
+            <li>Payment terms for approved accounts</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="split">
+      <div class="panel">
+        <h4>Packaging options (placeholders)</h4>
+        <ul>
+          <li><b>Retail bags:</b> 12 oz and/or 1 lb (choose one standard for consistency)</li>
+          <li><b>Bulk bags:</b> 2 lb and/or 5 lb</li>
+          <li><b>Whole bean:</b> default option</li>
+          <li><b>Ground:</b> available for drip/batch brew by request</li>
+        </ul>
+        <p class="small">Recommendation: standardize 2–3 SKUs per coffee so ordering is repeatable and inventory is easy.</p>
+      </div>
+
+      <div class="panel">
+        <h4>Minimums &amp; lead time (placeholders)</h4>
+        <ul>
+          <li><b>MOQ:</b> set by account type (e.g., 1 case minimum, or a minimum total pounds)</li>
+          <li><b>Lead time:</b> 48–72 hours for standard lineup (adjust to your roasting capacity)</li>
+          <li><b>Cutoff:</b> orders placed by (day/time) roast/ship the next (day)</li>
+          <li><b>Urgent orders:</b> subject to availability</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="height:14px"></div>
+
+    <div class="split">
+      <div class="panel">
+        <h4>Delivery &amp; pickup (placeholders)</h4>
+        <ul>
+          <li><b>Pickup:</b> available at the Hampton roastery (address published after confirmation)</li>
+          <li><b>Local delivery:</b> available within defined zones on scheduled days</li>
+          <li><b>Shipping:</b> optional for partners outside the local delivery area</li>
+        </ul>
+        <p class="small">Once Sweet Beans finalizes delivery days and zones, add a simple map image and schedule table here.</p>
+      </div>
+
+      <div class="panel">
+        <h4>Payment terms (placeholders)</h4>
+        <ul>
+          <li><b>New accounts:</b> prepay until ordering cadence is established</li>
+          <li><b>Approved accounts:</b> net terms available by review</li>
+          <li><b>Invoices:</b> emailed with each order</li>
+        </ul>
+        <div class="hr"></div>
+        <p class="small"><b>Next step:</b> request samples, then we’ll finalize your lineup and your reorder method.</p>
+        <div class="hero-actions" style="margin-top:10px">
+          <a class="btn secondary" href="contact.html#samples">Request Samples</a>
+          <a class="btn primary" href="contact.html#apply">Apply</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+)
+
+resources_html = page_template(
+    "Partner Resources | Sweet Beans Wholesale",
+    "Partner resources: brew guides, dial-in sheets, and training support for wholesale accounts.",
+    """
+<section class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(11,11,13,.92), rgba(11,11,13,.55) 55%, rgba(11,11,13,.86)), url('https://source.unsplash.com/1600x900/?coffee,brew,pour-over');"></div>
+      <div class="hero-inner">
+        <div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Partner resources</div>
+          <h2>Consistency tools for your team.</h2>
+          <p>Use this page as your partner hub: brew recipes, dial-in sheets, basic training guides, and a simple way to request support.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="contact.html">Request support</a>
+            <a class="btn" href="ordering.html">Ordering details</a>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <h3>Common requests</h3>
+          <ul>
+            <li>Drip recipe for batch brew</li>
+            <li>Grind size guidance</li>
+            <li>Espresso dial-in basics</li>
+            <li>How to store coffee correctly</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h3>Downloads (placeholders)</h3>
+        <p>Replace these with PDFs you host in <code>/public</code> once created.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,filter');"></div>
+        <div class="body">
+          <h4>Batch Brew Recipe (PDF)</h4>
+          <p>Standard ratio, brew time guidance, and troubleshooting.</p>
+          <div class="hero-actions" style="margin-top:10px">
+            <a class="btn" href="#" onclick="alert('Placeholder: add PDF link'); return false;">Download</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?espresso,coffee');"></div>
+        <div class="body">
+          <h4>Espresso Dial-In Sheet (PDF)</h4>
+          <p>Simple targets + notes for daily adjustment.</p>
+          <div class="hero-actions" style="margin-top:10px">
+            <a class="btn" href="#" onclick="alert('Placeholder: add PDF link'); return false;">Download</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('https://source.unsplash.com/1200x900/?coffee,storage');"></div>
+        <div class="body">
+          <h4>Coffee Storage Guide (PDF)</h4>
+          <p>Keep flavor stable and reduce waste.</p>
+          <div class="hero-actions" style="margin-top:10px">
+            <a class="btn" href="#" onclick="alert('Placeholder: add PDF link'); return false;">Download</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="split">
+      <div class="panel">
+        <h4>Training options (placeholders)</h4>
+        <ul>
+          <li><b>Barista basics:</b> espresso workflow + milk basics</li>
+          <li><b>Brew bar:</b> drip + pour-over fundamentals</li>
+          <li><b>Quality control:</b> tasting and consistency checks</li>
+        </ul>
+        <p class="small">Publish a simple “request training” link that routes to the Contact page.</p>
+      </div>
+      <div class="panel">
+        <h4>Schedule a cupping (placeholder)</h4>
+        <p>Host quarterly cuppings or partner tastings to introduce new coffees and align flavor expectations.</p>
+        <div class="hero-actions" style="margin-top:10px">
+          <a class="btn primary" href="contact.html">Request a cupping</a>
+          <a class="btn" href="coffees.html">Review lineup</a>
+        </div>
+        <div class="hr"></div>
+        <p class="small">Tip: Add a simple calendar embed later (Calendly / Google Calendar).</p>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+)
+
+contact_html = page_template(
+    "Contact Wholesale | Sweet Beans Coffee & Roastery",
+    "Contact Sweet Beans for wholesale samples, applications, and private label requests.",
+    """
+<section class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(11,11,13,.92), rgba(11,11,13,.55) 55%, rgba(11,11,13,.86)), url('https://source.unsplash.com/1600x900/?coffee,warehouse,roastery');"></div>
+      <div class="hero-inner">
+        <div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Contact / Start wholesale</div>
+          <h2>Let’s build your coffee program.</h2>
+          <p>Use the forms below to request samples, apply for wholesale, or inquire about private label. For now, forms open a prefilled email (static-site friendly). Swap to Formspree or a backend later.</p>
+          <div class="hero-actions">
+            <a class="btn secondary" href="#samples">Request Samples</a>
+            <a class="btn primary" href="#apply">Apply</a>
+            <a class="btn" href="#private-label">Private Label</a>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <h3>Direct contact</h3>
+          <ul>
+            <li><b>Phone:</b> (757) 964-6925</li>
+            <li><b>Email:</b> sweetbeanscs@gmail.com</li>
+            <li><b>Contacts:</b> Heather Amodeo or Mallory Rugg</li>
+          </ul>
+          <div class="badges">
+            <span class="badge">Samples</span>
+            <span class="badge">Wholesale</span>
+            <span class="badge">Private label</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="samples">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h3>Request samples</h3>
+        <p>Tell us what you’re serving (espresso/drip), your volume, and the flavor profile you want. We’ll curate a sample box.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <form data-mailto="sweetbeanscs@gmail.com" data-subject="Wholesale Samples Request">
+        <div class="form-row">
+          <div class="field">
+            <label for="s_name">Name</label>
+            <input id="s_name" name="Name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="s_business">Business / Organization</label>
+            <input id="s_business" name="Business" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="s_email">Email</label>
+            <input id="s_email" name="Email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="s_phone">Phone</label>
+            <input id="s_phone" name="Phone" type="tel" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="s_type">Partner type</label>
+            <select id="s_type" name="Partner type">
+              <option>Café / Coffee shop</option>
+              <option>Restaurant</option>
+              <option>Office / Institution</option>
+              <option>Hospitality (hotel/venue)</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="s_volume">Estimated weekly usage</label>
+            <select id="s_volume" name="Estimated weekly usage">
+              <option>Under 5 lb</option>
+              <option>5–15 lb</option>
+              <option>15–30 lb</option>
+              <option>30–60 lb</option>
+              <option>60+ lb</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="s_methods">Brew methods</label>
+          <input id="s_methods" name="Brew methods" placeholder="Example: espresso + batch brew + decaf drip" />
+        </div>
+
+        <div class="field">
+          <label for="s_notes">Flavor goals / notes</label>
+          <textarea id="s_notes" name="Notes" placeholder="What do you want your customers to taste? Any constraints (low acidity, bold, bright, etc.)?"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Send sample request</button>
+          <a class="btn" href="coffees.html">Review lineup</a>
+          <span class="help" data-form-notice></span>
+        </div>
+
+        <div class="notice">
+          Static site note: This form opens a prefilled email in your email client. To make it submit without email apps,
+          replace <code>data-mailto</code> with a real form endpoint (Formspree, etc.).
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h3>Apply for wholesale</h3>
+        <p>Once approved, we’ll finalize your lineup, packaging, minimums, and your reorder cadence.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <form data-mailto="sweetbeanscs@gmail.com" data-subject="Wholesale Application">
+        <div class="form-row">
+          <div class="field">
+            <label for="a_business">Business name</label>
+            <input id="a_business" name="Business name" required />
+          </div>
+          <div class="field">
+            <label for="a_contact">Primary contact</label>
+            <input id="a_contact" name="Primary contact" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="a_email">Email</label>
+            <input id="a_email" name="Email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="a_phone">Phone</label>
+            <input id="a_phone" name="Phone" type="tel" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="a_address">Business address</label>
+          <input id="a_address" name="Business address" placeholder="Street, City, State, ZIP" />
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="a_delivery">Delivery / pickup preference</label>
+            <select id="a_delivery" name="Delivery preference">
+              <option>Pickup (Hampton roastery)</option>
+              <option>Local delivery (if available)</option>
+              <option>Shipping (if available)</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="a_volume">Estimated weekly usage</label>
+            <select id="a_volume" name="Estimated weekly usage">
+              <option>Under 5 lb</option>
+              <option>5–15 lb</option>
+              <option>15–30 lb</option>
+              <option>30–60 lb</option>
+              <option>60+ lb</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="a_equipment">Equipment / brew setup (optional)</label>
+          <input id="a_equipment" name="Equipment" placeholder="Example: batch brewer brand/model, espresso machine, grinder" />
+        </div>
+
+        <div class="field">
+          <label for="a_notes">Anything else we should know?</label>
+          <textarea id="a_notes" name="Notes" placeholder="Your goals, ideal flavor profile, timeline to start, etc."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Send application</button>
+          <a class="btn" href="ordering.html">Review ordering</a>
+          <span class="help" data-form-notice></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="private-label">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h3>Private label inquiry</h3>
+        <p>Start your branded coffee line: tell us the audience, packaging, and how you plan to sell it.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <form data-mailto="sweetbeanscs@gmail.com" data-subject="Private Label Inquiry">
+        <div class="form-row">
+          <div class="field">
+            <label for="p_name">Name</label>
+            <input id="p_name" name="Name" required />
+          </div>
+          <div class="field">
+            <label for="p_org">Business / organization</label>
+            <input id="p_org" name="Business" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="p_email">Email</label>
+            <input id="p_email" name="Email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="p_phone">Phone</label>
+            <input id="p_phone" name="Phone" type="tel" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="p_use">How will you sell it?</label>
+          <input id="p_use" name="Sales channel" placeholder="In-store shelf, online, gifts, fundraiser, events…" />
+        </div>
+
+        <div class="field">
+          <label for="p_notes">Notes</label>
+          <textarea id="p_notes" name="Notes" placeholder="Audience, desired flavors, estimated monthly volume, packaging preferences, etc."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Send private label inquiry</button>
+          <a class="btn" href="private-label.html">Learn more</a>
+          <span class="help" data-form-notice></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+"""
+)
+
+# Write files
+with open(os.path.join(assets, "styles.css"), "w", encoding="utf-8") as f:
+    f.write(styles.strip()+"\n")
+with open(os.path.join(assets, "site.js"), "w", encoding="utf-8") as f:
+    f.write(site_js.strip()+"\n")
+
+pages = {
+    "index.html": index_html,
+    "coffees.html": coffees_html,
+    "services.html": services_html,
+    "private-label.html": private_label_html,
+    "ordering.html": ordering_html,
+    "resources.html": resources_html,
+    "contact.html": contact_html,
+}
+
+for name, html in pages.items():
+    with open(os.path.join(base, name), "w", encoding="utf-8") as f:
+        f.write(html)
+
+# Zip it
+zip_path = "/mnt/data/sweetbeans_wholesale_site.zip"
+with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+    for root, dirs, files in os.walk(base):
+        for file in files:
+            full = os.path.join(root, file)
+            rel = os.path.relpath(full, base)
+            z.write(full, arcname=os.path.join("sweetbeans_wholesale_site", rel))
+
+zip_path
