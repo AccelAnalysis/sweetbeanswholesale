@@ -19,7 +19,7 @@ const products = [
     use: "Espresso base, blends",
     sizes: "12oz, 2lb, 5lb",
     price: 61.00,
-    image: "https://images.unsplash.com/photo-1611854779393-1b2ae9bc4048?q=80&w=2000&auto=format&fit=crop"
+    image: "/sweetbeanswholesale/brazil.png"
   },
   {
     id: "COL-01",
@@ -43,7 +43,7 @@ const products = [
     use: "Pour-over, specialty",
     sizes: "12oz, 2lb, 5lb",
     price: 70.00,
-    image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=2080&auto=format&fit=crop"
+    image: "/sweetbeanswholesale/ethiopia.png"
   },
   {
     id: "GUA-01",
@@ -79,7 +79,7 @@ const products = [
     use: "Decaf alternatives",
     sizes: "12oz, 2lb, 5lb",
     price: 67.50,
-    image: "https://images.unsplash.com/photo-1552346990-3543163013ba?q=80&w=2070&auto=format&fit=crop"
+    image: "/sweetbeanswholesale/decaf-mexico.png"
   }
 ]
 
@@ -209,7 +209,7 @@ export default function CatalogPage() {
 
                 <div className="pt-4 flex items-center justify-between border-t border-coffee-light/20">
                   <div className="flex flex-col">
-                    <span className="text-xs text-coffee-medium">Wholesale Price (5lb)</span>
+                    <span className="text-xs text-coffee-medium">Wholesale Price (5lb) Non-Partner</span>
                     <span className="text-lg font-bold text-coffee-dark">${product.price.toFixed(2)}</span>
                   </div>
                   <Button size="sm" onClick={() => handleAddToCart(product)} className="gap-2">

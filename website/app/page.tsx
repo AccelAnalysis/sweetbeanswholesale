@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 import { ArrowRight, Coffee, MapPin, Store } from "lucide-react"
 
 export default function Home() {
@@ -10,6 +11,13 @@ export default function Home() {
       <section className="relative h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1743356629215-abb470447e71?q=80&w=2000&auto=format&fit=crop"
+            alt="Coffee Roasting Background"
+            fill
+            className="object-cover"
+            priority
+          />
           <iframe
             src="https://player.vimeo.com/video/1157684253?background=1&autoplay=1&loop=1&byline=0&title=0"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full aspect-video max-w-none md:w-full md:h-[56.25vw] md:aspect-auto pointer-events-none"
@@ -52,7 +60,7 @@ export default function Home() {
             <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg border border-coffee-light/20 hover:shadow-xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="https://drive.google.com/uc?export=view&id=1LGfPXYq2ZBcxT-g1lRdmnvp2b8WN8QVh"
+                  src="/sweetbeanswholesale/wholesale-coffee.png"
                   alt="Wholesale Coffee Bags"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -137,8 +145,9 @@ export default function Home() {
             {/* Roast 1 */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border border-coffee-light/30 hover:border-brand-purple/30 transition-colors">
               <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-lg mb-4">
-                 <Image
-                  src="https://images.unsplash.com/photo-1621251399450-4222df422273?q=80&w=2000&auto=format&fit=crop"
+                 <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?q=80&w=800&auto=format&fit=crop"
+                  fallbackSrc="/sweetbeanswholesale/brazil.png"
                   alt="Brazil Coffee"
                   fill
                   className="object-cover"
@@ -156,8 +165,9 @@ export default function Home() {
             {/* Roast 2 */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border border-coffee-light/30 hover:border-brand-purple/30 transition-colors">
               <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-lg mb-4">
-                 <Image
-                  src="https://images.unsplash.com/photo-1587049352851-8d4e8918685f?q=80&w=2000&auto=format&fit=crop"
+                 <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1611854779393-1b2a97063d83?q=80&w=800&auto=format&fit=crop"
+                  fallbackSrc="/sweetbeanswholesale/ethiopia.png"
                   alt="Ethiopia Coffee"
                   fill
                   className="object-cover"
@@ -175,8 +185,9 @@ export default function Home() {
             {/* Roast 3 */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border border-coffee-light/30 hover:border-brand-purple/30 transition-colors">
               <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-lg mb-4">
-                 <Image
-                  src="https://images.unsplash.com/photo-1524350876685-274059332603?q=80&w=2000&auto=format&fit=crop"
+                 <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1587049359689-a2a095536484?q=80&w=800&auto=format&fit=crop"
+                  fallbackSrc="/sweetbeanswholesale/decaf-mexico.png"
                   alt="Decaf Mexico Coffee"
                   fill
                   className="object-cover"

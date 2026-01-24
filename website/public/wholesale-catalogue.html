@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Beans Coffee | Wholesale Catalogue 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Color Scheme matching Logo/Brand */
+            --primary-dark: #2c241f;  /* Deep Coffee Brown */
+            --accent-gold: #c59d5f;   /* Gold/Burlap */
+            --cream-bg: #f9f7f2;      /* Light Cream */
+            --white: #ffffff;
+            --text-grey: #4a4a4a;
+            --light-border: #e6e2dd;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream-bg);
+            color: var(--primary-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-dark);
+        }
+
+        .container {
+            max-width: 1000px; /* Optimal reading width for catalogue */
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* --- COVER PAGE --- */
+        .cover-page {
+            height: 100vh;
+            min-height: 800px;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 4rem;
+        }
+
+        .logo-container {
+            width: 200px;
+            margin-bottom: 2rem;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .cover-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cover-subtitle {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+        }
+
+        .cover-details {
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        /* --- SECTION STYLES --- */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-gold);
+            margin: 1rem auto 0;
+        }
+
+        /* --- MISSION / INTRO --- */
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mission-card {
+            background: var(--white);
+            padding: 2rem;
+            border-top: 4px solid var(--accent-gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .mission-card h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* --- HOW IT WORKS --- */
+        .bg-white {
+            background-color: var(--white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .step {
+            position: relative;
+            padding-top: 1rem;
+        }
+
+        .step-num {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            opacity: 0.3;
+            font-family: 'Merriweather', serif;
+            position: absolute;
+            top: -1.5rem;
+            left: 0;
+            z-index: 0;
+        }
+
+        .step-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .step h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .fit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: var(--cream-bg);
+            padding: 3rem;
+            border-radius: 8px;
+        }
+
+        .fit-list ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .fit-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .fit-list li::before {
+            content: '•';
+            color: var(--accent-gold);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- QUICK GUIDE TABLE --- */
+        .table-container {
+            overflow-x: auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid var(--primary-dark);
+            font-family: 'Merriweather', serif;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--light-border);
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* --- PRODUCT CARDS --- */
+        .coffee-card {
+            display: flex;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            page-break-inside: avoid; /* Keeps cards whole when printing */
+        }
+
+        .card-image {
+            width: 35%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+        .card-content {
+            width: 65%;
+            padding: 3rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--light-border);
+            padding-bottom: 1rem;
+        }
+
+        .card-header h3 {
+            font-size: 1.8rem;
+        }
+
+        .process-tag {
+            background: var(--cream-bg);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-grey);
+            font-weight: 600;
+        }
+
+        .story-text {
+            font-style: italic;
+            color: var(--text-grey);
+            margin-bottom: 2rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .detail-group h5 {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .detail-group ul {
+            list-style: none;
+        }
+
+        .detail-group li {
+            font-size: 0.95rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .roast-level {
+            margin-top: 1.5rem;
+            display: inline-block;
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-box {
+            border: 2px solid var(--accent-gold);
+            padding: 3rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-box h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-details a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        /* --- PRINT / PDF OPTIMIZATIONS --- */
+        @media print {
+            body {
+                background: white;
+            }
+            .cover-page {
+                height: 100vh;
+                background: white !important;
+                color: black !important;
+                page-break-after: always;
+            }
+            .cover-title, .cover-subtitle, h1, h2, h3 {
+                color: black !important;
+            }
+            .section-title {
+                margin-top: 2rem;
+            }
+            .coffee-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                margin-bottom: 2rem;
+                page-break-inside: avoid;
+            }
+            .intro-section, .how-it-works-section, .catalogue-section {
+                page-break-after: always;
+            }
+            footer {
+                page-break-inside: avoid;
+                color: black !important;
+                background: white !important;
+            }
+            .cta-box {
+                border-color: black;
+            }
+            .cta-box h3 {
+                color: black;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mission-grid, .process-steps, .fit-grid, .coffee-card, .details-grid {
+                grid-template-columns: 1fr;
+            }
+            .coffee-card {
+                flex-direction: column;
+            }
+            .card-image {
+                width: 100%;
+                height: 250px;
+            }
+            .card-content {
+                width: 100%;
+                padding: 2rem;
+            }
+            .cover-title {
+                font-size: 2.5rem;
+            }
+            .step-num {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- COVER PAGE -->
+    <div class="cover-page">
+        <div class="logo-container">
+            <img src="Sweet_Beans_Logo_Jan2026.png" alt="Sweet Beans Logo">
+        </div>
+        <h1 class="cover-title">Wholesale Program<br>& Coffee Catalogue</h1>
+        <div class="cover-subtitle">Small-Batch • Woman-Owned • Veteran-Owned</div>
+        <div class="cover-details">
+            <p>Hampton, Virginia</p>
+            <p>Updated January 2026</p>
+        </div>
+    </div>
+
+    <!-- PAGE 2: INTRO -->
+    <section class="container intro-section">
+        <h2 class="section-title">Roasted with Purpose</h2>
+        <p class="intro-text">
+            Sweet Beans Coffee & Roastery is built for partners who can't afford "good enough." 
+            When your guests order coffee, they're buying more than caffeine—they're buying an experience, a ritual, and a reason to come back.
+        </p>
+
+        <div class="mission-grid">
+            <div class="mission-card">
+                <h4>Consistent Flavor</h4>
+                <p>Repeatable profiles your customers can rely on. We roast for consistency so your "House Blend" tastes the same in January as it does in July.</p>
+            </div>
+            <div class="mission-card">
+                <h4>Real Menu Fit</h4>
+                <p>A line-up designed for practical service: drip, espresso, and retail. We focus on coffees that work in the real world.</p>
+            </div>
+            <div class="mission-card">
+                <h4>Simple Service</h4>
+                <p>Easy ordering and responsive communication. We are real people in Hampton, VA, just a text or email away.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 3: HOW IT WORKS -->
+    <section class="bg-white how-it-works-section">
+        <div class="container">
+            <h2 class="section-title">Wholesale, Made Simple</h2>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <div class="step-content">
+                        <h4>Tell us what you serve</h4>
+                        <p>House drip, espresso, decaf? Your menu goals drive the lineup we build for you.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <div class="step-content">
+                        <h4>We recommend</h4>
+                        <p>Choose from our core single-origins or build a custom rotation to keep it fresh.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <div class="step-content">
+                        <h4>Request a flight</h4>
+                        <p>Taste, dial in, and pick the coffees that match your audience and price point.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <div class="step-content">
+                        <h4>Order + Repeat</h4>
+                        <p>Set a cadence that fits your volume. Reordering is fast and communication is clean.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fit-grid">
+                <div class="fit-list">
+                    <h4>Great fit for:</h4>
+                    <ul>
+                        <li>Cafés & Coffee Bars</li>
+                        <li>Restaurants & Brunch Spots</li>
+                        <li>Bakeries & Dessert Shops</li>
+                        <li>Boutiques & Gift Retail</li>
+                        <li>Offices & Hospitality</li>
+                    </ul>
+                </div>
+                <div class="fit-list">
+                    <h4>Available Options:</h4>
+                    <ul>
+                        <li>Whole Bean (Standard)</li>
+                        <li>Ground on Request</li>
+                        <li>Multiple Bag Sizes (Retail/Bulk)</li>
+                        <li>Decaf + Rotating Single Origins</li>
+                        <li>Menu Descriptions provided</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 4: QUICK GUIDE -->
+    <section class="container">
+        <h2 class="section-title">Quick Guide: The Lineup</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Coffee</th>
+                        <th>Signature Notes</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Brazil Cerrado</strong></td>
+                        <td>Cocoa, Roasted Nuts, Caramel</td>
+                        <td>House Drip, Espresso Base</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Colombia Huila</strong></td>
+                        <td>Caramel, Baking Spice, Citrus</td>
+                        <td>Espresso, Drip, Cold Brew</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ethiopia Yirgacheffe</strong></td>
+                        <td>Jasmine, Bergamot, Stone Fruit</td>
+                        <td>Pour-Over Bar, Single-Origin Feature</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Guatemala Antigua</strong></td>
+                        <td>Cocoa, Brown Sugar, Citrus</td>
+                        <td>House Drip, Medium Espresso</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sumatra Mandheling</strong></td>
+                        <td>Deep Body, Earthy, Cedar</td>
+                        <td>Dark Roast Lovers, Cold Brew</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Decaf Mexico</strong></td>
+                        <td>Cocoa, Toffee, Smooth Finish</td>
+                        <td>All-Day Decaf, Dessert Pairings</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- PAGE 5+: DETAILED CATALOGUE -->
+    <section class="container catalogue-section">
+        <h2 class="section-title">Detailed Profiles</h2>
+
+        <!-- Brazil -->
+        <div class="coffee-card">
+            <div class="card-image">
+                <img src="brazil.png" alt="Brazil Coffee">
+            </div>
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Brazil Cerrado</h3>
+                    <span class="process-tag">Natural Process</span>
+                </div>
+                <p class="story-text">
+                    "Comforting and crowd-pleasing. Brazil Santos brings a steady, chocolate-and-nut backbone that plays beautifully as a dependable house coffee or as the base note in espresso."
+                </p>
+                <div class="details-grid">
+                    <div class="detail-group">
+                        <h5>Tasting Notes</h5>
+                        <ul>
+                            <li>• Roasted Peanut</li>
+                            <li>• Milk Chocolate</li>
+                            <li>• Creamy Body</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <h5>Best For</h5>
+                        <ul>
+                            <li>• House Drip Coffee</li>
+                            <li>• Cold Brew Base</li>
+                            <li>• Blending for body</li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="roast-level">Roast: Medium</span>
+            </div>
+        </div>
+
+        <!-- Colombia -->
+        <div class="coffee-card">
+            <div class="card-image">
+                <img src="columbia.png" alt="Colombia Coffee">
+            </div>
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Colombia Huila</h3>
+                    <span class="process-tag">Washed Process</span>
+                </div>
+                <p class="story-text">
+                    "A classic, balanced cup with a little sparkle. Colombia Supremo is the 'everybody wins' option—sweet, clean, and flexible across brew methods."
+                </p>
+                <div class="details-grid">
+                    <div class="detail-group">
+                        <h5>Tasting Notes</h5>
+                        <ul>
+                            <li>• Caramel Sweetness</li>
+                            <li>• Citrus Zest</li>
+                            <li>• Clean Finish</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <h5>Best For</h5>
+                        <ul>
+                            <li>• Single-Origin Pour Over</li>
+                            <li>• Premium Batch Brew</li>
+                            <li>• Retail Bags</li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="roast-level">Roast: Medium</span>
+            </div>
+        </div>
+
+        <!-- Ethiopia -->
+        <div class="coffee-card">
+            <div class="card-image">
+                <img src="ethiopia.png" alt="Ethiopia Coffee">
+            </div>
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Ethiopia Yirgacheffe</h3>
+                    <span class="process-tag">Washed Process</span>
+                </div>
+                <p class="story-text">
+                    "For the adventurous palate. This coffee showcases the delicate, tea-like qualities that make Ethiopian beans famous. It's complex, floral, and perfect for showcasing your shop's brewing skill."
+                </p>
+                <div class="details-grid">
+                    <div class="detail-group">
+                        <h5>Tasting Notes</h5>
+                        <ul>
+                            <li>• Jasmine Floral</li>
+                            <li>• Berries / Stone Fruit</li>
+                            <li>• Tea-like Body</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <h5>Best For</h5>
+                        <ul>
+                            <li>• Slow Bar / Pour Over</li>
+                            <li>• Light Roast Enthusiasts</li>
+                            <li>• Summer Iced Coffee</li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="roast-level">Roast: Light-Medium</span>
+            </div>
+        </div>
+
+        <!-- Guatemala -->
+        <div class="coffee-card">
+            <div class="card-image">
+                <img src="guatemala.png" alt="Guatemala Coffee">
+            </div>
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Guatemala Antigua</h3>
+                    <span class="process-tag">Washed Process</span>
+                </div>
+                <p class="story-text">
+                    "Complex yet approachable. Known for its volcanic soil origins, this coffee brings a delightful spice note paired with deep cocoa, making it a sophisticated option for any menu."
+                </p>
+                <div class="details-grid">
+                    <div class="detail-group">
+                        <h5>Tasting Notes</h5>
+                        <ul>
+                            <li>• Spiced Cocoa</li>
+                            <li>• Toffee Sweetness</li>
+                            <li>• Elegant Acidity</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <h5>Best For</h5>
+                        <ul>
+                            <li>• Featured Daily Brew</li>
+                            <li>• Holiday Blends</li>
+                            <li>• French Press Service</li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="roast-level">Roast: Medium</span>
+            </div>
+        </div>
+
+        <!-- Sumatra -->
+        <div class="coffee-card">
+            <div class="card-image">
+                <img src="sumatra.png" alt="Sumatra Coffee">
+            </div>
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Sumatra Mandheling</h3>
+                    <span class="process-tag">Wet-Hulled</span>
+                </div>
+                <p class="story-text">
+                    "Mandheling is the comfort-coffee for guests who want depth. Produces a syrupy body and grounding earth tones—perfect when you need a bold cup that stands up to milk."
+                </p>
+                <div class="details-grid">
+                    <div class="detail-group">
+                        <h5>Tasting Notes</h5>
+                        <ul>
+                            <li>• Dark Chocolate & Cedar</li>
+                            <li>• Earthy Spice</li>
+                            <li>• Low Perceived Acidity</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <h5>Best For</h5>
+                        <ul>
+                            <li>• Bold Drip & Diner Service</li>
+                            <li>• Espresso Blends (Lattes)</li>
+                            <li>• Rich, Lingering Finish</li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="roast-level">Roast: Medium-Dark</span>
+            </div>
+        </div>
+
+        <!-- Decaf -->
+        <div class="coffee-card">
+            <div class="card-image">
+                <img src="decaf-mexico.png" alt="Decaf Coffee">
+            </div>
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Decaf Mexico</h3>
+                    <span class="process-tag">Water Process</span>
+                </div>
+                <p class="story-text">
+                    "Decaf shouldn't feel like an afterthought. This Mexico decaf keeps warmth and sweetness—ideal for evening service and anyone who wants the experience without the caffeine."
+                </p>
+                <div class="details-grid">
+                    <div class="detail-group">
+                        <h5>Tasting Notes</h5>
+                        <ul>
+                            <li>• Cinnamon / Nutmeg Warmth</li>
+                            <li>• Molasses-like Sweetness</li>
+                            <li>• Cocoa Finish</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <h5>Best For</h5>
+                        <ul>
+                            <li>• After-Dinner Service</li>
+                            <li>• Dessert Pairings</li>
+                            <li>• All-Day Café Programs</li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="roast-level">Roast: Medium</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="cta-box">
+            <h3>Ready to partner?</h3>
+            <p>We’d love to send you samples or schedule a tasting.</p>
+            <div class="contact-details">
+                <p><strong>Email:</strong> <a href="mailto:sweetbeanscs@gmail.com">sweetbeanscs@gmail.com</a></p>
+                <p><strong>Phone:</strong> 757-964-6925</p>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+                Women-Owned • Veteran-Owned • Community-Rooted
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

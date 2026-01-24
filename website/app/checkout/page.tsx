@@ -72,16 +72,16 @@ export default function CheckoutPage() {
           <div className="h-20 w-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
             <CheckCircle2 className="h-10 w-10" />
           </div>
-          <h1 className="text-3xl font-bold text-coffee-dark">Quote Requested!</h1>
+          <h1 className="text-3xl font-bold text-coffee-dark">Consultation Requested!</h1>
           <p className="text-coffee-medium text-lg">
-            Thank you, {formData.firstName}. We have received your order request.
+            Thank you, {formData.firstName}. We have received your request.
           </p>
           <div className="bg-cream/50 p-4 rounded-lg text-sm text-coffee-medium text-left space-y-2">
             <p><strong>Next Steps:</strong></p>
             <ol className="list-decimal list-inside space-y-1">
-              <li>Our team will review your order details.</li>
-              <li>We will email you a formal invoice including shipping.</li>
-              <li>Once approved, we&apos;ll roast and ship your coffee!</li>
+              <li>A Sweet Beans representative will call you within 24 hours to discuss your order and payment.</li>
+              <li>We&apos;ll send a personalized invoice including shipping and final pricing.</li>
+              <li>Once approved, we&apos;ll roast fresh coffee specifically for your order and arrange delivery.</li>
             </ol>
           </div>
           <Button size="lg" className="w-full" asChild>
@@ -114,7 +114,10 @@ export default function CheckoutPage() {
           <Link href="/wholesale/catalog" className="text-coffee-medium hover:text-brand-purple flex items-center gap-2 text-sm font-medium mb-4">
             <ArrowLeft className="h-4 w-4" /> Back to Catalog
           </Link>
-          <h1 className="text-3xl md:text-4xl font-bold text-coffee-dark">Request a Quote</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-coffee-dark mb-2">Request a Custom Quote & Consultation</h1>
+          <p className="text-coffee-medium max-w-3xl">
+            Our dedicated wholesale team will personally call you to discuss your order details, confirm pricing, and arrange payment—making the process seamless and tailored to your business needs.
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -170,6 +173,9 @@ export default function CheckoutPage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                     />
+                    <p className="text-xs text-coffee-medium">
+                      Required for our representative to provide personalized service and discuss your order.
+                    </p>
                   </div>
                   <div className="md:col-span-2 space-y-2">
                     <Label htmlFor="company">Company / Business Name</Label>
@@ -190,7 +196,7 @@ export default function CheckoutPage() {
                   Payment Preference
                 </h2>
                 <p className="text-sm text-coffee-medium">
-                  We will send a formal invoice to your email. How would you prefer to pay?
+                  Our team will call you to discuss payment options and finalize the best method for your business.
                 </p>
                 <RadioGroup 
                   defaultValue="invoice" 
@@ -295,11 +301,11 @@ export default function CheckoutPage() {
                     Submitting...
                   </>
                 ) : (
-                  "Submit Quote Request"
+                  "Request Personal Consultation"
                 )}
               </Button>
               <p className="text-xs text-center text-coffee-medium mt-4">
-                No payment required now. We will contact you to finalize.
+                Our representative will call you within 24 hours to complete your order.
               </p>
             </div>
           </div>

@@ -10,7 +10,7 @@ export default function WholesalePage() {
       <section className="relative h-[500px] flex items-center bg-coffee-dark text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://drive.google.com/uc?export=view&id=1LGfPXYq2ZBcxT-g1lRdmnvp2b8WN8QVh"
+            src="/sweetbeanswholesale/wholesale-coffee.png"
             alt="Wholesale Coffee"
             fill
             className="object-cover opacity-40"
@@ -310,7 +310,7 @@ export default function WholesalePage() {
           
           <div className="text-center mt-12 pt-8 border-t border-coffee-light/10">
             <p className="text-coffee-medium font-semibold">
-              Proudly serving <span className="text-brand-purple text-xl mx-1">50+</span> businesses across Virginia
+              Proudly serving <span className="text-brand-purple text-xl mx-1">YOU +</span> businesses across Virginia
             </p>
           </div>
         </div>
@@ -330,8 +330,8 @@ export default function WholesalePage() {
                   <div>
                     <h3 className="font-bold text-coffee-dark">Delivery Zones</h3>
                     <p className="text-sm text-coffee-medium mt-1">
-                      Free delivery in Hampton, Newport News, Yorktown, and Poquoson. 
-                      Low-cost delivery to Norfolk, Virginia Beach, and Suffolk.
+                      Free pickup. Low-costdelivery in Hampton, Newport News, Yorktown, Poquoson, Williamsburg, James City County, Isle of Wight,
+                      Norfolk, Virginia Beach, Suffolk, Chesapeake, Portsmouth, Southampton County, and more.
                     </p>
                   </div>
                 </div>
@@ -340,7 +340,7 @@ export default function WholesalePage() {
                   <div>
                     <h3 className="font-bold text-coffee-dark">Minimums & Lead Times</h3>
                     <p className="text-sm text-coffee-medium mt-1">
-                      Low 10lb minimum per order. 3-5 day lead time for roasting and delivery.
+                      Low 10lb minimum per order. 3-5 day lead time for roasting and delivery. Rush orders available.
                       Pickup available at our Hampton roastery.
                     </p>
                   </div>

@@ -12,7 +12,7 @@ export default function RoasteryPage() {
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1598516963288-467472097746?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1561986810-4f3ba2f46ceb?q=80&w=2000&auto=format&fit=crop"
             alt="Sweet Beans Roastery"
             fill
             className="object-cover"
@@ -63,14 +63,14 @@ export default function RoasteryPage() {
                   </div>
                   <p className="text-sm text-coffee-medium">
                     Mon-Fri: 7am - 4pm<br />
-                    Sat-Sun: 8am - 3pm
+                    Sat-Sun: 8am - 4pm
                   </p>
                 </div>
               </div>
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
                <Image
-                  src="https://images.unsplash.com/photo-1525640788966-69bdb028aa73?q=80&w=2076&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1515471897120-85416077e011?q=80&w=2000&auto=format&fit=crop"
                   alt="Roasting Process"
                   fill
                   className="object-cover"
