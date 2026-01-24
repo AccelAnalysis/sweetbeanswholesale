@@ -19,6 +19,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sweet Beans Coffee & Roastery | Hampton, VA",
   description: "Local small-batch coffee roaster in Hampton, VA. Serving the Peninsula with fresh roasted coffee, wholesale partnerships, and community vibes.",
+  openGraph: {
+    title: "Sweet Beans Coffee & Roastery | Hampton, VA",
+    description: "Local small-batch coffee roaster in Hampton, VA. Serving the Peninsula with fresh roasted coffee, wholesale partnerships, and community vibes.",
+    images: [
+      {
+        url: "/sweetbeanswholesale/Sweet_Beans_Logo_Jan2026.png",
+        width: 1200,
+        height: 630,
+        alt: "Sweet Beans Coffee & Roastery Logo",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
