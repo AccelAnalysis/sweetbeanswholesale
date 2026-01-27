@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useEffect, useMemo, useRef, useState } from "react"
 import type { AppData, CafeMenuItem, RetailProduct, SiteAsset, WholesaleProduct, HomeFeaturedCoffee } from "@/lib/types"
 import { initialData } from "@/lib/initial-data"
+import { fetchSiteData, saveSiteData } from "@/lib/api"
 
 type MenuContextValue = {
   data: AppData
@@ -25,17 +26,7 @@ type MenuContextValue = {
   removeHomeFeaturedCoffee: (id: string) => void
 }
 
-const STORAGE_KEY = "sb-menu-data-v1"
-
 const MenuContext = createContext<MenuContextValue | undefined>(undefined)
-
-function safeParse(json: string): unknown {
-  try {
-    return JSON.parse(json)
-  } catch {
-    return undefined
-  }
-}
 
 function normalizeAppData(raw: unknown): AppData {
   if (!raw || typeof raw !== "object") return initialData
@@ -56,26 +47,36 @@ function normalizeAppData(raw: unknown): AppData {
 }
 
 export function MenuProvider({ children }: { children: React.ReactNode }) {
-  const [data, setData] = useState<AppData>(() => {
-    if (typeof window === "undefined") return initialData
-    const raw = window.localStorage.getItem(STORAGE_KEY)
-    if (!raw) return initialData
-    const parsed = safeParse(raw)
-    return normalizeAppData(parsed)
-  })
+  const [data, setData] = useState<AppData>(initialData)
   const isInitialized = useRef(false)
 
+  // Load from Google Sheets on mount
   useEffect(() => {
-    if (!isInitialized.current) {
+    async function loadData() {
+      const remoteData = await fetchSiteData()
+      if (remoteData) {
+        const normalized = normalizeAppData(remoteData)
+        setData(normalized)
+      }
       isInitialized.current = true
-      return
     }
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+    loadData()
+  }, [])
+
+  // Save to Google Sheets on change (debounced 2s)
+  useEffect(() => {
+    if (!isInitialized.current) return
+
+    const timer = setTimeout(() => {
+      saveSiteData(data)
+    }, 2000)
+
+    return () => clearTimeout(timer)
   }, [data])
 
   const resetToDefaults = () => {
     setData(initialData)
-    localStorage.removeItem(STORAGE_KEY)
+    // Will trigger save effect automatically
   }
 
   const addCafeItem: MenuContextValue["addCafeItem"] = (item) => {

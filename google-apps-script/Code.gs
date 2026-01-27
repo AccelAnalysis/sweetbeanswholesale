@@ -42,8 +42,45 @@ const SHEETS = {
   JOB_APPLICATIONS: {
     name: "Job Applications",
     headers: ["Date", "Status", "Name", "Email", "Phone", "Position", "Experience", "Availability", "Resume Link", "Notes"]
+  },
+  // New Data Sheets
+  CAFE_ITEMS: {
+    name: "DB_CafeItems",
+    headers: ["id", "categoryId", "name", "description", "price", "image", "videoUrl", "highlight", "page", "subpage", "note", "linkUrl"]
+  },
+  WHOLESALE_PRODUCTS: {
+    name: "DB_WholesaleProducts",
+    headers: ["id", "name", "origin", "roast", "notes", "acidity", "use", "sizes", "price", "image", "videoUrl", "page", "subpage", "linkUrl"]
+  },
+  RETAIL_PRODUCTS: {
+    name: "DB_RetailProducts",
+    headers: ["id", "name", "roast", "price", "image", "videoUrl", "page", "subpage", "linkUrl"]
+  },
+  SITE_ASSETS: {
+    name: "DB_SiteAssets",
+    headers: ["id", "page", "location", "type", "url", "alt", "linkUrl"]
+  },
+  HOME_FEATURED: {
+    name: "DB_HomeFeatured",
+    headers: ["id", "name", "description", "roast", "image", "fallbackImage"]
   }
 };
+
+/**
+ * Handle GET requests - Serve the AppData JSON
+ */
+function doGet(e) {
+  try {
+    const data = getSiteData();
+    return ContentService.createTextOutput(JSON.stringify(data))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "error",
+      message: error.toString()
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
 
 /**
  * Handle POST requests from the website
@@ -51,7 +88,7 @@ const SHEETS = {
 function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
-    const type = data.type; // 'quote', 'application', 'inquiry'
+    const type = data.type; // 'quote', 'application', 'inquiry', 'sync_data'
     
     // Ensure workbook structure exists
     setupWorkbook();
@@ -70,6 +107,8 @@ function doPost(e) {
       result = handleRetailOrder(data);
     } else if (type === 'join_team') {
       result = handleJobApplication(data);
+    } else if (type === 'sync_data') {
+      result = handleSyncData(data.payload);
     } else {
       throw new Error("Unknown submission type: " + type);
     }
@@ -86,6 +125,102 @@ function doPost(e) {
       message: error.toString()
     })).setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+/**
+ * Read all DB sheets and construct AppData
+ */
+function getSiteData() {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  
+  // Helper to read a sheet into an array of objects
+  const readSheet = (configKey) => {
+    const config = SHEETS[configKey];
+    const sheet = ss.getSheetByName(config.name);
+    if (!sheet) return [];
+    
+    const rows = sheet.getDataRange().getValues();
+    if (rows.length < 2) return []; // Only headers
+    
+    const headers = rows[0];
+    const data = rows.slice(1);
+    
+    return data.map(row => {
+      const obj = {};
+      headers.forEach((h, i) => {
+        // Convert boolean strings back to booleans
+        let val = row[i];
+        if (val === "true") val = true;
+        if (val === "false") val = false;
+        obj[h] = val;
+      });
+      return obj;
+    });
+  };
+
+  return {
+    cafeCategories: [ // Hardcoded categories for now, or add a DB_Categories sheet if needed
+      { id: "combos", title: "Combos", icon: "Utensils" },
+      { id: "coffee", title: "Coffee", icon: "Coffee" },
+      { id: "not-coffee", title: "Not Coffee" },
+      { id: "food", title: "The Food", icon: "Utensils" },
+      { id: "goods", title: "The Goods", icon: "Gift" },
+      { id: "merch", title: "Merch", icon: "ShoppingBag" },
+      { id: "catering", title: "Catering", icon: "Utensils" },
+      { id: "bouquets", title: "Bouquets & Strawberries", icon: "Gift" },
+    ],
+    cafeItems: readSheet("CAFE_ITEMS"),
+    wholesaleProducts: readSheet("WHOLESALE_PRODUCTS"),
+    retailProducts: readSheet("RETAIL_PRODUCTS"),
+    siteAssets: readSheet("SITE_ASSETS"),
+    homeFeaturedCoffees: readSheet("HOME_FEATURED")
+  };
+}
+
+/**
+ * Overwrite DB sheets with new data
+ */
+function handleSyncData(appData) {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  
+  // Helper to overwrite a sheet
+  const writeSheet = (configKey, items) => {
+    const config = SHEETS[configKey];
+    let sheet = ss.getSheetByName(config.name);
+    if (!sheet) {
+      sheet = ss.insertSheet(config.name);
+    } else {
+      sheet.clear();
+    }
+    
+    // Write headers
+    sheet.appendRow(config.headers);
+    sheet.getRange(1, 1, 1, config.headers.length).setFontWeight("bold").setBackground("#EFEFEF");
+    sheet.setFrozenRows(1);
+    
+    if (!items || items.length === 0) return;
+    
+    // Map items to rows based on headers
+    const rows = items.map(item => {
+      return config.headers.map(h => {
+        const val = item[h];
+        return val === undefined || val === null ? "" : val;
+      });
+    });
+    
+    // Write data in bulk
+    if (rows.length > 0) {
+      sheet.getRange(2, 1, rows.length, config.headers.length).setValues(rows);
+    }
+  };
+  
+  writeSheet("CAFE_ITEMS", appData.cafeItems);
+  writeSheet("WHOLESALE_PRODUCTS", appData.wholesaleProducts);
+  writeSheet("RETAIL_PRODUCTS", appData.retailProducts);
+  writeSheet("SITE_ASSETS", appData.siteAssets);
+  writeSheet("HOME_FEATURED", appData.homeFeaturedCoffees);
+  
+  return { success: true };
 }
 
 /**
