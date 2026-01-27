@@ -1,10 +1,30 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 import { ArrowRight, Coffee, MapPin, Store } from "lucide-react"
+import { useMenu } from "@/components/menu-provider"
 
 export default function Home() {
+  const { data } = useMenu()
+
+  const homeHeroImage = data.siteAssets.find(
+    (a) => a.page === "home" && a.location === "hero-background-image"
+  )
+  const homeHeroIframe = data.siteAssets.find(
+    (a) => a.page === "home" && a.location === "hero-background-iframe"
+  )
+  const homeWholesaleCard = data.siteAssets.find(
+    (a) => a.page === "home" && a.location === "segment-card-wholesale"
+  )
+  const homeCafeCard = data.siteAssets.find(
+    (a) => a.page === "home" && a.location === "segment-card-cafe"
+  )
+
+  const featuredCoffees = data.homeFeaturedCoffees
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -12,14 +32,20 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1743356629215-abb470447e71?q=80&w=2000&auto=format&fit=crop"
+            src={
+              homeHeroImage?.url ||
+              "https://images.unsplash.com/photo-1743356629215-abb470447e71?q=80&w=2000&auto=format&fit=crop"
+            }
             alt="Coffee Roasting Background"
             fill
             className="object-cover"
             priority
           />
           <iframe
-            src="https://player.vimeo.com/video/1157684253?background=1&autoplay=1&loop=1&byline=0&title=0"
+            src={
+              homeHeroIframe?.url ||
+              "https://player.vimeo.com/video/1157684253?background=1&autoplay=1&loop=1&byline=0&title=0"
+            }
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full aspect-video max-w-none md:w-full md:h-[56.25vw] md:aspect-auto pointer-events-none"
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
@@ -60,7 +86,7 @@ export default function Home() {
             <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg border border-coffee-light/20 hover:shadow-xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="/sweetbeanswholesale/wholesale-coffee.png"
+                  src={homeWholesaleCard?.url || "/sweetbeanswholesale/wholesale-coffee.png"}
                   alt="Wholesale Coffee Bags"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -94,7 +120,10 @@ export default function Home() {
             <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg border border-coffee-light/20 hover:shadow-xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2000&auto=format&fit=crop"
+                  src={
+                    homeCafeCard?.url ||
+                    "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2000&auto=format&fit=crop"
+                  }
                   alt="Cafe Interior"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -142,65 +171,34 @@ export default function Home() {
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Roast 1 */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border border-coffee-light/30 hover:border-brand-purple/30 transition-colors">
-              <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-lg mb-4">
-                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?q=80&w=800&auto=format&fit=crop"
-                  fallbackSrc="/sweetbeanswholesale/brazil.png"
-                  alt="Brazil Coffee"
-                  fill
-                  className="object-cover"
-                />
+            {featuredCoffees.map((coffee) => (
+              <div 
+                key={coffee.id} 
+                className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border border-coffee-light/30 hover:border-brand-purple/30 transition-colors"
+              >
+                <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-lg mb-4">
+                   <ImageWithFallback
+                    src={coffee.image}
+                    fallbackSrc={coffee.fallbackImage || "/sweetbeanswholesale/brazil.png"}
+                    alt={`${coffee.name} Coffee`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-coffee-dark">{coffee.name}</h3>
+                <span className={`px-3 py-1 text-xs font-semibold rounded-full uppercase tracking-wide ${
+                  coffee.roast === "Light" ? "bg-amber-100 text-amber-800" :
+                  coffee.roast === "Medium" ? "bg-coffee-light/30 text-coffee-dark" :
+                  coffee.roast === "Dark" ? "bg-coffee-dark text-white" :
+                  "bg-gray-100 text-gray-800"
+                }`}>
+                  {coffee.roast} Roast
+                </span>
+                <p className="text-coffee-medium">
+                  {coffee.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-coffee-dark">Brazil</h3>
-              <span className="px-3 py-1 bg-coffee-light/30 text-coffee-dark text-xs font-semibold rounded-full uppercase tracking-wide">
-                Medium Roast
-              </span>
-              <p className="text-coffee-medium">
-                Caramel, toffee, and a mellow balance. The perfect base for espresso or a smooth daily drip.
-              </p>
-            </div>
-
-            {/* Roast 2 */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border border-coffee-light/30 hover:border-brand-purple/30 transition-colors">
-              <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-lg mb-4">
-                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1611854779393-1b2a97063d83?q=80&w=800&auto=format&fit=crop"
-                  fallbackSrc="/sweetbeanswholesale/ethiopia.png"
-                  alt="Ethiopia Coffee"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-coffee-dark">Ethiopia Yirgacheffe</h3>
-              <span className="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-semibold rounded-full uppercase tracking-wide">
-                Light Roast
-              </span>
-              <p className="text-coffee-medium">
-                Citrus, floral, and tropical fruits with jasmine notes. Bright and complex for pour-overs.
-              </p>
-            </div>
-
-            {/* Roast 3 */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border border-coffee-light/30 hover:border-brand-purple/30 transition-colors">
-              <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-lg mb-4">
-                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1587049359689-a2a095536484?q=80&w=800&auto=format&fit=crop"
-                  fallbackSrc="/sweetbeanswholesale/decaf-mexico.png"
-                  alt="Decaf Mexico Coffee"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-coffee-dark">Decaf Mexico</h3>
-              <span className="px-3 py-1 bg-coffee-dark text-white text-xs font-semibold rounded-full uppercase tracking-wide">
-                Decaf
-              </span>
-              <p className="text-coffee-medium">
-                Swiss Water Process. Chocolate, cinnamon, and graham cracker. Smooth and caffeine-free.
-              </p>
-            </div>
+            ))}
           </div>
           
           <div className="text-center mt-12">

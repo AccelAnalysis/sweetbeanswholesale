@@ -4,88 +4,15 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useCart } from "@/components/cart-provider"
+import { useMenu } from "@/components/menu-provider"
 import { Button } from "@/components/ui/button"
 import { Download, Filter, Package, ShoppingCart } from "lucide-react"
-
-// Product Data
-const products = [
-  {
-    id: "BRZ-01",
-    name: "Brazil Santos",
-    origin: "Brazil",
-    roast: "Medium",
-    notes: "Caramel, toffee, mellow balance",
-    acidity: "Low",
-    use: "Espresso base, blends",
-    sizes: "12oz, 2lb, 5lb",
-    price: 61.00,
-    image: "/sweetbeanswholesale/brazil.png"
-  },
-  {
-    id: "COL-01",
-    name: "Colombia Supremo",
-    origin: "Colombia",
-    roast: "Medium",
-    notes: "Chocolate, fruity, nutty",
-    acidity: "Mellow",
-    use: "Drip, medium roasts",
-    sizes: "12oz, 2lb, 5lb",
-    price: 65.00,
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=2070&auto=format&fit=crop"
-  },
-  {
-    id: "ETH-01",
-    name: "Ethiopia Yirgacheffe",
-    origin: "Ethiopia",
-    roast: "Light",
-    notes: "Citrus, floral, tropical fruits, jasmine",
-    acidity: "Bright",
-    use: "Pour-over, specialty",
-    sizes: "12oz, 2lb, 5lb",
-    price: 70.00,
-    image: "/sweetbeanswholesale/ethiopia.png"
-  },
-  {
-    id: "GUA-01",
-    name: "Guatemala Antigua",
-    origin: "Guatemala",
-    roast: "Medium",
-    notes: "Chocolate, caramel, fruit hints",
-    acidity: "Vibrant",
-    use: "Bold drinks",
-    sizes: "12oz, 2lb, 5lb",
-    price: 66.00,
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1974&auto=format&fit=crop"
-  },
-  {
-    id: "SUM-01",
-    name: "Sumatra Mandheling",
-    origin: "Sumatra",
-    roast: "Dark",
-    notes: "Cedar, dark chocolate, cherries",
-    acidity: "Low",
-    use: "Dark roasts",
-    sizes: "12oz, 2lb, 5lb",
-    price: 63.50,
-    image: "https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=2070&auto=format&fit=crop"
-  },
-  {
-    id: "DEC-01",
-    name: "Decaf Mexico",
-    origin: "Mexico",
-    roast: "Medium",
-    notes: "Nutmeg, molasses, chocolate",
-    acidity: "Tangy",
-    use: "Decaf alternatives",
-    sizes: "12oz, 2lb, 5lb",
-    price: 67.50,
-    image: "/sweetbeanswholesale/decaf-mexico.png"
-  }
-]
 
 export default function CatalogPage() {
   const [activeFilter, setActiveFilter] = useState("All")
   const { addItem } = useCart()
+  const { data } = useMenu()
+  const products = data.wholesaleProducts
 
   const filteredProducts = activeFilter === "All" 
     ? products 
@@ -142,7 +69,7 @@ export default function CatalogPage() {
           
           <div className="flex gap-4 w-full md:w-auto">
              <Button variant="outline" className="gap-2 w-full md:w-auto" asChild>
-              <a href="/sweetbeanswholesale/wholesale-catalog.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/sweetbeanswholesale/wholesale-catalog.pdf" download="wholesale-catalog.pdf" target="_blank" rel="noopener noreferrer">
                 <Download className="h-4 w-4" />
                 Download PDF Catalog
               </a>

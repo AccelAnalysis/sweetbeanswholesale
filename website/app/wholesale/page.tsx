@@ -1,16 +1,40 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2, Truck, Users, Coffee, Store, Building2, UtensilsCrossed } from "lucide-react"
+import { useMenu } from "@/components/menu-provider"
 
 export default function WholesalePage() {
+  const { data } = useMenu()
+
+  const heroAsset = data.siteAssets.find(
+    (a) => a.page === "wholesale" && a.location === "hero-background"
+  )
+  const whyPartnerAsset = data.siteAssets.find(
+    (a) => a.page === "wholesale" && a.location === "why-partner-image"
+  )
+  const partnerCafes = data.siteAssets.find(
+    (a) => a.page === "wholesale" && a.location === "partner-image-cafes"
+  )
+  const partnerRestaurants = data.siteAssets.find(
+    (a) => a.page === "wholesale" && a.location === "partner-image-restaurants"
+  )
+  const partnerOffices = data.siteAssets.find(
+    (a) => a.page === "wholesale" && a.location === "partner-image-offices"
+  )
+  const partnerBakeries = data.siteAssets.find(
+    (a) => a.page === "wholesale" && a.location === "partner-image-bakeries"
+  )
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[500px] flex items-center bg-coffee-dark text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/sweetbeanswholesale/wholesale-coffee.png"
+            src={heroAsset?.url || "/sweetbeanswholesale/wholesale-coffee.png"}
             alt="Wholesale Coffee"
             fill
             className="object-cover opacity-40"
@@ -93,7 +117,10 @@ export default function WholesalePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1974&auto=format&fit=crop"
+                src={
+                  whyPartnerAsset?.url ||
+                  "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1974&auto=format&fit=crop"
+                }
                 alt="Barista Training"
                 fill
                 className="object-cover"
@@ -264,7 +291,10 @@ export default function WholesalePage() {
             {/* Partner Images */}
             <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
               <Image
-                src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=800&auto=format&fit=crop"
+                src={
+                  partnerCafes?.url ||
+                  "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=800&auto=format&fit=crop"
+                }
                 alt="Partner Cafe"
                 fill
                 className="object-cover"
@@ -275,7 +305,10 @@ export default function WholesalePage() {
             </div>
             <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
               <Image
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop"
+                src={
+                  partnerRestaurants?.url ||
+                  "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop"
+                }
                 alt="Partner Restaurant"
                 fill
                 className="object-cover"
@@ -286,7 +319,10 @@ export default function WholesalePage() {
             </div>
             <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
               <Image
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
+                src={
+                  partnerOffices?.url ||
+                  "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
+                }
                 alt="Partner Office"
                 fill
                 className="object-cover"
@@ -297,7 +333,10 @@ export default function WholesalePage() {
             </div>
             <div className="relative h-32 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
               <Image
-                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop"
+                src={
+                  partnerBakeries?.url ||
+                  "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop"
+                }
                 alt="Partner Bakery"
                 fill
                 className="object-cover"

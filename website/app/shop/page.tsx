@@ -5,40 +5,12 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ShoppingBag, Star, ArrowRight } from "lucide-react"
 import { useCart } from "@/components/cart-provider"
-
-const retailProducts = [
-  {
-    id: "RET-01",
-    name: "Hampton House Blend",
-    roast: "Medium",
-    price: 21.50,
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=2070&auto=format&fit=crop"
-  },
-  {
-    id: "RET-02",
-    name: "Ethiopia Yirgacheffe",
-    roast: "Light",
-    price: 24.50,
-    image: "https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/1d77007d-8922-4127-bfdd-b6b332328c88.jpg"
-  },
-  {
-    id: "RET-03",
-    name: "Sumatra Dark",
-    roast: "Dark",
-    price: 21.50,
-    image: "https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=2070&auto=format&fit=crop"
-  },
-  {
-    id: "RET-04",
-    name: "Decaf Mexico",
-    roast: "Medium",
-    price: 23.00,
-    image: "https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/mexico_coffee.png"
-  }
-]
+import { useMenu } from "@/components/menu-provider"
 
 export default function ShopPage() {
   const { addItem } = useCart()
+  const { data } = useMenu()
+  const retailProducts = data.retailProducts
 
   const handleAddToCart = (product: typeof retailProducts[0]) => {
     addItem({

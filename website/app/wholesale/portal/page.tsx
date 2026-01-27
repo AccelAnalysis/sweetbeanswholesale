@@ -150,7 +150,7 @@ export default function PortalDashboard() {
                   ))}
                 </div>
                 <Button variant="outline" className="w-full mt-4" asChild>
-                  <Link href="#">View All History</Link>
+                  <Link href="/contact?subject=Wholesale Order History Request">View All History</Link>
                 </Button>
               </CardContent>
             </Card>

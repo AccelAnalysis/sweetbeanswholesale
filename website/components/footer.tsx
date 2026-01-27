@@ -32,7 +32,7 @@ export function Footer() {
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="hover:text-white transition-colors">
+              <Link href="https://www.instagram.com/sweetbeanscs/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>

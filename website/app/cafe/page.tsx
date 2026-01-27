@@ -1,358 +1,38 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
+import { useMemo } from "react"
 import { Button } from "@/components/ui/button"
+import { useMenu } from "@/components/menu-provider"
 import { MapPin, Clock, Coffee, ArrowRight, Utensils, ShoppingBag, Gift } from "lucide-react"
 
-// Menu Data Types
-type MenuItem = {
-  name: string
-  price: string
-  description: string
-  note?: string
-  highlight?: boolean
+function getCategoryIcon(iconName?: string) {
+  if (iconName === "Coffee") return <Coffee className="h-6 w-6 text-brand-purple" />
+  if (iconName === "Utensils") return <Utensils className="h-6 w-6 text-brand-purple" />
+  if (iconName === "Gift") return <Gift className="h-6 w-6 text-brand-purple" />
+  if (iconName === "ShoppingBag") return <ShoppingBag className="h-6 w-6 text-brand-purple" />
+  return undefined
 }
-
-type MenuCategory = {
-  id: string
-  title: string
-  icon?: React.ReactNode
-  items: MenuItem[]
-}
-
-// Full Menu Data from Mock Site
-const menuCategories: MenuCategory[] = [
-  {
-    id: "combos",
-    title: "Combos",
-    icon: <Utensils className="h-6 w-6 text-brand-purple" />,
-    items: [
-      {
-        name: "Morning Boost",
-        price: "7.50",
-        description: "Coffee paired with a Bagel Sandwich for a perfect start to your day (save 1.15).",
-        highlight: true
-      },
-      {
-        name: "Sweet Treat",
-        price: "7.50",
-        description: "Indulgent Mocha with a fresh Brownie for a rich, comforting escape (save 0.85).",
-        highlight: true
-      }
-    ]
-  },
-  {
-    id: "coffee",
-    title: "Coffee",
-    icon: <Coffee className="h-6 w-6 text-brand-purple" />,
-    items: [
-      {
-        name: "Frappe",
-        price: "5.55",
-        description: "A velvety iced latte blended to creamy perfection with our in-house roast, topped with luscious Sweet Beans whipped cream or cold foam. Pair with a Muffin for +3.00.",
-        highlight: true
-      },
-      {
-        name: "Mocha",
-        price: "5.25",
-        description: "Indulgent mocha crafted with our legendary in-house chocolate sauce for a rich, comforting escape.",
-        highlight: true
-      },
-      {
-        name: "Latte",
-        price: "5.00",
-        description: "A luxurious assortment of flavors in our specialty lattes, made with our own velvety in-house syrups and sauces (Small 4.50 / Medium 5.00 / Large 5.50).",
-        highlight: true
-      },
-      {
-        name: "Cappuccino",
-        price: "4.90",
-        description: "Traditional Italian-style cappuccino with our in-house roast and expertly steamed milk and foam for a bold, frothy delight."
-      },
-      {
-        name: "Cold Brew",
-        price: "4.85",
-        description: "Our in-house roast steeped for 24 hours to deliver a smooth, bold flavor that's refreshingly invigorating."
-      },
-      {
-        name: "Americano",
-        price: "4.50",
-        description: "Robust traditional Americano with 3 shots of espresso and equal parts water for an intense coffee experience."
-      },
-      {
-        name: "Coffee Traveler",
-        price: "19.50",
-        description: "Convenient 96 oz. box of freshly brewed coffee from our amazing in-house roast blend."
-      },
-      {
-        name: "Coffee",
-        price: "3.15",
-        description: "Freshly brewed coffee from our amazing in-house roast blend, smooth and aromatic."
-      },
-      {
-        name: "Espresso Cup",
-        price: "2.25",
-        description: "Pure perfection: our espresso roast straight to the cup, intense and satisfying."
-      }
-    ]
-  },
-  {
-    id: "not-coffee",
-    title: "Not Coffee",
-    items: [
-      {
-        name: "Chai Tea Latte",
-        price: "6.50",
-        description: "Lovely chilled spiced vanilla chai whipped with steamed milk, then poured over ice for a creamy, exotic treat.",
-        highlight: true
-      },
-      {
-        name: "Red Bull Italian Ice",
-        price: "6.50",
-        description: "Energizing blend of our in-house raspberry syrup with 8oz of Red Bull and heavy cream for a bold, creamy boost.",
-        highlight: true
-      },
-      {
-        name: "Fruit Smoothie",
-        price: "6.50",
-        description: "Vibrant smoothie made with real fresh-cut in-house fruit for a refreshing, natural burst of flavor.",
-        highlight: true
-      },
-      {
-        name: "Frozen Hot Chocolate",
-        price: "5.00",
-        description: "Our famous hot chocolate blended into a cool, creamy iced classic that's irresistibly indulgent."
-      },
-      {
-        name: "Fruit Bomb",
-        price: "5.00",
-        description: "Fantastic blend of fruit and soda mixed into a refreshing flavor explosion."
-      },
-      {
-        name: "London Fog",
-        price: "4.20",
-        description: "Your choice of tea steeped in perfectly steamed milk for a full, creamy taste that's soothing and elegant."
-      },
-      {
-        name: "Hot Chocolate",
-        price: "4.00",
-        description: "Great hot chocolate made with our legendary in-house chocolate sauce, perfect for the whole family."
-      },
-      {
-        name: "Steamer",
-        price: "3.30",
-        description: "Any of our specialty flavors in steamed milk without espresso, warm and comforting."
-      },
-      {
-        name: "Tea",
-        price: "2.80",
-        description: "Choose from our great tea options, from regular black to vibrant watermelon hibiscus."
-      },
-      {
-        name: "Soda & Water",
-        price: "1.25",
-        description: "Choose from any of our soda or water options for a simple refreshment."
-      },
-      {
-        name: "Cup Of Ice",
-        price: "0.75",
-        description: "Refreshing ice cubes, perfect for cooling your favorite beverages. Add to any iced drink for just 0.75."
-      }
-    ]
-  },
-  {
-    id: "food",
-    title: "The Food",
-    icon: <Utensils className="h-6 w-6 text-brand-purple" />,
-    items: [
-      {
-        name: "Melt",
-        price: "9.25",
-        description: "Classic chicken melts or meat-free options loaded with fresh veggies and zesty avocado lime sauce. Includes chips!",
-        note: "Customize: Add bacon or extra cheese for +1.00.",
-        highlight: true
-      },
-      {
-        name: "3 Cheese Melt",
-        price: "7.25",
-        description: "Ultimate grilled cheese with provolone, mozzarella, and cheddar for a gooey, cheesy delight.",
-        note: "Customize: Add tomato or ham for +1.00.",
-        highlight: true
-      },
-      {
-        name: "Bagel Sandwich",
-        price: "5.50",
-        description: "Our famous breakfast sandwich options on your choice of bagel, hearty and satisfying.",
-        note: "Customize: Add cream cheese or sausage for +1.00."
-      },
-      {
-        name: "Chips & Salsa",
-        price: "5.25",
-        description: "Our in-house made salsas with premium restaurant-style tortilla chips in a full bag."
-      },
-      {
-        name: "Fruit Cup",
-        price: "5.00",
-        description: "Fresh-cut fruit, great for on-the-go refreshment."
-      },
-      {
-        name: "Yogurt Parfait",
-        price: "4.25",
-        description: "Fresh-cut strawberries layered with our in-house baked granola and premium yogurt."
-      },
-      {
-        name: "Burrito",
-        price: "3.95",
-        description: "1.5 ounces of fluffy in-house made eggs with cheese, wrapped and toasted in a tortilla.",
-        note: "Customize: Add sausage or veggies for +1.00."
-      },
-      {
-        name: "Bagel",
-        price: "3.50",
-        description: "Your choice of 3 different bagel types, best with a side of cream cheese.",
-        note: "Customize: Add cream cheese for +1.00."
-      },
-      {
-        name: "Pretzel Roll",
-        price: "2.00",
-        description: "Our famous in-house baked fresh pretzel rolls! Goes great with honey mustard or sour cream."
-      }
-    ]
-  },
-  {
-    id: "goods",
-    title: "The Goods",
-    icon: <Gift className="h-6 w-6 text-brand-purple" />,
-    items: [
-      {
-        name: "Hot Cocoa Bomb",
-        price: "13.00",
-        description: "Chocolate sphere filled with cocoa powder—drop in hot milk and watch it explode into decadent delight! Perfect with any hot beverage.",
-        highlight: true
-      },
-      {
-        name: "Dipped Oreos",
-        price: "7.50",
-        description: "Oreo cookies dipped in various flavors of our in-house chocolate sauce for a crunchy, indulgent treat.",
-        highlight: true
-      },
-      {
-        name: "Peach Bar",
-        price: "5.50",
-        description: "Baked in-house peach bar with premium chopped freestone peaches and spiced crumble, juicy and crumbly."
-      },
-      {
-        name: "Edible Cookie Dough",
-        price: "5.00",
-        description: "Carefully prepared, no-bake safe edible cookie dough that's soft and irresistible."
-      },
-      {
-        name: "Scotcharoo",
-        price: "4.00",
-        description: "Crisp rice bar mixed with caramel and topped with our in-house dark and milk chocolate blend."
-      },
-      {
-        name: "Muffin",
-        price: "4.00",
-        description: "Fan-favorite Cherry Walnut and other famous in-house muffins, moist and flavorful."
-      },
-      {
-        name: "Brownie",
-        price: "3.10",
-        description: "Dense chocolate treat that will make you crave a glass of milk, fudgy and rich."
-      },
-      {
-        name: "Cookies",
-        price: "2.70",
-        description: "Fresh-baked in-house cookies with options for everyone, including gluten-free—soft and chewy."
-      }
-    ]
-  },
-  {
-    id: "merch",
-    title: "Merch",
-    icon: <ShoppingBag className="h-6 w-6 text-brand-purple" />,
-    items: [
-      {
-        name: "Sweet Beans Tumbler",
-        price: "25.00",
-        description: "Reusable tumbler with secure lid and straw, ideal for on-the-go hydration. Limited stock!"
-      },
-      {
-        name: "Sweet Beans Shirt",
-        price: "20.00",
-        description: "Comfortable shirt with our signature sweet beans design, made from soft, durable fabric."
-      }
-    ]
-  },
-  {
-    id: "catering",
-    title: "Catering",
-    icon: <Utensils className="h-6 w-6 text-brand-purple" />,
-    items: [
-      {
-        name: "Breakfast Platter",
-        price: "60.00",
-        description: "Scrambled eggs, bacon, sausage links, sourdough toast, and tater tots. Order 24 hours in advance.",
-        highlight: true
-      },
-      {
-        name: "Pastry Platter",
-        price: "55.00",
-        description: "Assortment of croissants, pain au chocolat, and apple turnovers."
-      },
-      {
-        name: "Panini Platter",
-        price: "55.00",
-        description: "Assorted panini with options: Chicken Pesto, Chicken Parmesan, Veggie Loaded."
-      },
-      {
-        name: "Dessert Platter",
-        price: "45.00",
-        description: "Variety of chocolate chip cookies, double chocolate cookies, brownies, and muffins."
-      },
-      {
-        name: "Turkey Sliders",
-        price: "40.00",
-        description: "Mini sandwiches with turkey, cheese, lettuce, tomato, pickles, and mayo."
-      },
-      {
-        name: "Fruit/Veggie Platter",
-        price: "35.00",
-        description: "Vibrant assortment of fresh strawberries, pineapple, honeydew, cantaloupe, and red grapes."
-      },
-      {
-        name: "Boxed Soup & Sandwich",
-        price: "35.00",
-        description: "Grilled cheese sandwich with cheddar on Texas toast paired with tomato bisque soup."
-      },
-      {
-        name: "Pitcher Cold Brew",
-        price: "20.00",
-        description: ""
-      }
-    ]
-  },
-  {
-    id: "bouquets",
-    title: "Bouquets & Strawberries",
-    icon: <Gift className="h-6 w-6 text-brand-purple" />,
-    items: [
-      {
-        name: "Sweet & Delicious",
-        price: "50.99",
-        description: "Fresh strawberries paired with chocolate-dipped strawberries, pineapple flowers, cantaloupe, etc. Upgrade your Dessert Platter with this for +40.00.",
-        highlight: true
-      },
-      {
-        name: "Sweet Pineapple Treat",
-        price: "38.25",
-        description: "Heart-shaped pineapple slice surrounded by fresh strawberries, orange slices, and grapes."
-      }
-    ]
-  }
-]
 
 export default function CafePage() {
+  const { data } = useMenu()
+
+  const heroAsset = useMemo(() => {
+    return data.siteAssets.find(
+      (a) => a.page === "cafe" && a.location === "hero-background" && a.type === "image"
+    )
+  }, [data.siteAssets])
+
+  const menuCategories = useMemo(() => {
+    return data.cafeCategories.map((cat) => ({
+      id: cat.id,
+      title: cat.title,
+      icon: getCategoryIcon(cat.icon),
+      items: data.cafeItems.filter((it) => it.categoryId === cat.id),
+    }))
+  }, [data.cafeCategories, data.cafeItems])
+
   return (
     <div className="flex flex-col min-h-screen bg-cream">
       
@@ -361,7 +41,10 @@ export default function CafePage() {
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2000&auto=format&fit=crop"
+            src={
+              heroAsset?.url ||
+              "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2000&auto=format&fit=crop"
+            }
             alt="Sweet Beans Cafe Interior"
             fill
             className="object-cover"
@@ -398,7 +81,7 @@ export default function CafePage() {
                 Hampton, VA 23666
               </p>
               <a 
-                href="https://maps.google.com" 
+                href="https://www.google.com/maps/place/Sweet+Beans+Coffee+Bar/@37.0930618,-76.3958294,17z/data=!3m1!4b1!4m6!3m5!1s0x89ba83935cec8a43:0x7b35e220bcb5c8ae!8m2!3d37.0930618!4d-76.3932545!16s%2Fg%2F11h0zcwn5x!5m2!1e4!1e1?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-brand-purple text-sm font-semibold mt-2 hover:underline"
@@ -455,6 +138,29 @@ export default function CafePage() {
                         }
                       `}
                     >
+                      {(item.image || item.videoUrl) && (
+                        <div className="mb-4">
+                          <div className="relative w-full h-40 rounded-lg overflow-hidden bg-coffee-light/10">
+                            {item.videoUrl ? (
+                              <iframe
+                                src={item.videoUrl}
+                                className="absolute inset-0 w-full h-full"
+                                frameBorder="0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowFullScreen
+                              />
+                            ) : (
+                              <Image
+                                src={item.image as string}
+                                alt={item.name}
+                                fill
+                                className="object-cover"
+                              />
+                            )}
+                          </div>
+                        </div>
+                      )}
+
                       <div className="flex justify-between items-start mb-2 pb-2 border-b border-dashed border-coffee-light/20">
                         <h4 className={`font-bold text-lg ${item.highlight ? 'text-brand-purple' : 'text-coffee-dark'}`}>
                           {item.name}

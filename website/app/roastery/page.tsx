@@ -1,9 +1,21 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { MapPin, Clock, Calendar, Users, Coffee, ArrowRight } from "lucide-react"
+import { useMenu } from "@/components/menu-provider"
 
 export default function RoasteryPage() {
+  const { data } = useMenu()
+
+  const heroAsset = data.siteAssets.find(
+    (a) => a.page === "roastery" && a.location === "hero-background"
+  )
+  const storyAsset = data.siteAssets.find(
+    (a) => a.page === "roastery" && a.location === "story-image"
+  )
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       
@@ -12,7 +24,10 @@ export default function RoasteryPage() {
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1561986810-4f3ba2f46ceb?q=80&w=2000&auto=format&fit=crop"
+            src={
+              heroAsset?.url ||
+              "https://images.unsplash.com/photo-1561986810-4f3ba2f46ceb?q=80&w=2000&auto=format&fit=crop"
+            }
             alt="Sweet Beans Roastery"
             fill
             className="object-cover"
@@ -70,7 +85,10 @@ export default function RoasteryPage() {
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
                <Image
-                  src="https://images.unsplash.com/photo-1515471897120-85416077e011?q=80&w=2000&auto=format&fit=crop"
+                  src={
+                    storyAsset?.url ||
+                    "https://images.unsplash.com/photo-1515471897120-85416077e011?q=80&w=2000&auto=format&fit=crop"
+                  }
                   alt="Roasting Process"
                   fill
                   className="object-cover"
